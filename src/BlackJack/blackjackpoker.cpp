@@ -8,6 +8,7 @@
 
 #include "BlackJack/blackjackpoker.h"
 #include "BlackJack/Form1.h"
+#include "BlackJack/FormRanking.h"
 
 using namespace Osp::App;
 using namespace Osp::Base;
@@ -44,7 +45,10 @@ blackjackpoker::OnAppInitializing(AppRegistry& appRegistry)
 	//PowerManager::SetScreenEventListener(*this);
 
 	// Create a form
+
 	Form1 *pForm1 = new Form1();
+	//FormRanking *pForm1 = new FormRanking();
+
 	pForm1->Initialize();
 
 	// Add the form to the frame
