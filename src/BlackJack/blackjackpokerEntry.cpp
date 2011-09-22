@@ -1,7 +1,7 @@
 /**
  * This file contains the bada application entry point.
  */
-#include "blackjackpoker.h"
+#include "BlackJack/blackjackpoker.h"
 
 using namespace Osp::Base;
 using namespace Osp::Base::Collection;

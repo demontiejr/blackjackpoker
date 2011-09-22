@@ -6,8 +6,8 @@
  */
 
 
-#include "blackjackpoker.h"
-#include "Form1.h"
+#include "BlackJack/blackjackpoker.h"
+#include "BlackJack/Form1.h"
 
 using namespace Osp::App;
 using namespace Osp::Base;

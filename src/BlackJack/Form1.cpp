@@ -1,4 +1,4 @@
-#include "Form1.h"
+#include "BlackJack/Form1.h"
 
 using namespace Osp::Base;
 using namespace Osp::Ui;
@@ -63,5 +63,3 @@ Form1::OnActionPerformed(const Osp::Ui::Control& source, int actionId)
 		break;
 	}
 }
-
-
