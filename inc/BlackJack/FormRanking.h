@@ -9,8 +9,11 @@
 
 #include <FBase.h>
 #include <FUi.h>
+#include <FMedia.h>
+#include <FGraphics.h>
 #include "BlackJack/Ranking.h"
 #include "BlackJack/InfoRanking.h"
+
 
 class FormRanking: public Osp::Ui::Controls::Form,
 		public Osp::Ui::IActionEventListener {
@@ -24,10 +27,12 @@ protected:
 	static const int ID_BUTTON_ADD = 101;
 	static const int ID_BUTTON_GET = 102;
 	static const int ID_BUTTON_LIMPAR = 103;
+	static const int ID_BUTTON_VOLTAR = 104;
 
 	 Osp::Ui::Controls::Button *__pButtonAdd;
 	 Osp::Ui::Controls::Button *__pButtonGet;
 	 Osp::Ui::Controls::Button *__pButtonLimpar;
+	 Osp::Ui::Controls::Button *__pButtonVoltar;
 
 	 Osp::Ui::Controls::EditField *__pEditFieldNome;
 	 Osp::Ui::Controls::EditField *__pEditFieldPontos;
@@ -43,6 +48,8 @@ public:
 	virtual result OnTerminating(void);
 	virtual void OnActionPerformed(const Osp::Ui::Control& source, int actionId);
 	Ranking ranking;
+	virtual result OnDraw(void);
+
 private:
     void Add();
     void Get();
