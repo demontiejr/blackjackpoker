@@ -158,7 +158,7 @@ result FormRanking::OnDraw(void) {
 			BITMAP_PIXEL_FORMAT_ARGB8888);
 
 	Label *pLabel = new Label();
-	pLabel->Construct(Rectangle(0, 0, 240, 399), null);
+	pLabel->Construct(Rectangle(0, 0, 240, 400), null);
 	pLabel->SetBackgroundBitmap(*pBitmap);
 	AddControl(*pLabel);
 	delete pImage;

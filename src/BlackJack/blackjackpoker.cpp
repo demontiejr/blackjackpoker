@@ -31,31 +31,12 @@ blackjackpoker::CreateInstance(void)
 bool
 blackjackpoker::OnAppInitializing(AppRegistry& appRegistry)
 {
-
 	FormMgr *pFormMgr = new FormMgr();
-	int lastFormId = 0;
-	String lastFormName("");
-	String formIDkey("AppLastFormId");
-	String formNamekey("AppLastFormName");
-	result r = E_SUCCESS;
-
 	pFormMgr->Initialize();
+
 	GetAppFrame()->GetFrame()->AddControl(*pFormMgr);
 
-	r = appRegistry.Get(formIDkey, lastFormId);
-	if ( r == E_KEY_NOT_FOUND)
-	{
-		lastFormId = FormMgr::REQUEST_FORM_MENU;
-		appRegistry.Add(formIDkey, lastFormId);
-	}
-
-	r = appRegistry.Get(formNamekey, lastFormName);
-	if ( r == E_KEY_NOT_FOUND)
-	{
-		appRegistry.Add(formNamekey, L"IDF_FORM_MENU");
-	}
-
-	pFormMgr->SetStarterForm((RequestId)lastFormId, null);
+	pFormMgr->SetStarterForm(FormMgr::REQUEST_FORM_MENU, null);
 
 	return true;
 }
