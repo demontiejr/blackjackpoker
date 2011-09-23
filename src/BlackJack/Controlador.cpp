@@ -12,11 +12,13 @@ using namespace Osp::Graphics;
 using namespace Osp::Media;
 
 Controlador::Controlador() {
-	delete this->imagem;
+//	delete this->imagem;
 
 	player = new Mao();
 	mesa = new Mao();
 	baralho = new Baralho();
+	this->valorAcumulado = 200;
+	this->valorDaAposta = 5;
 	//	myVibrator = new Vibrator();
 	//	myVibrator->Construct();
 	Image image;
@@ -28,6 +30,18 @@ Controlador::~Controlador() {
 	delete player;
 	delete mesa;
 	delete baralho;
+}
+
+void Controlador::aumentarAposta() {
+	//TODO mudar a regra de negocio
+	if (this->valorDaAposta < 100)
+		this->valorDaAposta += 5;
+}
+
+void Controlador::diminuirAposta() {
+	//TODO mudar a regra de negocio
+	if (this->valorDaAposta > 5)
+		this->valorDaAposta -= 5;
 }
 
 int Controlador::puxarCarta() {
@@ -50,17 +64,21 @@ String Controlador::parar() {
 		s += "EMPATE!";
 	} else if (ms > 21) {
 		s += "VOCE GANHOU!";
+		this->valorAcumulado += this->valorDaAposta;
 		//			myVibrator->Start(400, 100, 2, 100);
 		//myPlayer->Play();
 	} else if (pl > 21) {
 		s += "MESA GANHOU";
+		this->valorAcumulado -= this->valorDaAposta;
 	} else if (pl <= 21 && ms <= 21) {
 		if (pl > ms) {
 			s += "VOCE GANHOU!";
+			this->valorAcumulado += this->valorDaAposta;
 			//				myVibrator->Start(400, 100, 2, 100);
 			//myPlayer->Play();
 		} else if (ms > pl) {
 			s += "MESA GANHOU";
+			this->valorAcumulado -= this->valorDaAposta;
 		} else {
 			s += "EMPATE";
 		}
@@ -94,6 +112,7 @@ String Controlador::reiniciar() {
 }
 
 void Controlador::desenharCartas(Canvas *pCanvas) {
+	AppLog("chamou desenhar");
 	Osp::Graphics::Bitmap *imagem_carta = new Bitmap();
 
 	float escala = 1.29;

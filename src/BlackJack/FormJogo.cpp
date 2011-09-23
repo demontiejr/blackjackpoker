@@ -19,6 +19,7 @@ FormJogo::~FormJogo(void) {
 bool FormJogo::Initialize() {
 	// Construct an XML form
 	Construct(L"IDF_FORM1");
+	controlador = new Controlador();
 //	this->SetBackgroundColor(Osp::Graphics::Color(0, 128, 0));
 
 	return true;
@@ -111,6 +112,9 @@ void FormJogo::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 	default:
 		break;
 	}
+
+	Canvas* pCanvas = GetCanvasN();
+	controlador->desenharCartas(pCanvas);
 }
 
 void FormJogo::desenharCartas() {
@@ -136,6 +140,7 @@ result FormJogo::OnDraw(void) {
         __pButtonParar->RequestRedraw(true);
         __pButtonReiniciar->RequestRedraw(true);
         __pLabelPontos->RequestRedraw(true);
+
         desenharCartas();//TODO ver se eh necessario
 
         return r;

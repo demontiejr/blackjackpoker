@@ -23,11 +23,15 @@ public:
 	int puxarCarta();
 	String parar();
 	String reiniciar();
+	void aumentarAposta();
+	void diminuirAposta();
 
 protected:
 	Baralho *baralho;
 	Mao *player;
 	Mao *mesa;
+	int valorAcumulado;
+	int valorDaAposta;
 	Osp::Graphics::Bitmap *imagem;
 };
 
