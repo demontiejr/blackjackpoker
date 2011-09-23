@@ -68,11 +68,11 @@ result FormInstrucoes::OnDraw(void) {
 	result r = pImage->Construct();
 	if (IsFailed(r))
 		return r;
-	Bitmap *pBitmap = pImage->DecodeN("/Home/background.jpg",
+	Bitmap *pBitmap = pImage->DecodeN("/Home/background-instr.png",
 			BITMAP_PIXEL_FORMAT_ARGB8888);
 
 	Label *pLabel = new Label();
-	pLabel->Construct(Rectangle(0, 0, 240, 399), null);
+	pLabel->Construct(Rectangle(0, 0, 240, 400), null);
 	pLabel->SetBackgroundBitmap(*pBitmap);
 	AddControl(*pLabel);
 	delete pImage;
