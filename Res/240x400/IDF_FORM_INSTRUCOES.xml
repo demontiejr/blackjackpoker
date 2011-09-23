@@ -10,4 +10,9 @@
         <layout mode="Portrait" style="FORM_STYLE_TITLE|FORM_STYLE_INDICATOR"/>
         <layout mode="Landscape" style="FORM_STYLE_TITLE|FORM_STYLE_INDICATOR"/>
     </Form>
+    <Button id="IDC_BUTTON_VOLTAR" parent="IDF_FORM_INSTRUCOES">
+        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="Voltar" vAlign="ALIGN_MIDDLE"/>
+        <layout height="41" mode="Portrait" width="99" x="70" y="246"/>
+        <layout height="24" mode="Landscape" width="185" x="100" y="130"/>
+    </Button>
 </Scene>

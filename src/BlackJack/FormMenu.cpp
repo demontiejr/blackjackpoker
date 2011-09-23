@@ -5,14 +5,14 @@
  */
 
 #include "BlackJack/FormMenu.h"
-//#include "FormMgr.h"
+#include "BlackJack/FormMgr.h"
 
+using namespace Osp::App;
 using namespace Osp::Base;
 using namespace Osp::Ui;
 using namespace Osp::Ui::Controls;
 using namespace Osp::Media;
 using namespace Osp::Graphics;
-
 
 FormMenu::FormMenu() {
 	// TODO Auto-generated constructor stub
@@ -49,7 +49,7 @@ result FormMenu::OnInitializing(void) {
 	 __pButtonInstrucoes = static_cast<Button *> (GetControl(L"IDC_BUTTON_INSTRUCOES"));
 	 if (__pButtonInstrucoes != null)
 	 {
-	 __pButtonInstrucoes->SetActionId(ID_BUTTON_RANKING);
+	 __pButtonInstrucoes->SetActionId(ID_BUTTON_INSTRUCOES);
 	 __pButtonInstrucoes->AddActionEventListener(*this);
 	 }
 
@@ -63,7 +63,9 @@ result FormMenu::OnTerminating(void) {
 }
 
 void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
+	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
 	switch (actionId) {
+
 	case ID_BUTTON_NOVO_JOGO: {
 		AppLog("NOVO JOGO Button is clicked! \n");
 	}
@@ -71,11 +73,19 @@ void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 
 	case ID_BUTTON_RANKING: {
 		AppLog("RANKING Button is clicked! \n");
+		FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
+				"FormMgr"));
+		if (pFormMgr != null)
+			pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_RANKING, null);
 	}
 		break;
 
 	case ID_BUTTON_INSTRUCOES: {
 		AppLog("INSTRUCOES Button is clicked! \n");
+		FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
+				"FormMgr"));
+		if (pFormMgr != null)
+			pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_INSTRUCOES, null);
 	}
 		break;
 
@@ -84,6 +94,7 @@ void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 	}
 
 }
+
 result FormMenu::OnDraw(void) {
 	Image *pImage = new Image();
 	result r = pImage->Construct();
