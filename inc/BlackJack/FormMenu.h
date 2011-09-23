@@ -9,6 +9,8 @@
 
 #include <FBase.h>
 #include <FUi.h>
+#include <FMedia.h>
+#include <FGraphics.h>
 
 class FormMenu:
 	public Osp::Ui::Controls::Form,
@@ -33,6 +35,8 @@ public:
 	virtual result OnInitializing(void);
 	virtual result OnTerminating(void);
 	virtual void OnActionPerformed(const Osp::Ui::Control& source, int actionId);
+	virtual result OnDraw(void);
+
 };
 
 #endif /* FORMMENU_H_ */
