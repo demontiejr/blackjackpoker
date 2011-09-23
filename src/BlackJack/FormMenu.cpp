@@ -68,6 +68,10 @@ void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 
 	case ID_BUTTON_NOVO_JOGO: {
 		AppLog("NOVO JOGO Button is clicked! \n");
+		FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
+				"FormMgr"));
+		if (pFormMgr != null)
+			pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, null);
 	}
 	break;
 

@@ -15,9 +15,10 @@ public:
 public:
 	bool Initialize();
 	bool SetStarterForm(RequestId requestId, Osp::Base::Collection::IList* pArgs);
-	static const RequestId REQUEST_FORM_MENU = 100;
-	static const RequestId REQUEST_FORM_INSTRUCOES = 101;
-	static const RequestId REQUEST_FORM_RANKING = 102;
+	static const RequestId REQUEST_FORM_JOGO = 100;
+	static const RequestId REQUEST_FORM_MENU = 101;
+	static const RequestId REQUEST_FORM_INSTRUCOES = 102;
+	static const RequestId REQUEST_FORM_RANKING = 103;
 
 protected:
 	void SwitchToForm(RequestId requestId, Osp::Base::Collection::IList* pArgs);

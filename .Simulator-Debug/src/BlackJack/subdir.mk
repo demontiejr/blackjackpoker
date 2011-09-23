@@ -4,34 +4,46 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/BlackJack/Form1.cpp \
+../src/BlackJack/Baralho.cpp \
+../src/BlackJack/Carta.cpp \
+../src/BlackJack/Controlador.cpp \
 ../src/BlackJack/FormInstrucoes.cpp \
+../src/BlackJack/FormJogo.cpp \
 ../src/BlackJack/FormMenu.cpp \
 ../src/BlackJack/FormMgr.cpp \
 ../src/BlackJack/FormRanking.cpp \
 ../src/BlackJack/InfoRanking.cpp \
+../src/BlackJack/Mao.cpp \
 ../src/BlackJack/Ranking.cpp \
 ../src/BlackJack/blackjackpoker.cpp \
 ../src/BlackJack/blackjackpokerEntry.cpp 
 
 OBJS += \
-./src/BlackJack/Form1.o \
+./src/BlackJack/Baralho.o \
+./src/BlackJack/Carta.o \
+./src/BlackJack/Controlador.o \
 ./src/BlackJack/FormInstrucoes.o \
+./src/BlackJack/FormJogo.o \
 ./src/BlackJack/FormMenu.o \
 ./src/BlackJack/FormMgr.o \
 ./src/BlackJack/FormRanking.o \
 ./src/BlackJack/InfoRanking.o \
+./src/BlackJack/Mao.o \
 ./src/BlackJack/Ranking.o \
 ./src/BlackJack/blackjackpoker.o \
 ./src/BlackJack/blackjackpokerEntry.o 
 
 CPP_DEPS += \
-./src/BlackJack/Form1.d \
+./src/BlackJack/Baralho.d \
+./src/BlackJack/Carta.d \
+./src/BlackJack/Controlador.d \
 ./src/BlackJack/FormInstrucoes.d \
+./src/BlackJack/FormJogo.d \
 ./src/BlackJack/FormMenu.d \
 ./src/BlackJack/FormMgr.d \
 ./src/BlackJack/FormRanking.d \
 ./src/BlackJack/InfoRanking.d \
+./src/BlackJack/Mao.d \
 ./src/BlackJack/Ranking.d \
 ./src/BlackJack/blackjackpoker.d \
 ./src/BlackJack/blackjackpokerEntry.d 

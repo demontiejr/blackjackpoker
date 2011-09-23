@@ -10,9 +10,24 @@
         <layout mode="Portrait" style="FORM_STYLE_TITLE|FORM_STYLE_INDICATOR"/>
         <layout mode="Landscape" style="FORM_STYLE_TITLE|FORM_STYLE_INDICATOR"/>
     </Form>
-    <Button id="IDC_BUTTON_OK" parent="IDF_FORM1">
-        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="OK" vAlign="ALIGN_MIDDLE"/>
-        <layout height="45" mode="Portrait" width="120" x="60" y="118"/>
-        <layout height="51" mode="Landscape" width="200" x="100" y="54"/>
+    <Label id="IDC_LABEL_PONTOS" parent="IDF_FORM1">
+        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="" textColor="" textSize="22" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <layout height="31" mode="Portrait" width="201" x="20" y="16"/>
+        <layout height="18" mode="Landscape" width="335" x="33" y="0"/>
+    </Label>
+    <Button id="IDC_BUTTON_REINICIAR" parent="IDF_FORM1">
+        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="INICIAR" vAlign="ALIGN_MIDDLE"/>
+        <layout height="41" mode="Portrait" width="121" x="24" y="238"/>
+        <layout height="24" mode="Landscape" width="201" x="50" y="136"/>
+    </Button>
+    <Button id="IDC_BUTTON_PARAR" parent="IDF_FORM1">
+        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="PARAR" vAlign="ALIGN_MIDDLE"/>
+        <layout height="41" mode="Portrait" width="121" x="25" y="297"/>
+        <layout height="24" mode="Landscape" width="201" x="70" y="156"/>
+    </Button>
+    <Button id="IDC_BUTTON_PUXAR" parent="IDF_FORM1">
+        <property NormalBGBitmapPath="/240x400/carta_virada.png" PressedBGBitmapPath="/240x400/carta_virada_pressionada.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
+        <layout height="105" mode="Portrait" width="71" x="160" y="236"/>
+        <layout height="53" mode="Landscape" width="118" x="266" y="133"/>
     </Button>
 </Scene>

@@ -1,4 +1,5 @@
 #include "BlackJack/FormMgr.h"
+#include "BlackJack/FormJogo.h"
 #include "BlackJack/FormMenu.h"
 #include "BlackJack/FormInstrucoes.h"
 #include "BlackJack/FormRanking.h"
@@ -49,6 +50,19 @@ void FormMgr::SwitchToForm(RequestId requestId, Osp::Base::Collection::IList* pA
 
 	switch(requestId)
 	{
+	case REQUEST_FORM_JOGO:
+			{
+				FormJogo *pFormJogo = new FormJogo();
+				pFormJogo->Initialize();
+				pFrame->AddControl(*pFormJogo);
+				pFrame->SetCurrentForm(*pFormJogo);
+				pFormJogo->Draw();
+				pFormJogo->Show();
+				if (__pPreviousForm != null)
+					pFrame->RemoveControl(*__pPreviousForm);
+				__pPreviousForm = pFormJogo;
+			}
+			break;
 	case REQUEST_FORM_MENU:
 		{
 			FormMenu *pFormMenu = new FormMenu();

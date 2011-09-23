@@ -1,25 +1,15 @@
-src/BlackJack/FormMgr.d src/BlackJack/FormMgr.o: \
- ../src/BlackJack/FormMgr.cpp \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMgr.h \
- C:/bada/1.1.0b1/include/FApp.h C:/bada/1.1.0b1/include/FAppApplication.h \
- C:/bada/1.1.0b1/include/FBaseObject.h \
- C:/bada/1.1.0b1/include/FBaseTypes.h C:/bada/1.1.0b1/include/FBaseSys.h \
- C:/bada/1.1.0b1/include/FBaseConfig.h \
+src/BlackJack/FormJogo.d src/BlackJack/FormJogo.o: \
+ ../src/BlackJack/FormJogo.cpp \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormJogo.h \
+ C:/bada/1.1.0b1/include/FBase.h C:/bada/1.1.0b1/include/FBaseTypes.h \
+ C:/bada/1.1.0b1/include/FBaseSys.h C:/bada/1.1.0b1/include/FBaseConfig.h \
  C:/bada/1.1.0b1/include/FBaseDataType.h \
- C:/bada/1.1.0b1/include/FSysBattery.h \
- C:/bada/1.1.0b1/include/FSysConfig.h C:/bada/1.1.0b1/include/FSysPower.h \
- C:/bada/1.1.0b1/include/FAppConfig.h C:/bada/1.1.0b1/include/FAppTypes.h \
- C:/bada/1.1.0b1/include/FBaseString.h \
- C:/bada/1.1.0b1/include/FAppAppManager.h \
- C:/bada/1.1.0b1/include/FAppAppControl.h \
- C:/bada/1.1.0b1/include/FAppIAppControlEventListener.h \
- C:/bada/1.1.0b1/include/FBaseRtIEventListener.h \
- C:/bada/1.1.0b1/include/FBaseResult.h \
  C:/bada/1.1.0b1/include/FBaseErrors.h \
  C:/bada/1.1.0b1/include/FBaseErrorDefine.h \
- C:/bada/1.1.0b1/include/FAppIPackageEventListener.h \
- C:/bada/1.1.0b1/include/FAppPackageManager.h \
- C:/bada/1.1.0b1/include/FBase.h C:/bada/1.1.0b1/include/FBaseChar.h \
+ C:/bada/1.1.0b1/include/FBaseResult.h \
+ C:/bada/1.1.0b1/include/FBaseObject.h \
+ C:/bada/1.1.0b1/include/FBaseChar.h \
+ C:/bada/1.1.0b1/include/FBaseString.h \
  C:/bada/1.1.0b1/include/FBaseNumber.h \
  C:/bada/1.1.0b1/include/FBaseBoolean.h \
  C:/bada/1.1.0b1/include/FBaseInt8.h \
@@ -77,6 +67,7 @@ src/BlackJack/FormMgr.d src/BlackJack/FormMgr.o: \
  C:/bada/1.1.0b1/include/FBaseColMultiHashMapT.h \
  C:/bada/1.1.0b1/include/FBaseColIMultiMapT.h \
  C:/bada/1.1.0b1/include/FBaseRt.h C:/bada/1.1.0b1/include/FBaseRtTypes.h \
+ C:/bada/1.1.0b1/include/FBaseRtIEventListener.h \
  C:/bada/1.1.0b1/include/FBaseRtTimer.h \
  C:/bada/1.1.0b1/include/FBaseResource.h \
  C:/bada/1.1.0b1/include/FBaseRtITimerEventListener.h \
@@ -92,22 +83,7 @@ src/BlackJack/FormMgr.d src/BlackJack/FormMgr.o: \
  C:/bada/1.1.0b1/include/FBaseUtilUri.h \
  C:/bada/1.1.0b1/include/FBaseUtilInflator.h \
  C:/bada/1.1.0b1/include/FBaseUtilDeflator.h \
- C:/bada/1.1.0b1/include/FAppAppRegistry.h \
- C:/bada/1.1.0b1/include/FAppAppResource.h \
- C:/bada/1.1.0b1/include/FGrpBitmap.h \
- C:/bada/1.1.0b1/include/FGrpConfig.h C:/bada/1.1.0b1/include/FGrpPoint.h \
- C:/bada/1.1.0b1/include/FGrpColor.h \
- C:/bada/1.1.0b1/include/FGrpDimension.h \
- C:/bada/1.1.0b1/include/FGrpRectangle.h \
- C:/bada/1.1.0b1/include/FGrpBitmapCommon.h \
- C:/bada/1.1.0b1/include/FGrpBufferInfo.h \
- C:/bada/1.1.0b1/include/FGrpPixelFormat.h \
- C:/bada/1.1.0b1/include/FAppIAppFrame.h \
- C:/bada/1.1.0b1/include/FAppNotificationManager.h \
- C:/bada/1.1.0b1/include/FAppPackageInfo.h \
- C:/bada/1.1.0b1/include/FAppDownloadUIManager.h \
- C:/bada/1.1.0b1/include/FBase.h C:/bada/1.1.0b1/include/FUi.h \
- C:/bada/1.1.0b1/include/FUiFocusManager.h \
+ C:/bada/1.1.0b1/include/FUi.h C:/bada/1.1.0b1/include/FUiFocusManager.h \
  C:/bada/1.1.0b1/include/FUiConfig.h \
  C:/bada/1.1.0b1/include/FUiKeyboardMap.h \
  C:/bada/1.1.0b1/include/FUiIKeyEventListener.h \
@@ -121,11 +97,19 @@ src/BlackJack/FormMgr.d src/BlackJack/FormMgr.o: \
  C:/bada/1.1.0b1/include/FUiIDateChangeEventListener.h \
  C:/bada/1.1.0b1/include/FUiIDateTimeChangeEventListener.h \
  C:/bada/1.1.0b1/include/FUiIDragDropEventListener.h \
- C:/bada/1.1.0b1/include/FGraphics.h \
+ C:/bada/1.1.0b1/include/FGraphics.h C:/bada/1.1.0b1/include/FGrpPoint.h \
+ C:/bada/1.1.0b1/include/FGrpConfig.h \
  C:/bada/1.1.0b1/include/FGrpFontCommon.h \
- C:/bada/1.1.0b1/include/FGrpFont.h \
+ C:/bada/1.1.0b1/include/FGrpFont.h C:/bada/1.1.0b1/include/FBase.h \
+ C:/bada/1.1.0b1/include/FGrpDimension.h \
+ C:/bada/1.1.0b1/include/FGrpRectangle.h \
+ C:/bada/1.1.0b1/include/FGrpColor.h \
  C:/bada/1.1.0b1/include/FGrpCanvasCommon.h \
+ C:/bada/1.1.0b1/include/FGrpBufferInfo.h \
+ C:/bada/1.1.0b1/include/FGrpBitmapCommon.h \
+ C:/bada/1.1.0b1/include/FGrpPixelFormat.h \
  C:/bada/1.1.0b1/include/FGrpCanvas.h \
+ C:/bada/1.1.0b1/include/FGrpBitmap.h \
  C:/bada/1.1.0b1/include/FGrpEnrichedText.h \
  C:/bada/1.1.0b1/include/FGrpTextElement.h \
  C:/bada/1.1.0b1/include/FUiIExpandableItemEventListener.h \
@@ -139,7 +123,7 @@ src/BlackJack/FormMgr.d src/BlackJack/FormMgr.o: \
  C:/bada/1.1.0b1/include/FUiITextEventListener.h \
  C:/bada/1.1.0b1/include/FUiITimeChangeEventListener.h \
  C:/bada/1.1.0b1/include/FUiITouchEventListener.h \
- C:/bada/1.1.0b1/include/FUiTouch.h \
+ C:/bada/1.1.0b1/include/FUiTouch.h C:/bada/1.1.0b1/include/FSysConfig.h \
  C:/bada/1.1.0b1/include/FUiIWindowEventListener.h \
  C:/bada/1.1.0b1/include/FUiControl.h \
  C:/bada/1.1.0b1/include/FUiClassType.h \
@@ -213,7 +197,6 @@ src/BlackJack/FormMgr.d src/BlackJack/FormMgr.o: \
  C:/bada/1.1.0b1/include/FUiCtrlSlider.h \
  C:/bada/1.1.0b1/include/FUiCtrlTab.h \
  C:/bada/1.1.0b1/include/FUiCtrlTimePicker.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormJogo.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Controlador.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Carta.h \
  C:/bada/1.1.0b1/include/FMedia.h C:/bada/1.1.0b1/include/FMediaImage.h \
@@ -248,37 +231,11 @@ src/BlackJack/FormMgr.d src/BlackJack/FormMgr.o: \
  C:/bada/1.1.0b1/include/FMediaCapability.h \
  C:/bada/1.1.0b1/include/FMediaCapabilityCommon.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mao.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMenu.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormInstrucoes.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormRanking.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Ranking.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h \
- C:/bada/1.1.0b1/include/FIo.h C:/bada/1.1.0b1/include/FIoDirectory.h \
- C:/bada/1.1.0b1/include/FBaseTypes.h \
- C:/bada/1.1.0b1/include/FBaseDateTime.h \
- C:/bada/1.1.0b1/include/FBaseString.h \
- C:/bada/1.1.0b1/include/FBaseResource.h \
- C:/bada/1.1.0b1/include/FBaseColArrayList.h \
- C:/bada/1.1.0b1/include/FIoConfig.h C:/bada/1.1.0b1/include/FIoFile.h \
- C:/bada/1.1.0b1/include/FBaseResult.h \
- C:/bada/1.1.0b1/include/FBaseByteBuffer.h \
- C:/bada/1.1.0b1/include/FIoRegistry.h \
- C:/bada/1.1.0b1/include/FBaseUuId.h C:/bada/1.1.0b1/include/FIoDbTypes.h \
- C:/bada/1.1.0b1/include/FIoDatabase.h \
- C:/bada/1.1.0b1/include/FBaseRtThreadMutex.h \
- C:/bada/1.1.0b1/include/FIoDbStatement.h \
- C:/bada/1.1.0b1/include/FIoDbTypes.h \
- C:/bada/1.1.0b1/include/FIoDbEnumerator.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h
 
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMgr.h:
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormJogo.h:
 
-C:/bada/1.1.0b1/include/FApp.h:
-
-C:/bada/1.1.0b1/include/FAppApplication.h:
-
-C:/bada/1.1.0b1/include/FBaseObject.h:
+C:/bada/1.1.0b1/include/FBase.h:
 
 C:/bada/1.1.0b1/include/FBaseTypes.h:
 
@@ -288,39 +245,17 @@ C:/bada/1.1.0b1/include/FBaseConfig.h:
 
 C:/bada/1.1.0b1/include/FBaseDataType.h:
 
-C:/bada/1.1.0b1/include/FSysBattery.h:
-
-C:/bada/1.1.0b1/include/FSysConfig.h:
-
-C:/bada/1.1.0b1/include/FSysPower.h:
-
-C:/bada/1.1.0b1/include/FAppConfig.h:
-
-C:/bada/1.1.0b1/include/FAppTypes.h:
-
-C:/bada/1.1.0b1/include/FBaseString.h:
-
-C:/bada/1.1.0b1/include/FAppAppManager.h:
-
-C:/bada/1.1.0b1/include/FAppAppControl.h:
-
-C:/bada/1.1.0b1/include/FAppIAppControlEventListener.h:
-
-C:/bada/1.1.0b1/include/FBaseRtIEventListener.h:
-
-C:/bada/1.1.0b1/include/FBaseResult.h:
-
 C:/bada/1.1.0b1/include/FBaseErrors.h:
 
 C:/bada/1.1.0b1/include/FBaseErrorDefine.h:
 
-C:/bada/1.1.0b1/include/FAppIPackageEventListener.h:
+C:/bada/1.1.0b1/include/FBaseResult.h:
 
-C:/bada/1.1.0b1/include/FAppPackageManager.h:
-
-C:/bada/1.1.0b1/include/FBase.h:
+C:/bada/1.1.0b1/include/FBaseObject.h:
 
 C:/bada/1.1.0b1/include/FBaseChar.h:
+
+C:/bada/1.1.0b1/include/FBaseString.h:
 
 C:/bada/1.1.0b1/include/FBaseNumber.h:
 
@@ -442,6 +377,8 @@ C:/bada/1.1.0b1/include/FBaseRt.h:
 
 C:/bada/1.1.0b1/include/FBaseRtTypes.h:
 
+C:/bada/1.1.0b1/include/FBaseRtIEventListener.h:
+
 C:/bada/1.1.0b1/include/FBaseRtTimer.h:
 
 C:/bada/1.1.0b1/include/FBaseResource.h:
@@ -471,38 +408,6 @@ C:/bada/1.1.0b1/include/FBaseUtilUri.h:
 C:/bada/1.1.0b1/include/FBaseUtilInflator.h:
 
 C:/bada/1.1.0b1/include/FBaseUtilDeflator.h:
-
-C:/bada/1.1.0b1/include/FAppAppRegistry.h:
-
-C:/bada/1.1.0b1/include/FAppAppResource.h:
-
-C:/bada/1.1.0b1/include/FGrpBitmap.h:
-
-C:/bada/1.1.0b1/include/FGrpConfig.h:
-
-C:/bada/1.1.0b1/include/FGrpPoint.h:
-
-C:/bada/1.1.0b1/include/FGrpColor.h:
-
-C:/bada/1.1.0b1/include/FGrpDimension.h:
-
-C:/bada/1.1.0b1/include/FGrpRectangle.h:
-
-C:/bada/1.1.0b1/include/FGrpBitmapCommon.h:
-
-C:/bada/1.1.0b1/include/FGrpBufferInfo.h:
-
-C:/bada/1.1.0b1/include/FGrpPixelFormat.h:
-
-C:/bada/1.1.0b1/include/FAppIAppFrame.h:
-
-C:/bada/1.1.0b1/include/FAppNotificationManager.h:
-
-C:/bada/1.1.0b1/include/FAppPackageInfo.h:
-
-C:/bada/1.1.0b1/include/FAppDownloadUIManager.h:
-
-C:/bada/1.1.0b1/include/FBase.h:
 
 C:/bada/1.1.0b1/include/FUi.h:
 
@@ -536,13 +441,33 @@ C:/bada/1.1.0b1/include/FUiIDragDropEventListener.h:
 
 C:/bada/1.1.0b1/include/FGraphics.h:
 
+C:/bada/1.1.0b1/include/FGrpPoint.h:
+
+C:/bada/1.1.0b1/include/FGrpConfig.h:
+
 C:/bada/1.1.0b1/include/FGrpFontCommon.h:
 
 C:/bada/1.1.0b1/include/FGrpFont.h:
 
+C:/bada/1.1.0b1/include/FBase.h:
+
+C:/bada/1.1.0b1/include/FGrpDimension.h:
+
+C:/bada/1.1.0b1/include/FGrpRectangle.h:
+
+C:/bada/1.1.0b1/include/FGrpColor.h:
+
 C:/bada/1.1.0b1/include/FGrpCanvasCommon.h:
 
+C:/bada/1.1.0b1/include/FGrpBufferInfo.h:
+
+C:/bada/1.1.0b1/include/FGrpBitmapCommon.h:
+
+C:/bada/1.1.0b1/include/FGrpPixelFormat.h:
+
 C:/bada/1.1.0b1/include/FGrpCanvas.h:
+
+C:/bada/1.1.0b1/include/FGrpBitmap.h:
 
 C:/bada/1.1.0b1/include/FGrpEnrichedText.h:
 
@@ -571,6 +496,8 @@ C:/bada/1.1.0b1/include/FUiITimeChangeEventListener.h:
 C:/bada/1.1.0b1/include/FUiITouchEventListener.h:
 
 C:/bada/1.1.0b1/include/FUiTouch.h:
+
+C:/bada/1.1.0b1/include/FSysConfig.h:
 
 C:/bada/1.1.0b1/include/FUiIWindowEventListener.h:
 
@@ -718,8 +645,6 @@ C:/bada/1.1.0b1/include/FUiCtrlTab.h:
 
 C:/bada/1.1.0b1/include/FUiCtrlTimePicker.h:
 
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormJogo.h:
-
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Controlador.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Carta.h:
@@ -791,53 +716,3 @@ C:/bada/1.1.0b1/include/FMediaCapabilityCommon.h:
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mao.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMenu.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormInstrucoes.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormRanking.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Ranking.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h:
-
-C:/bada/1.1.0b1/include/FIo.h:
-
-C:/bada/1.1.0b1/include/FIoDirectory.h:
-
-C:/bada/1.1.0b1/include/FBaseTypes.h:
-
-C:/bada/1.1.0b1/include/FBaseDateTime.h:
-
-C:/bada/1.1.0b1/include/FBaseString.h:
-
-C:/bada/1.1.0b1/include/FBaseResource.h:
-
-C:/bada/1.1.0b1/include/FBaseColArrayList.h:
-
-C:/bada/1.1.0b1/include/FIoConfig.h:
-
-C:/bada/1.1.0b1/include/FIoFile.h:
-
-C:/bada/1.1.0b1/include/FBaseResult.h:
-
-C:/bada/1.1.0b1/include/FBaseByteBuffer.h:
-
-C:/bada/1.1.0b1/include/FIoRegistry.h:
-
-C:/bada/1.1.0b1/include/FBaseUuId.h:
-
-C:/bada/1.1.0b1/include/FIoDbTypes.h:
-
-C:/bada/1.1.0b1/include/FIoDatabase.h:
-
-C:/bada/1.1.0b1/include/FBaseRtThreadMutex.h:
-
-C:/bada/1.1.0b1/include/FIoDbStatement.h:
-
-C:/bada/1.1.0b1/include/FIoDbTypes.h:
-
-C:/bada/1.1.0b1/include/FIoDbEnumerator.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h:
