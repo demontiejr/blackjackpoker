@@ -26,10 +26,12 @@ protected:
 	static const int ID_BUTTON_NOVO_JOGO = 101;
 	static const int ID_BUTTON_RANKING = 102;
 	static const int ID_BUTTON_INSTRUCOES = 103;
+	static const int ID_BUTTON_SAIR = 104;
 
 	Osp::Ui::Controls::Button *__pButtonNovoJogo;
 	Osp::Ui::Controls::Button *__pButtonRanking;
 	Osp::Ui::Controls::Button *__pButtonInstrucoes;
+	Osp::Ui::Controls::Button *__pButtonSair;
 
 public:
 	virtual result OnInitializing(void);

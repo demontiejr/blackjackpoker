@@ -53,6 +53,13 @@ result FormMenu::OnInitializing(void) {
 		__pButtonInstrucoes->AddActionEventListener(*this);
 	}
 
+	__pButtonSair = static_cast<Button *> (GetControl(L"IDC_BUTTON_SAIR"));
+	if (__pButtonSair != null)
+	{
+		__pButtonSair->SetActionId(ID_BUTTON_SAIR);
+		__pButtonSair->AddActionEventListener(*this);
+	}
+
 	return r;
 }
 
@@ -93,6 +100,12 @@ void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 	}
 	break;
 
+	case ID_BUTTON_SAIR: {
+		AppLog("SAIR Button is clicked! \n");
+		Application::GetInstance()->Terminate();
+	}
+	break;
+
 	default:
 		break;
 	}
@@ -117,6 +130,7 @@ result FormMenu::OnDraw(void) {
 	__pButtonNovoJogo->RequestRedraw(true);
 	__pButtonRanking->RequestRedraw(true);
 	__pButtonInstrucoes->RequestRedraw(true);
+	__pButtonSair->RequestRedraw(true);
 
 	return r;
 }

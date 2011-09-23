@@ -17,10 +17,10 @@ Controlador::Controlador() {
 	player = new Mao();
 	mesa = new Mao();
 	baralho = new Baralho();
+
 	this->valorAcumulado = 200;
 	this->valorDaAposta = 5;
-	//	myVibrator = new Vibrator();
-	//	myVibrator->Construct();
+
 	Image image;
 	image.Construct();
 	imagem = image.DecodeN(L"/Res/cards.png", BITMAP_PIXEL_FORMAT_ARGB8888);
@@ -65,8 +65,6 @@ String Controlador::parar() {
 	} else if (ms > 21) {
 		s += "VOCE GANHOU!";
 		this->valorAcumulado += this->valorDaAposta;
-		//			myVibrator->Start(400, 100, 2, 100);
-		//myPlayer->Play();
 	} else if (pl > 21) {
 		s += "MESA GANHOU";
 		this->valorAcumulado -= this->valorDaAposta;
@@ -74,8 +72,6 @@ String Controlador::parar() {
 		if (pl > ms) {
 			s += "VOCE GANHOU!";
 			this->valorAcumulado += this->valorDaAposta;
-			//				myVibrator->Start(400, 100, 2, 100);
-			//myPlayer->Play();
 		} else if (ms > pl) {
 			s += "MESA GANHOU";
 			this->valorAcumulado -= this->valorDaAposta;
@@ -113,7 +109,8 @@ String Controlador::reiniciar() {
 
 void Controlador::desenharCartas(Canvas *pCanvas) {
 	AppLog("chamou desenhar");
-	Osp::Graphics::Bitmap *imagem_carta = new Bitmap();
+
+	Osp::Graphics::Bitmap *pBitmapCarta = new Bitmap();
 
 	float escala = 1.29;
 
@@ -122,7 +119,6 @@ void Controlador::desenharCartas(Canvas *pCanvas) {
 	float x, y;
 
 	if (pCanvas != null) {
-		pCanvas->Clear();
 
 		for(int i = 0; i < player->numeroCartas(); i++){
 
@@ -142,18 +138,16 @@ void Controlador::desenharCartas(Canvas *pCanvas) {
 			x = x * escala;
 			y = y * escala;
 
-			imagem_carta->Construct(*(imagem), Rectangle(x, y, 80*escala, 124*escala));
-			//imagem_carta->Scale(Dimension(103, 160));
+			pBitmapCarta->Construct(*(imagem), Rectangle(x, y, 80*escala, 124*escala));
+			pBitmapCarta->Scale(Dimension(52, 80));
 
 			if(i < 3)
-				pCanvas->DrawBitmap(Point(30 + i*135, 230), *(imagem_carta));
+				pCanvas->DrawBitmap(Point((30 + i*135)/2, (230)/2), *(pBitmapCarta));
 			else
-				pCanvas->DrawBitmap(Point(30 + (i%3)*135, 410), *(imagem_carta));
+				pCanvas->DrawBitmap(Point((30 + (i%3)*135)/2, (410)/2), *(pBitmapCarta));
 		}
 	}
 
-	pCanvas->Show();
+	delete pBitmapCarta;
 
-	delete pCanvas;
-	delete imagem_carta;
 }

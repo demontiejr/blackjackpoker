@@ -7,6 +7,7 @@ CPP_SRCS += \
 ../src/BlackJack/Baralho.cpp \
 ../src/BlackJack/Carta.cpp \
 ../src/BlackJack/Controlador.cpp \
+../src/BlackJack/Form1.cpp \
 ../src/BlackJack/FormInstrucoes.cpp \
 ../src/BlackJack/FormJogo.cpp \
 ../src/BlackJack/FormMenu.cpp \
@@ -22,6 +23,7 @@ OBJS += \
 ./src/BlackJack/Baralho.o \
 ./src/BlackJack/Carta.o \
 ./src/BlackJack/Controlador.o \
+./src/BlackJack/Form1.o \
 ./src/BlackJack/FormInstrucoes.o \
 ./src/BlackJack/FormJogo.o \
 ./src/BlackJack/FormMenu.o \
@@ -37,6 +39,7 @@ CPP_DEPS += \
 ./src/BlackJack/Baralho.d \
 ./src/BlackJack/Carta.d \
 ./src/BlackJack/Controlador.d \
+./src/BlackJack/Form1.d \
 ./src/BlackJack/FormInstrucoes.d \
 ./src/BlackJack/FormJogo.d \
 ./src/BlackJack/FormMenu.d \

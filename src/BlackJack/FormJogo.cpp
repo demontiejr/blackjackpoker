@@ -20,15 +20,12 @@ bool FormJogo::Initialize() {
 	// Construct an XML form
 	Construct(L"IDF_FORM1");
 	controlador = new Controlador();
-//	this->SetBackgroundColor(Osp::Graphics::Color(0, 128, 0));
 
 	return true;
 }
 
 result FormJogo::OnInitializing(void) {
 	result r = E_SUCCESS;
-
-	//myPlayer = new AudioPlayer();
 
 	__pButtonPuxar = static_cast<Button *>(GetControl(L"BUTTON_PUXAR"));
 	if (__pButtonPuxar != null)
@@ -52,21 +49,6 @@ result FormJogo::OnInitializing(void) {
 	}
 
 	__pLabelPontos = static_cast<Label *>(GetControl(L"LABEL_PONTOS"));
-
-	/*
-	Image image;
-	image.Construct();
-	Osp::Graphics::Bitmap *imagem = image.DecodeN(L"/Res/bj.png", BITMAP_PIXEL_FORMAT_ARGB8888);
-	Canvas* pCanvas = GetCanvasN();
-	if (pCanvas != null) {
-		AppLog("Desenhou");
-		pCanvas->Clear();
-		pCanvas->DrawBitmap(Point(1, 210), *(imagem));
-		pCanvas->Show();
-		RequestRedraw(true);
-	}
-	delete pCanvas;
-	 */
 
 	return r;
 }
@@ -108,40 +90,45 @@ void FormJogo::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 		desenharCartas();
 		__pLabelPontos->RequestRedraw();
 
+		__pButtonPuxar->SetEnabled(true);
+
 	}
 	default:
 		break;
 	}
 
-	Canvas* pCanvas = GetCanvasN();
-	controlador->desenharCartas(pCanvas);
+	RequestRedraw(true);
 }
 
 void FormJogo::desenharCartas() {
-	Canvas* pCanvas = GetCanvasN();
-	controlador->desenharCartas(pCanvas);
+
 }
 
 result FormJogo::OnDraw(void) {
         Image *pImage = new Image();
+
         result r = pImage->Construct();
+
         if (IsFailed(r))
                 return r;
-        Bitmap *pBitmap = pImage->DecodeN("/Home/background.jpg",
+
+        Bitmap *pBitmap = pImage->DecodeN("/Home/background.png",
                         BITMAP_PIXEL_FORMAT_ARGB8888);
 
-        Label *pLabel = new Label();
-        pLabel->Construct(Rectangle(0, 0, 479, 799), null);
-        pLabel->SetBackgroundBitmap(*pBitmap);
-        AddControl(*pLabel);
+        Canvas* pCanvas = GetCanvasN();
+        if(pCanvas){
+        	pCanvas->Clear();
+
+        	pCanvas->DrawBitmap(Point(0, 0), *pBitmap);
+        	controlador->desenharCartas(pCanvas);
+
+			pCanvas->Show();
+
+			delete pCanvas;
+        }
+
         delete pImage;
         delete pBitmap;
-        __pButtonPuxar->RequestRedraw(true);
-        __pButtonParar->RequestRedraw(true);
-        __pButtonReiniciar->RequestRedraw(true);
-        __pLabelPontos->RequestRedraw(true);
-
-        desenharCartas();//TODO ver se eh necessario
 
         return r;
 }
