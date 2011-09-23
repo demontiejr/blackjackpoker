@@ -7,22 +7,27 @@
 <Scene Bversion="1.1.0.v20100930" Dversion="20100701">
     <Form id="IDF_FORM_MENU">
         <property BGColor="" BGColorOpacity="100" Orientation="Automatic:2Dir" softKey0NormalIcon="" softKey0PressedIcon="" softKey0Text="" softKey1NormalIcon="" softKey1PressedIcon="" softKey1Text="" title="" titleAlign="ALIGN_LEFT" titleIcon=""/>
-        <layout mode="Portrait" style="FORM_STYLE_TITLE|FORM_STYLE_INDICATOR"/>
-        <layout mode="Landscape" style="FORM_STYLE_TITLE|FORM_STYLE_INDICATOR"/>
+        <layout mode="Portrait" style="FORM_STYLE_NORMAL"/>
+        <layout mode="Landscape" style="FORM_STYLE_NORMAL"/>
     </Form>
     <Button id="IDC_BUTTON_NOVO_JOGO" parent="IDF_FORM_MENU">
-        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="Novo Jogo" vAlign="ALIGN_MIDDLE"/>
-        <layout height="51" mode="Portrait" width="120" x="60" y="64"/>
-        <layout height="51" mode="Landscape" width="200" x="100" y="54"/>
+        <property NormalBGBitmapPath="/240x400/bt-game.png" PressedBGBitmapPath="/240x400/bt-game-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
+        <layout height="40" mode="Portrait" width="140" x="51" y="123"/>
+        <layout height="51" mode="Landscape" width="200" x="100" y="98"/>
     </Button>
     <Button id="IDC_BUTTON_RANKING" parent="IDF_FORM_MENU">
-        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="Ranking" vAlign="ALIGN_MIDDLE"/>
-        <layout height="51" mode="Portrait" width="120" x="60" y="145"/>
-        <layout height="51" mode="Landscape" width="200" x="120" y="74"/>
+        <property NormalBGBitmapPath="/240x400/bt-ranking.png" PressedBGBitmapPath="/240x400/bt-ranking-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
+        <layout height="40" mode="Portrait" width="140" x="51" y="197"/>
+        <layout height="51" mode="Landscape" width="200" x="120" y="118"/>
     </Button>
     <Button id="IDC_BUTTON_INSTRUCOES" parent="IDF_FORM_MENU">
-        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="Instruções" vAlign="ALIGN_MIDDLE"/>
-        <layout height="51" mode="Portrait" width="120" x="60" y="226"/>
-        <layout height="51" mode="Landscape" width="200" x="140" y="94"/>
+        <property NormalBGBitmapPath="/240x400/bt-instr.png" PressedBGBitmapPath="/240x400/bt-instr-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
+        <layout height="40" mode="Portrait" width="174" x="34" y="270"/>
+        <layout height="51" mode="Landscape" width="200" x="140" y="138"/>
     </Button>
+    <Label id="IDC_LABEL1" parent="IDF_FORM_MENU">
+        <property BGBitmapPath="/240x400/background-menu.png" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="" textColor="" textSize="22" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <layout height="400" mode="Portrait" width="240" x="0" y="0"/>
+        <layout height="24" mode="Landscape" width="118" x="66" y="12"/>
+    </Label>
 </Scene>

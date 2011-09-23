@@ -40,18 +40,18 @@ result FormMenu::OnInitializing(void) {
 	}
 
 	__pButtonRanking = static_cast<Button *>(GetControl(L"IDC_BUTTON_RANKING"));
-	 if (__pButtonRanking != null)
-	 {
-	 __pButtonRanking->SetActionId(ID_BUTTON_RANKING);
-	 __pButtonRanking->AddActionEventListener(*this);
-	 }
+	if (__pButtonRanking != null)
+	{
+		__pButtonRanking->SetActionId(ID_BUTTON_RANKING);
+		__pButtonRanking->AddActionEventListener(*this);
+	}
 
-	 __pButtonInstrucoes = static_cast<Button *> (GetControl(L"IDC_BUTTON_INSTRUCOES"));
-	 if (__pButtonInstrucoes != null)
-	 {
-	 __pButtonInstrucoes->SetActionId(ID_BUTTON_INSTRUCOES);
-	 __pButtonInstrucoes->AddActionEventListener(*this);
-	 }
+	__pButtonInstrucoes = static_cast<Button *> (GetControl(L"IDC_BUTTON_INSTRUCOES"));
+	if (__pButtonInstrucoes != null)
+	{
+		__pButtonInstrucoes->SetActionId(ID_BUTTON_INSTRUCOES);
+		__pButtonInstrucoes->AddActionEventListener(*this);
+	}
 
 	return r;
 }
@@ -69,7 +69,7 @@ void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 	case ID_BUTTON_NOVO_JOGO: {
 		AppLog("NOVO JOGO Button is clicked! \n");
 	}
-		break;
+	break;
 
 	case ID_BUTTON_RANKING: {
 		AppLog("RANKING Button is clicked! \n");
@@ -78,7 +78,7 @@ void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 		if (pFormMgr != null)
 			pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_RANKING, null);
 	}
-		break;
+	break;
 
 	case ID_BUTTON_INSTRUCOES: {
 		AppLog("INSTRUCOES Button is clicked! \n");
@@ -87,7 +87,7 @@ void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 		if (pFormMgr != null)
 			pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_INSTRUCOES, null);
 	}
-		break;
+	break;
 
 	default:
 		break;
@@ -96,15 +96,16 @@ void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 }
 
 result FormMenu::OnDraw(void) {
+
 	Image *pImage = new Image();
 	result r = pImage->Construct();
 	if (IsFailed(r))
 		return r;
-	Bitmap *pBitmap = pImage->DecodeN("/Home/background.jpg",
+	Bitmap *pBitmap = pImage->DecodeN("/Home/background-menu.png",
 			BITMAP_PIXEL_FORMAT_ARGB8888);
 
 	Label *pLabel = new Label();
-	pLabel->Construct(Rectangle(0, 0, 240, 399), null);
+	pLabel->Construct(Rectangle(0, 0, 240, 400), null);
 	pLabel->SetBackgroundBitmap(*pBitmap);
 	AddControl(*pLabel);
 	delete pImage;

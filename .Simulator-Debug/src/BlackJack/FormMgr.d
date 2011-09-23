@@ -214,6 +214,37 @@ src/BlackJack/FormMgr.d src/BlackJack/FormMgr.o: \
  C:/bada/1.1.0b1/include/FUiCtrlTab.h \
  C:/bada/1.1.0b1/include/FUiCtrlTimePicker.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMenu.h \
+ C:/bada/1.1.0b1/include/FMedia.h C:/bada/1.1.0b1/include/FMediaImage.h \
+ C:/bada/1.1.0b1/include/FGraphics.h \
+ C:/bada/1.1.0b1/include/FMediaConfig.h \
+ C:/bada/1.1.0b1/include/FMediaImageCommon.h \
+ C:/bada/1.1.0b1/include/FMediaIImageEventListener.h \
+ C:/bada/1.1.0b1/include/FMediaPlayer.h \
+ C:/bada/1.1.0b1/include/FMediaPlayerCommon.h \
+ C:/bada/1.1.0b1/include/FMediaIPlayerEventListener.h \
+ C:/bada/1.1.0b1/include/FMediaCamera.h \
+ C:/bada/1.1.0b1/include/FMediaCameraCommon.h \
+ C:/bada/1.1.0b1/include/FMediaICameraEventListener.h \
+ C:/bada/1.1.0b1/include/FMediaAudioRecorder.h \
+ C:/bada/1.1.0b1/include/FMediaAudioRecorderCommon.h \
+ C:/bada/1.1.0b1/include/FMediaRecorderCommon.h \
+ C:/bada/1.1.0b1/include/FMediaIAudioRecorderEventListener.h \
+ C:/bada/1.1.0b1/include/FMediaVideoRecorder.h \
+ C:/bada/1.1.0b1/include/FMediaVideoRecorderCommon.h \
+ C:/bada/1.1.0b1/include/FMediaIVideoRecorderEventListener.h \
+ C:/bada/1.1.0b1/include/FMediaDrmInfo.h \
+ C:/bada/1.1.0b1/include/FMediaDrmConstants.h \
+ C:/bada/1.1.0b1/include/FMediaDrmConstraintInfo.h \
+ C:/bada/1.1.0b1/include/FMediaAudioIn.h \
+ C:/bada/1.1.0b1/include/FMediaAudioCommon.h \
+ C:/bada/1.1.0b1/include/FMediaIAudioInEventListener.h \
+ C:/bada/1.1.0b1/include/FMediaAudioOut.h \
+ C:/bada/1.1.0b1/include/FMediaIAudioOutEventListener.h \
+ C:/bada/1.1.0b1/include/FMediaBasicPlayerInfo.h \
+ C:/bada/1.1.0b1/include/FMediaBasicPlayerInfoCommon.h \
+ C:/bada/1.1.0b1/include/FMediaIBasicPlayerInfoEventListener.h \
+ C:/bada/1.1.0b1/include/FMediaCapability.h \
+ C:/bada/1.1.0b1/include/FMediaCapabilityCommon.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormInstrucoes.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormRanking.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Ranking.h \
@@ -683,6 +714,70 @@ C:/bada/1.1.0b1/include/FUiCtrlTab.h:
 C:/bada/1.1.0b1/include/FUiCtrlTimePicker.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMenu.h:
+
+C:/bada/1.1.0b1/include/FMedia.h:
+
+C:/bada/1.1.0b1/include/FMediaImage.h:
+
+C:/bada/1.1.0b1/include/FGraphics.h:
+
+C:/bada/1.1.0b1/include/FMediaConfig.h:
+
+C:/bada/1.1.0b1/include/FMediaImageCommon.h:
+
+C:/bada/1.1.0b1/include/FMediaIImageEventListener.h:
+
+C:/bada/1.1.0b1/include/FMediaPlayer.h:
+
+C:/bada/1.1.0b1/include/FMediaPlayerCommon.h:
+
+C:/bada/1.1.0b1/include/FMediaIPlayerEventListener.h:
+
+C:/bada/1.1.0b1/include/FMediaCamera.h:
+
+C:/bada/1.1.0b1/include/FMediaCameraCommon.h:
+
+C:/bada/1.1.0b1/include/FMediaICameraEventListener.h:
+
+C:/bada/1.1.0b1/include/FMediaAudioRecorder.h:
+
+C:/bada/1.1.0b1/include/FMediaAudioRecorderCommon.h:
+
+C:/bada/1.1.0b1/include/FMediaRecorderCommon.h:
+
+C:/bada/1.1.0b1/include/FMediaIAudioRecorderEventListener.h:
+
+C:/bada/1.1.0b1/include/FMediaVideoRecorder.h:
+
+C:/bada/1.1.0b1/include/FMediaVideoRecorderCommon.h:
+
+C:/bada/1.1.0b1/include/FMediaIVideoRecorderEventListener.h:
+
+C:/bada/1.1.0b1/include/FMediaDrmInfo.h:
+
+C:/bada/1.1.0b1/include/FMediaDrmConstants.h:
+
+C:/bada/1.1.0b1/include/FMediaDrmConstraintInfo.h:
+
+C:/bada/1.1.0b1/include/FMediaAudioIn.h:
+
+C:/bada/1.1.0b1/include/FMediaAudioCommon.h:
+
+C:/bada/1.1.0b1/include/FMediaIAudioInEventListener.h:
+
+C:/bada/1.1.0b1/include/FMediaAudioOut.h:
+
+C:/bada/1.1.0b1/include/FMediaIAudioOutEventListener.h:
+
+C:/bada/1.1.0b1/include/FMediaBasicPlayerInfo.h:
+
+C:/bada/1.1.0b1/include/FMediaBasicPlayerInfoCommon.h:
+
+C:/bada/1.1.0b1/include/FMediaIBasicPlayerInfoEventListener.h:
+
+C:/bada/1.1.0b1/include/FMediaCapability.h:
+
+C:/bada/1.1.0b1/include/FMediaCapabilityCommon.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormInstrucoes.h:
 

@@ -7,12 +7,12 @@
 <Scene Bversion="1.1.0.v20100930" Dversion="20100701">
     <Form id="IDF_FORM_INSTRUCOES">
         <property BGColor="" BGColorOpacity="100" Orientation="Automatic:2Dir" softKey0NormalIcon="" softKey0PressedIcon="" softKey0Text="" softKey1NormalIcon="" softKey1PressedIcon="" softKey1Text="" title="" titleAlign="ALIGN_LEFT" titleIcon=""/>
-        <layout mode="Portrait" style="FORM_STYLE_TITLE|FORM_STYLE_INDICATOR"/>
-        <layout mode="Landscape" style="FORM_STYLE_TITLE|FORM_STYLE_INDICATOR"/>
+        <layout mode="Portrait" style="FORM_STYLE_NORMAL"/>
+        <layout mode="Landscape" style="FORM_STYLE_NORMAL"/>
     </Form>
     <Button id="IDC_BUTTON_VOLTAR" parent="IDF_FORM_INSTRUCOES">
         <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="Voltar" vAlign="ALIGN_MIDDLE"/>
-        <layout height="41" mode="Portrait" width="99" x="70" y="246"/>
-        <layout height="24" mode="Landscape" width="185" x="100" y="130"/>
+        <layout height="41" mode="Portrait" width="99" x="140" y="359"/>
+        <layout height="24" mode="Landscape" width="185" x="100" y="174"/>
     </Button>
 </Scene>
