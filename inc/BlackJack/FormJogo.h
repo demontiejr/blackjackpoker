@@ -4,20 +4,22 @@
 #include <FBase.h>
 #include <FUi.h>
 #include "BlackJack/Controlador.h"
+#include "BlackJack/IListenerControlador.h"
 
-class FormJogo :
-	public Osp::Ui::Controls::Form,
-	public Osp::Ui::IActionEventListener
+class FormJogo:
+public Osp::Ui::Controls::Form,
+public Osp::Ui::IActionEventListener,
+public IListenerControlador
 {
 
-// Construction
+	// Construction
 public:
 	FormJogo(void);
 	virtual ~FormJogo(void);
 	bool Initialize(void);
 	void desenharCartas();
 
-// Implementation
+	// Implementation
 protected:
 	static const int ID_BUTTON_PUXAR = 102;
 	static const int ID_BUTTON_PARAR = 103;
@@ -26,7 +28,7 @@ protected:
 	Osp::Ui::Controls::Button *__pButtonParar;
 	Osp::Ui::Controls::Button *__pButtonReiniciar;
 	Osp::Ui::Controls::Label *__pLabelPontos;
-//	Osp::System::Vibrator *myVibrator;
+	//	Osp::System::Vibrator *myVibrator;
 	Controlador *controlador;
 
 public:
@@ -34,6 +36,15 @@ public:
 	virtual result OnTerminating(void);
 	virtual result OnDraw(void);
 	virtual void OnActionPerformed(const Osp::Ui::Control& source, int actionId);
+
+	virtual void OnInicioJogadaJogador();
+	virtual void OnInicioJogadaMesa();
+	virtual void OnFimJogadaJogador();
+	virtual void OnFimJogadaMesa();
+	virtual void OnInicioPartida();
+	virtual void OnFimPartida();
+	virtual void OnPagarVencedor();
+
 };
 
 #endif	//_FORMJOGO_H_

@@ -13,12 +13,12 @@ FormJogo::FormJogo(void) {
 }
 
 FormJogo::~FormJogo(void) {
-//	delete myVibrator;
+	//	delete myVibrator;
 }
 
 bool FormJogo::Initialize() {
 	// Construct an XML form
-	Construct(L"IDF_FORM1");
+	Construct(L"IDF_FORM_JOGO");
 	controlador = new Controlador();
 
 	return true;
@@ -27,7 +27,7 @@ bool FormJogo::Initialize() {
 result FormJogo::OnInitializing(void) {
 	result r = E_SUCCESS;
 
-	__pButtonPuxar = static_cast<Button *>(GetControl(L"BUTTON_PUXAR"));
+	__pButtonPuxar = static_cast<Button *> (GetControl(L"BUTTON_PUXAR"));
 	if (__pButtonPuxar != null)
 	{
 		__pButtonPuxar->SetActionId(ID_BUTTON_PUXAR);
@@ -66,37 +66,37 @@ void FormJogo::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 	switch (actionId) {
 	case ID_BUTTON_PUXAR: {
 		/*
-		int pontos = controlador->puxarCarta();
-		__pLabelPontos->SetText("Pontos: " + Integer::ToString(pontos));
-		__pLabelPontos->RequestRedraw();
-		desenharCartas();
-		if (pontos >= 21) {
-			__pButtonPuxar->SetEnabled(false);
-			__pButtonPuxar->RequestRedraw();
-		}
-		*/
+		 int pontos = controlador->puxarCarta();
+		 __pLabelPontos->SetText("Pontos: " + Integer::ToString(pontos));
+		 __pLabelPontos->RequestRedraw();
+		 desenharCartas();
+		 if (pontos >= 21) {
+		 __pButtonPuxar->SetEnabled(false);
+		 __pButtonPuxar->RequestRedraw();
+		 }
+		 */
 	}
-	break;
+		break;
 	case ID_BUTTON_PARAR: {
 		/*
-		String s = controlador->parar();
+		 String s = controlador->parar();
 
-		__pLabelPontos->SetText(s);
-		__pLabelPontos->RequestRedraw();
-		*/
+		 __pLabelPontos->SetText(s);
+		 __pLabelPontos->RequestRedraw();
+		 */
 	}
-	break;
+		break;
 
 	case ID_BUTTON_REINICIAR: {
 		/*
-		String mao = controlador->reiniciar();
+		 String mao = controlador->reiniciar();
 
-		__pLabelPontos->SetText(mao);
-		desenharCartas();
-		__pLabelPontos->RequestRedraw();
+		 __pLabelPontos->SetText(mao);
+		 desenharCartas();
+		 __pLabelPontos->RequestRedraw();
 
-		__pButtonPuxar->SetEnabled(true);
-		*/
+		 __pButtonPuxar->SetEnabled(true);
+		 */
 	}
 	default:
 		break;
@@ -111,31 +111,56 @@ void FormJogo::desenharCartas() {
 
 result FormJogo::OnDraw(void) {
 	/*
-        Image *pImage = new Image();
+	 Image *pImage = new Image();
 
-        result r = pImage->Construct();
+	 result r = pImage->Construct();
 
-        if (IsFailed(r))
-                return r;
+	 if (IsFailed(r))
+	 return r;
 
-        Bitmap *pBitmap = pImage->DecodeN("/Home/background.png",
-                        BITMAP_PIXEL_FORMAT_ARGB8888);
+	 Bitmap *pBitmap = pImage->DecodeN("/Home/background.png",
+	 BITMAP_PIXEL_FORMAT_ARGB8888);
 
-        Canvas* pCanvas = GetCanvasN();
-        if(pCanvas){
-        	pCanvas->Clear();
+	 Canvas* pCanvas = GetCanvasN();
+	 if(pCanvas){
+	 pCanvas->Clear();
 
-        	pCanvas->DrawBitmap(Point(0, 0), *pBitmap);
-        	controlador->desenharCartas(pCanvas);
+	 pCanvas->DrawBitmap(Point(0, 0), *pBitmap);
+	 controlador->desenharCartas(pCanvas);
 
-			pCanvas->Show();
+	 pCanvas->Show();
 
-			delete pCanvas;
-        }
+	 delete pCanvas;
+	 }
 
-        delete pImage;
-        delete pBitmap;
+	 delete pImage;
+	 delete pBitmap;
 
-        return r;
-       */
+	 return r;
+	 */
+
+	return E_SUCCESS;
+}
+
+//TODO - implementar os metodos da interface
+
+void FormJogo::OnFimJogadaMesa() {
+}
+
+void FormJogo::OnInicioPartida() {
+}
+
+void FormJogo::OnInicioJogadaMesa() {
+}
+
+void FormJogo::OnFimJogadaJogador() {
+}
+
+void FormJogo::OnPagarVencedor() {
+}
+
+void FormJogo::OnInicioJogadaJogador() {
+}
+
+void FormJogo::OnFimPartida() {
 }
