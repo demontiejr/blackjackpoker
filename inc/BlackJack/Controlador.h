@@ -11,28 +11,43 @@
 #include "BlackJack/Carta.h"
 #include "BlackJack/Mao.h"
 #include "BlackJack/Baralho.h"
+#include "BlackJack/Jogador.h"
+#include "BlackJack/IListenerControlador.h"
 
 using namespace Osp::Graphics;
 using namespace Osp::Base;
+
+class Jogador;
 
 class Controlador {
 public:
 	Controlador();
 	virtual ~Controlador();
-	void desenharCartas(Canvas *pCanvas);
-	int puxarCarta();
-	String parar();
-	String reiniciar();
-	void aumentarAposta();
-	void diminuirAposta();
+
+	void InicioJogadaJogador();
+	void FimJogadaJogador();
+
+	void InicioJogadaMesa();
+	void FimJogadaMesa();
+
+	void IniciarPartida();
+	void FimPartida();
+
+	void AtualizarAposta();
+
+	void PagarVencedor();
 
 protected:
 	Baralho *baralho;
-	Mao *player;
-	Mao *mesa;
-	int valorAcumulado;
-	int valorDaAposta;
-	Osp::Graphics::Bitmap *imagem;
+	Jogador *jogador;
+	Jogador *mesa;
+
+	int valorApostaAcumulado;
+
+	IListenerControlador* listener;
+
+public:
+	Baralho* GetBaralho();
 };
 
 #endif /* CONTROLADOR_H_ */

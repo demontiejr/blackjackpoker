@@ -15,6 +15,7 @@ public:
 	Baralho();
 	virtual ~Baralho();
 	void embaralhar();
+	Carta* DarCarta();
 	Carta* darCarta();
 	void reporCartas();
 	int topo;

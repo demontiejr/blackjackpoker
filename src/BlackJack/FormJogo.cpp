@@ -65,6 +65,7 @@ void FormJogo::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 
 	switch (actionId) {
 	case ID_BUTTON_PUXAR: {
+		/*
 		int pontos = controlador->puxarCarta();
 		__pLabelPontos->SetText("Pontos: " + Integer::ToString(pontos));
 		__pLabelPontos->RequestRedraw();
@@ -73,17 +74,21 @@ void FormJogo::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 			__pButtonPuxar->SetEnabled(false);
 			__pButtonPuxar->RequestRedraw();
 		}
+		*/
 	}
 	break;
 	case ID_BUTTON_PARAR: {
+		/*
 		String s = controlador->parar();
 
 		__pLabelPontos->SetText(s);
 		__pLabelPontos->RequestRedraw();
+		*/
 	}
 	break;
 
 	case ID_BUTTON_REINICIAR: {
+		/*
 		String mao = controlador->reiniciar();
 
 		__pLabelPontos->SetText(mao);
@@ -91,7 +96,7 @@ void FormJogo::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 		__pLabelPontos->RequestRedraw();
 
 		__pButtonPuxar->SetEnabled(true);
-
+		*/
 	}
 	default:
 		break;
@@ -105,6 +110,7 @@ void FormJogo::desenharCartas() {
 }
 
 result FormJogo::OnDraw(void) {
+	/*
         Image *pImage = new Image();
 
         result r = pImage->Construct();
@@ -131,4 +137,5 @@ result FormJogo::OnDraw(void) {
         delete pBitmap;
 
         return r;
+       */
 }

@@ -22,6 +22,7 @@ public:
 	virtual ~Mao();
 	int getValor();
 	void pegarCarta(Carta &c);
+	void PegarCarta(Carta* c);
 	void limparMao();
 	String mostrarMao();
 	bool estourou();
