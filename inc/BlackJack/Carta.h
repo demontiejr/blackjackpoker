@@ -1,8 +1,7 @@
 /*
  * Carta.h
- *
- *  Created on: 22/09/2011
- *      Author: Junior
+ * Created on: 22/09/2011
+ * Author: Junior
  */
 
 #ifndef CARTA_H_
@@ -38,9 +37,9 @@ public:
 	Carta();
 	Carta(int numero, int naipe);
 	virtual ~Carta();
-	int getValor();
-	String toString();
-	int getNumero();
+	int GetValor();
+	String ToString();
+	int GetNumero();
 	int valor;
 	int naipe;
 

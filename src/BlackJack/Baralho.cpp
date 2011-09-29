@@ -1,8 +1,7 @@
 /*
  * Baralho.cpp
- *
- *  Created on: 22/09/2011
- *      Author: Junior
+ * Created on: 22/09/2011
+ * Author: Junior
  */
 
 #include "BlackJack/Baralho.h"
@@ -17,26 +16,26 @@ Baralho::Baralho() {
 
 	for (int naipe = 0; naipe < 4; naipe++) {
 		for (int numero = 0; numero < 13; numero++) {
-			cartas[i] = criaCarta(numero, naipe);
+			cartas[i] = CriaCarta(numero, naipe);
 			i++;
 		}
 	}
 
-	embaralhar();
+	Embaralhar();
 }
 
-Carta* Baralho::criaCarta(int numero, int naipe) {
+Carta* Baralho::CriaCarta(int numero, int naipe) {
 	return new Carta(numero, naipe);
 }
 
-Carta* Baralho::darCarta() {
+Carta* Baralho::DarCarta() {
 	if (this->topo <= 0)
 		return NULL;
 	Carta* cartaRetirada = cartas[--this->topo];
 	return cartaRetirada;
 }
 
-void Baralho::embaralhar() {
+void Baralho::Embaralhar() {
 	int posicao;
 	for (posicao = 0; posicao < topo - 1; posicao++) {
 		// escolhe uma posição aleatória entre posição e númeroDeCartas()-1
@@ -48,10 +47,10 @@ void Baralho::embaralhar() {
 	}
 }
 
-void Baralho::reporCartas()
+void Baralho::ReporCartas()
 {
 	this->topo = 52;
-	embaralhar();
+	Embaralhar();
 }
 
 Baralho::~Baralho() {

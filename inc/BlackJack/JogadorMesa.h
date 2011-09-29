@@ -1,8 +1,7 @@
 /*
  * JogadorMesa.h
- *
- *  Created on: 25/09/2011
- *      Author: Arthur Holanda
+ * Created on: 25/09/2011
+ * Author: Arthur Holanda
  */
 
 #ifndef JOGADORMESA_H_

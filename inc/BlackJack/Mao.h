@@ -1,8 +1,7 @@
 /*
  * Mao.h
- *
- *  Created on: 22/09/2011
- *      Author: Junior
+ * Created on: 22/09/2011
+ * Author: Junior
  */
 
 #ifndef MAO_H_
@@ -20,20 +19,19 @@ public:
 
 	Mao();
 	virtual ~Mao();
-	int getValor();
-	void pegarCarta(Carta &c);
+	int GetValor();
 	void PegarCarta(Carta* c);
-	void limparMao();
-	String mostrarMao();
-	bool estourou();
-	void setStatus(int);
-	int getStatus();
-	Carta *getCarta(int indice);
-	int numeroCartas();
+	void LimparMao();
+	String MostrarMao();
+	bool Estourou();
+	void SetStatus(int);
+	int GetStatus();
+	Carta* GetCarta(int indice);
+	int NumeroCartas();
 
 private:
-	int calcularValor();
-	Carta cartas[20];
+	int CalcularValor();
+	Carta* cartas[20];
 	int qtdCartas;
 	bool status;//1 = parou de jogar, 0 = continua jogando
 };

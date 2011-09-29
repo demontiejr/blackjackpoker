@@ -1,8 +1,7 @@
 /*
  * Mao.cpp
- *
- *  Created on: 22/09/2011
- *      Author: Junior
+ * Created on: 22/09/2011
+ * Author: Junior
  */
 
 #include "BlackJack/Mao.h"
@@ -18,31 +17,31 @@ Mao::~Mao() {
 	// TODO Auto-generated destructor stub
 }
 
-void Mao::pegarCarta(Carta &c)
+void Mao::PegarCarta(Carta*  c)
 {
 	cartas[qtdCartas] = c;
 	qtdCartas++;
 }
 
 
-bool Mao::estourou()
+bool Mao::Estourou()
 {
-	return getValor() > 21;
+	return GetValor() > 21;
 }
 
-int Mao::getStatus()
+int Mao::GetStatus()
 {
 	return status;
 }
 
-void Mao::setStatus(int status)
+void Mao::SetStatus(int status)
 {
 	this->status = status;
 }
 
-String Mao::mostrarMao()
+String Mao::MostrarMao()
 {
-	String show = "Pontos: " + Integer::ToString(getValor());
+	String show = "Pontos: " + Integer::ToString(GetValor());
 
 	//for(int i  = 0; i < qtdCartas; i++ ){
 
@@ -53,43 +52,43 @@ String Mao::mostrarMao()
 	return show;
 }
 
-Carta *Mao::getCarta(int indice)
+Carta* Mao::GetCarta(int indice)
 {
-	return &(cartas[indice]);
+	return cartas[indice];
 }
 
-int Mao::calcularValor()
+int Mao::CalcularValor()
 {
 	int soma = 0;
 
 	for (int i = 0; i < qtdCartas; ++i) {
-		soma += cartas[i].getValor();
+		soma += cartas[i]->GetValor();
 	}
 
 	if(soma > 21){
 		soma = 0;
 		for (int i = 0; i < qtdCartas; ++i) {
-			if(cartas[i].getNumero() == AS)
+			if(cartas[i]->GetNumero() == AS)
 				soma += 1;
 			else
-				soma += cartas[i].getValor();
+				soma += cartas[i]->GetValor();
 		}
 	}
 
 	return soma;
 }
 
-int Mao::getValor()
+int Mao::GetValor()
 {
-	return calcularValor();
+	return CalcularValor();
 }
 
-void Mao::limparMao()
+void Mao::LimparMao()
 {
 	qtdCartas = 0;
 	status  = 0;
 }
 
-int Mao::numeroCartas(){
+int Mao::NumeroCartas(){
 	return this->qtdCartas;
 }

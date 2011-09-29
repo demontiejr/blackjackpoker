@@ -1,8 +1,7 @@
 /*
  * Jogador.cpp
- *
- *  Created on: 25/09/2011
- *      Author: Arthur Holanda
+ * Created on: 25/09/2011
+ * Author: Arthur Holanda
  */
 
 #include "BlackJack/Jogador.h"
@@ -61,7 +60,7 @@ void Jogador::Ganhou() {
 			maxVitoriasConsecutivas);
 }
 
-Mao *Jogador::GetMao() {
+Mao* Jogador::GetMao() {
 	return this->mao;
 }
 

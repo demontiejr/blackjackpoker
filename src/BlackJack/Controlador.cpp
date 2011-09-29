@@ -1,8 +1,7 @@
 /*
  * Controlador.cpp
- *
- *  Created on: 23/09/2011
- *      Author: Junior
+ * Created on: 23/09/2011
+ * Author: Junior
  */
 
 #include "BlackJack/Controlador.h"
@@ -19,6 +18,9 @@ Controlador::~Controlador() {
 }
 
 void Controlador::InicioJogadaJogador() {
+}
+
+Baralho* Controlador::GetBaralho() {
 }
 
 void Controlador::IniciarPartida() {

@@ -1,8 +1,7 @@
 /*
  * Controlador.h
- *
- *  Created on: 23/09/2011
- *      Author: Junior
+ * Created on: 23/09/2011
+ * Author: Junior
  */
 
 #ifndef CONTROLADOR_H_
@@ -38,9 +37,9 @@ public:
 	void PagarVencedor();
 
 protected:
-	Baralho *baralho;
-	Jogador *jogador;
-	Jogador *mesa;
+	Baralho* baralho;
+	Jogador* jogador;
+	Jogador* mesa;
 
 	int valorApostaAcumulado;
 

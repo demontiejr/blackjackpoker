@@ -1,8 +1,7 @@
 /*
  * Ranking.h
- *
- *  Created on: 22/09/2011
- *      Author: Arthur Holanda
+ * Created on: 22/09/2011
+ * Author: Arthur Holanda
  */
 
 #ifndef RANKING_H_

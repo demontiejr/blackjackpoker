@@ -1,8 +1,7 @@
 			/*
  * InfoRanking.h
- *
- *  Created on: 22/09/2011
- *      Author: Arthur Holanda
+ * Created on: 22/09/2011
+ * Author: Arthur Holanda
  */
 
 #ifndef INFORANKING_H_
@@ -22,7 +21,6 @@ public:
 	int GetVitorias();
 
 	virtual ~InfoRanking();
-
 
 protected:
 	String nome;

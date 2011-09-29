@@ -1,8 +1,7 @@
 /*
  * Baralho.h
- *
- *  Created on: 22/09/2011
- *      Author: Junior
+ * Created on: 22/09/2011
+ * Author: Junior
  */
 
 #ifndef BARALHO_H_
@@ -14,15 +13,14 @@ class Baralho {
 public:
 	Baralho();
 	virtual ~Baralho();
-	void embaralhar();
+	void Embaralhar();
 	Carta* DarCarta();
-	Carta* darCarta();
-	void reporCartas();
+	void ReporCartas();
 	int topo;
 
 private:
-	Carta *cartas[52];
-	Carta* criaCarta(int numero, int naipe);
+	Carta* cartas[52];
+	Carta* CriaCarta(int numero, int naipe);
 };
 
 #endif /* BARALHO_H_ */

@@ -1,8 +1,7 @@
 /*
  * Jogador.h
- *
- *  Created on: 25/09/2011
- *      Author: Arthur Holanda
+ * Created on: 25/09/2011
+ * Author: Arthur Holanda
  */
 
 #ifndef JOGADOR_H_

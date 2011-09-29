@@ -32,17 +32,17 @@ Carta::~Carta() {
 	// TODO Auto-generated destructor stub
 }
 
-int Carta::getValor()
+int Carta::GetValor()
 {
 	return valor;
 }
 
-String Carta::toString()
+String Carta::ToString()
 {
 	return nome;
 }
 
-int Carta::getNumero()
+int Carta::GetNumero()
 {
 	return this->numero;
 }
