@@ -39,6 +39,8 @@ public:
 
 	virtual void OnInicioJogadaJogador();
 	virtual void OnInicioJogadaMesa();
+	virtual void OnJogadorPuxaCarta();
+	virtual void OnMesaPuxaCarta();
 	virtual void OnFimJogadaJogador();
 	virtual void OnFimJogadaMesa();
 	virtual void OnInicioPartida();

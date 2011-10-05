@@ -75,6 +75,7 @@ void Jogador::PuxarCarta() {
 
 int Jogador::Apostar(int valorAposta) {
 	pontos -= valorAposta;
+	return 0;
 }
 
 void Jogador::SetControlador(Controlador *controlador) {
@@ -89,7 +90,7 @@ void Jogador::Parar()
 void Jogador::IniciarPartida()
 {
 	this->status = JOGANDO;
-	//TODO - implementar limpar mão
+	this->mao->LimparMao();
 }
 
 StatusJogador Jogador::GetStatus()

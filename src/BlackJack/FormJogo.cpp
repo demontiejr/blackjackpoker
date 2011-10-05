@@ -145,22 +145,43 @@ result FormJogo::OnDraw(void) {
 //TODO - implementar os metodos da interface
 
 void FormJogo::OnFimJogadaMesa() {
+	//TODO - adicionar acao
+	controlador->FimPartida();
 }
 
 void FormJogo::OnInicioPartida() {
+	//TODO - adicionar acao
+	controlador->InicioJogadaJogador();
 }
 
 void FormJogo::OnInicioJogadaMesa() {
+	//TODO - adicionar acao
+	controlador->JogadaMesa();
 }
 
 void FormJogo::OnFimJogadaJogador() {
+	//TODO - adicionar acao
+	controlador->InicioJogadaMesa();
+}
+
+void FormJogo::OnMesaPuxaCarta() {
+	//TODO - adicionar acao
+	controlador->JogadaMesa();
+}
+
+void FormJogo::OnJogadorPuxaCarta() {
+	//TODO - adicionar acao
 }
 
 void FormJogo::OnPagarVencedor() {
+	//TODO - adicionar acao
+	controlador->FimPartida();
 }
 
 void FormJogo::OnInicioJogadaJogador() {
+	//TODO - adicionar acao
 }
 
 void FormJogo::OnFimPartida() {
+	//TODO - adicionar acao
 }

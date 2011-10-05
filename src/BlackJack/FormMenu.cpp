@@ -78,7 +78,7 @@ void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 		FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
 				"FormMgr"));
 		if (pFormMgr != null)
-			pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, null);
+			pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_LOBBY, null);
 	}
 	break;
 

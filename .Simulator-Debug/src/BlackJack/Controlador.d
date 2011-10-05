@@ -230,7 +230,9 @@ src/BlackJack/Controlador.d src/BlackJack/Controlador.o: \
  C:/bada/1.1.0b1/include/FUiCtrlTab.h \
  C:/bada/1.1.0b1/include/FUiCtrlTimePicker.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mao.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Jogador.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/IListenerControlador.h
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Controlador.h:
 
@@ -713,3 +715,7 @@ C:/bada/1.1.0b1/include/FUiCtrlTimePicker.h:
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mao.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Jogador.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/IListenerControlador.h:

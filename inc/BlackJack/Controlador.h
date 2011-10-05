@@ -24,9 +24,12 @@ public:
 	virtual ~Controlador();
 
 	void InicioJogadaJogador();
+	void JogadorPuxaCarta();
 	void FimJogadaJogador();
 
 	void InicioJogadaMesa();
+	void MesaPuxaCarta();
+	void JogadaMesa();
 	void FimJogadaMesa();
 
 	void IniciarPartida();
@@ -47,6 +50,9 @@ protected:
 
 public:
 	Baralho* GetBaralho();
+private:
+    bool JogadorGanhou();
+    bool Empate();
 };
 
 #endif /* CONTROLADOR_H_ */

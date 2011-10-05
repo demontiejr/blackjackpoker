@@ -19,6 +19,7 @@ public:
 	static const RequestId REQUEST_FORM_MENU = 101;
 	static const RequestId REQUEST_FORM_INSTRUCOES = 102;
 	static const RequestId REQUEST_FORM_RANKING = 103;
+	static const RequestId REQUEST_FORM_LOBBY = 104;
 
 protected:
 	void SwitchToForm(RequestId requestId, Osp::Base::Collection::IList* pArgs);

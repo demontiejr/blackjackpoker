@@ -7,7 +7,7 @@ CPP_SRCS += \
 ../src/BlackJack/Baralho.cpp \
 ../src/BlackJack/Carta.cpp \
 ../src/BlackJack/Controlador.cpp \
-../src/BlackJack/Form1.cpp \
+../src/BlackJack/Desenhadora.cpp \
 ../src/BlackJack/FormInstrucoes.cpp \
 ../src/BlackJack/FormJogo.cpp \
 ../src/BlackJack/FormMenu.cpp \
@@ -27,7 +27,7 @@ OBJS += \
 ./src/BlackJack/Baralho.o \
 ./src/BlackJack/Carta.o \
 ./src/BlackJack/Controlador.o \
-./src/BlackJack/Form1.o \
+./src/BlackJack/Desenhadora.o \
 ./src/BlackJack/FormInstrucoes.o \
 ./src/BlackJack/FormJogo.o \
 ./src/BlackJack/FormMenu.o \
@@ -47,7 +47,7 @@ CPP_DEPS += \
 ./src/BlackJack/Baralho.d \
 ./src/BlackJack/Carta.d \
 ./src/BlackJack/Controlador.d \
-./src/BlackJack/Form1.d \
+./src/BlackJack/Desenhadora.d \
 ./src/BlackJack/FormInstrucoes.d \
 ./src/BlackJack/FormJogo.d \
 ./src/BlackJack/FormMenu.d \
@@ -68,8 +68,8 @@ CPP_DEPS += \
 src/BlackJack/%.o: ../src/BlackJack/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: bada C++ Compiler'
-	arm-samsung-nucleuseabi-g++ -D_DEBUG -DSHP -I"C:/bada/1.1.0b1/include" -I"C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc" -O0 -g -Wall -c -fpic -fshort-wchar -mcpu=arm9 -mfloat-abi=soft -mlittle-endian -mthumb-interwork -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o"$@" "$<"
-	arm-samsung-nucleuseabi-g++ -D_DEBUG -DSHP -I"C:/bada/1.1.0b1/include" -I"C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc" -O0 -g -Wall -E -fpic -fshort-wchar -mcpu=arm9 -mfloat-abi=soft -mlittle-endian -mthumb-interwork -o"C:/bada/1.1.0b1/IDE/workspace/repository/blackjackpoker/Target-Debug/$(notdir $(basename $@).i)" "$<"
+	arm-samsung-nucleuseabi-g++ -D_DEBUG -DSHP -I"/include" -I"C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc" -O0 -g -Wall -c -fpic -fshort-wchar -mcpu=cortex-a8 -mfpu=vfpv3 -mfloat-abi=hard -mlittle-endian -mthumb-interwork -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o"$@" "$<"
+	arm-samsung-nucleuseabi-g++ -D_DEBUG -DSHP -I"/include" -I"C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc" -O0 -g -Wall -E -fpic -fshort-wchar -mcpu=cortex-a8 -mfpu=vfpv3 -mfloat-abi=hard -mlittle-endian -mthumb-interwork -o"C:/bada/1.1.0b1/IDE/workspace/repository/blackjackpoker/Target-Debug/$(notdir $(basename $@).i)" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

@@ -18,30 +18,99 @@ Controlador::~Controlador() {
 }
 
 void Controlador::InicioJogadaJogador() {
+	if(listener != null){
+		listener->OnInicioJogadaJogador();
+	}
+}
+
+void Controlador::MesaPuxaCarta()
+{
+	mesa->PuxarCarta();
+
+	if(listener != null){
+		listener->OnMesaPuxaCarta();
+	}
+}
+
+void Controlador::JogadorPuxaCarta()
+{
+	jogador->PuxarCarta();
+
+	if(listener != null){
+		this->listener->OnJogadorPuxaCarta();
+	}
+}
+
+void Controlador::JogadaMesa()
+{
+	if(mesa->GetMao()->GetValor() < 17){
+		MesaPuxaCarta();
+	}else{
+		FimJogadaMesa();
+	}
 }
 
 Baralho* Controlador::GetBaralho() {
+	return this->baralho;
 }
 
 void Controlador::IniciarPartida() {
+	baralho->ReporCartas();
+	jogador->IniciarPartida();
+	mesa->IniciarPartida();
+}
+
+bool Controlador::JogadorGanhou()
+{
+	//TODO decidir vencedor de forma correta
+    return (jogador->GetMao()->GetValor() > mesa->GetMao()->GetValor());
+}
+
+bool Controlador::Empate()
+{
+	//TODO decidir empate
+    return (jogador->GetMao()->GetValor() == mesa->GetMao()->GetValor());
 }
 
 void Controlador::PagarVencedor() {
+	if(JogadorGanhou()){
+		jogador->Receber(valorApostaAcumulado);
+	}else if(Empate()){
+		jogador->Receber(valorApostaAcumulado/2);
+	}
+
+	valorApostaAcumulado = 0;
+
+	if(listener != null){
+		listener->OnPagarVencedor();
+	}
 }
 
 void Controlador::FimJogadaJogador() {
+	if(listener != null){
+		listener->OnFimJogadaJogador();
+	}
 }
 
 void Controlador::FimPartida() {
+	if(listener != null){
+		listener->OnFimPartida();
+	}
 }
 
 void Controlador::AtualizarAposta() {
 }
 
 void Controlador::FimJogadaMesa() {
+	if(listener != null){
+		this->listener->OnFimJogadaMesa();
+	}
 }
 
 void Controlador::InicioJogadaMesa() {
+	if(listener != null){
+		this->listener->OnInicioJogadaMesa();
+	}
 }
 
 /*

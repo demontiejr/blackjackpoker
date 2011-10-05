@@ -3,6 +3,7 @@
 #include "BlackJack/FormMenu.h"
 #include "BlackJack/FormInstrucoes.h"
 #include "BlackJack/FormRanking.h"
+#include "BlackJack/FormLobby.h"
 
 using namespace Osp::App;
 using namespace Osp::Base;
@@ -10,9 +11,9 @@ using namespace Osp::Ui;
 using namespace Osp::Ui::Controls;
 
 FormMgr::FormMgr(void) :
-__pPreviousForm(null)
-{
-}
+		__pPreviousForm(null)
+		{
+		}
 
 FormMgr::~FormMgr(void)
 {
@@ -51,57 +52,71 @@ void FormMgr::SwitchToForm(RequestId requestId, Osp::Base::Collection::IList* pA
 	switch(requestId)
 	{
 	case REQUEST_FORM_JOGO:
-			{
-				FormJogo *pFormJogo = new FormJogo();
-				pFormJogo->Initialize();
-				pFrame->AddControl(*pFormJogo);
-				pFrame->SetCurrentForm(*pFormJogo);
-				pFormJogo->Draw();
-				pFormJogo->Show();
-				if (__pPreviousForm != null)
-					pFrame->RemoveControl(*__pPreviousForm);
-				__pPreviousForm = pFormJogo;
-			}
-			break;
+	{
+		FormJogo *pFormJogo = new FormJogo();
+		pFormJogo->Initialize();
+		pFrame->AddControl(*pFormJogo);
+		pFrame->SetCurrentForm(*pFormJogo);
+		pFormJogo->Draw();
+		pFormJogo->Show();
+		if (__pPreviousForm != null)
+			pFrame->RemoveControl(*__pPreviousForm);
+		__pPreviousForm = pFormJogo;
+	}
+	break;
 	case REQUEST_FORM_MENU:
-		{
-			FormMenu *pFormMenu = new FormMenu();
-			pFormMenu->Initialize();
-			pFrame->AddControl(*pFormMenu);
-			pFrame->SetCurrentForm(*pFormMenu);
-			pFormMenu->Draw();
-			pFormMenu->Show();
-			if (__pPreviousForm != null)
-				pFrame->RemoveControl(*__pPreviousForm);
-			__pPreviousForm = pFormMenu;
-		}
-		break;
+	{
+		FormMenu *pFormMenu = new FormMenu();
+		pFormMenu->Initialize();
+		pFrame->AddControl(*pFormMenu);
+		pFrame->SetCurrentForm(*pFormMenu);
+		pFormMenu->Draw();
+		pFormMenu->Show();
+		if (__pPreviousForm != null)
+			pFrame->RemoveControl(*__pPreviousForm);
+		__pPreviousForm = pFormMenu;
+	}
+	break;
 	case REQUEST_FORM_INSTRUCOES:
-		{
-			FormInstrucoes *pFormInstrucoes = new FormInstrucoes();
-			pFormInstrucoes->Initialize();
-			pFrame->AddControl(*pFormInstrucoes);
-			pFrame->SetCurrentForm(*pFormInstrucoes);
-			pFormInstrucoes->Draw();
-			pFormInstrucoes->Show();
-			if (__pPreviousForm != null)
-				pFrame->RemoveControl(*__pPreviousForm);
-			__pPreviousForm = pFormInstrucoes;
-		}
-		break;
+	{
+		FormInstrucoes *pFormInstrucoes = new FormInstrucoes();
+		pFormInstrucoes->Initialize();
+		pFrame->AddControl(*pFormInstrucoes);
+		pFrame->SetCurrentForm(*pFormInstrucoes);
+		pFormInstrucoes->Draw();
+		pFormInstrucoes->Show();
+		if (__pPreviousForm != null)
+			pFrame->RemoveControl(*__pPreviousForm);
+		__pPreviousForm = pFormInstrucoes;
+	}
+	break;
 	case REQUEST_FORM_RANKING:
-		{
-			FormRanking *pFormRanking = new FormRanking();
-			pFormRanking->Initialize();
-			pFrame->AddControl(*pFormRanking);
-			pFrame->SetCurrentForm(*pFormRanking);
-			pFormRanking->Draw();
-			pFormRanking->Show();
-			if (__pPreviousForm != null)
-				pFrame->RemoveControl(*__pPreviousForm);
-			__pPreviousForm = pFormRanking;
-		}
-		break;
+	{
+		FormRanking *pFormRanking = new FormRanking();
+		pFormRanking->Initialize();
+		pFrame->AddControl(*pFormRanking);
+		pFrame->SetCurrentForm(*pFormRanking);
+		pFormRanking->Draw();
+		pFormRanking->Show();
+		if (__pPreviousForm != null)
+			pFrame->RemoveControl(*__pPreviousForm);
+		__pPreviousForm = pFormRanking;
+	}
+	break;
+
+	case REQUEST_FORM_LOBBY:
+	{
+		FormLobby *pFormLobby = new FormLobby();
+		pFormLobby->Initialize();
+		pFrame->AddControl(*pFormLobby);
+		pFrame->SetCurrentForm(*pFormLobby);
+		pFormLobby->Draw();
+		pFormLobby->Show();
+		if (__pPreviousForm != null)
+			pFrame->RemoveControl(*__pPreviousForm);
+		__pPreviousForm = pFormLobby;
+	}
+	break;
 	default:
 		break;
 	}

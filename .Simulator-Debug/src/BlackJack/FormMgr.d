@@ -249,6 +249,8 @@ src/BlackJack/FormMgr.d src/BlackJack/FormMgr.o: \
  C:/bada/1.1.0b1/include/FMediaCapabilityCommon.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mao.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Jogador.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/IListenerControlador.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMenu.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormInstrucoes.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormRanking.h \
@@ -270,7 +272,8 @@ src/BlackJack/FormMgr.d src/BlackJack/FormMgr.o: \
  C:/bada/1.1.0b1/include/FIoDbStatement.h \
  C:/bada/1.1.0b1/include/FIoDbTypes.h \
  C:/bada/1.1.0b1/include/FIoDbEnumerator.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormLobby.h
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMgr.h:
 
@@ -792,6 +795,10 @@ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mao.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h:
 
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Jogador.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/IListenerControlador.h:
+
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMenu.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormInstrucoes.h:
@@ -841,3 +848,5 @@ C:/bada/1.1.0b1/include/FIoDbTypes.h:
 C:/bada/1.1.0b1/include/FIoDbEnumerator.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormLobby.h:
