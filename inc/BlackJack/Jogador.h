@@ -11,15 +11,16 @@
 #include "BlackJack/Controlador.h"
 #include "BlackJack/Mao.h"
 
-using namespace  Osp::Base;
+using namespace Osp::Base;
 
 #define VALOR_APOSTA_INICIAL 10
 
-enum StatusJogador {PAROU, JOGANDO};
+typedef enum  {PAROU, JOGANDO} StatusJogador;
 
-class Controlador;//isso foi colocado aqui para resolver um problema "maluco" com c++
+class Controlador;
 
 class Jogador {
+
 public:
 	Jogador();
 	void Construct(String nome);
@@ -35,16 +36,7 @@ public:
 	void Parar();
 
 	void IniciarPartida();
-
-	/*
-	 * Metodo que define como deve ser o comportamento da jogada de um jogador automatico s(mesa)
-	 */
-	virtual void Jogar() = 0;
-
-	/*
-	 * Esse metodo deve chamar um dos métodos de fim de jogada no controlador
-	 */
-	virtual void TerminouJogada() = 0;
+	void TerminouJogada();
 
 protected:
 	String nome;
@@ -64,6 +56,7 @@ public: //getters e setters
 
 	String GetNome();
 
+	int GetPontos();
 	int GetMaxPontos();
 
 	int GetMaxVitoriasConsecutivas();

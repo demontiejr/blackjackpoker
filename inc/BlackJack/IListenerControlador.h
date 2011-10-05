@@ -13,6 +13,7 @@ public:
 	virtual ~IListenerControlador();
 	virtual void OnInicioJogadaJogador()=0;
 	virtual void OnJogadorPuxaCarta()=0;
+	virtual void OnJogadorDobra()=0;
 	virtual void OnFimJogadaJogador()=0;
 	virtual void OnInicioJogadaMesa()=0;
 	virtual void OnMesaPuxaCarta()=0;

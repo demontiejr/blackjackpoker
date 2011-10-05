@@ -46,7 +46,7 @@ all: blackjackpoker.exe
 blackjackpoker.exe: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: bada C++ Linker'
-	@echo 'ldflags: -L"C:/bada/1.1.0b1/Model/WaveWQ_LP1/Simulator" -L"C:/bada/1.1.0b1/Lib" -L"C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/lib" -shared -o"blackjackpoker.exe" ./src/BlackJack/Baralho.o ./src/BlackJack/Carta.o ./src/BlackJack/Controlador.o ./src/BlackJack/Desenhadora.o ./src/BlackJack/FormInstrucoes.o ./src/BlackJack/FormJogo.o ./src/BlackJack/FormLobby.o ./src/BlackJack/FormMenu.o ./src/BlackJack/FormMgr.o ./src/BlackJack/FormRanking.o ./src/BlackJack/IListenerControlador.o ./src/BlackJack/InfoRanking.o ./src/BlackJack/Jogador.o ./src/BlackJack/JogadorMesa.o ./src/BlackJack/JogadorPessoa.o ./src/BlackJack/Mao.o ./src/BlackJack/Ranking.o ./src/BlackJack/blackjackpoker.o ./src/BlackJack/blackjackpokerEntry.o '
+	@echo 'ldflags: -L"C:/bada/1.1.0b1/Model/WaveWQ_LP1/Simulator" -L"C:/bada/1.1.0b1/Lib" -L"C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/lib" -shared -o"blackjackpoker.exe" ./src/BlackJack/Baralho.o ./src/BlackJack/Carta.o ./src/BlackJack/Controlador.o ./src/BlackJack/Desenhadora.o ./src/BlackJack/FormInstrucoes.o ./src/BlackJack/FormJogo.o ./src/BlackJack/FormLobby.o ./src/BlackJack/FormMenu.o ./src/BlackJack/FormMgr.o ./src/BlackJack/FormRanking.o ./src/BlackJack/IListenerControlador.o ./src/BlackJack/InfoRanking.o ./src/BlackJack/Jogador.o ./src/BlackJack/Mao.o ./src/BlackJack/Mesa.o ./src/BlackJack/Ranking.o ./src/BlackJack/blackjackpoker.o ./src/BlackJack/blackjackpokerEntry.o '
 	i686-mingw32-g++ @ldflags @ldobjs  $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '

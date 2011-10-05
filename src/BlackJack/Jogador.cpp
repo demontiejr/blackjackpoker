@@ -34,6 +34,8 @@ int Jogador::GetMaxVitoriasConsecutivas() {
 int Jogador::Receber(int valor) {
 	this->pontos += valor;
 	this->maxPontos = Math::Max(maxPontos, pontos);
+
+	return 0;
 }
 
 void Jogador::SetValorAposta(int valorAposta) {
@@ -48,6 +50,10 @@ String Jogador::GetNome() {
 
 int Jogador::GetMaxPontos() {
 	return this->maxPontos;
+}
+
+int Jogador::GetPontos() {
+	return this->pontos;
 }
 
 int Jogador::GetValorAposta(int valorAposta) {
@@ -91,6 +97,11 @@ void Jogador::IniciarPartida()
 {
 	this->status = JOGANDO;
 	this->mao->LimparMao();
+}
+
+void Jogador::TerminouJogada()
+{
+	this->SetStatus(PAROU);
 }
 
 StatusJogador Jogador::GetStatus()

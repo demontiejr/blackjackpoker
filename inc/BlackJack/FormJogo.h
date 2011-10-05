@@ -11,25 +11,50 @@ public Osp::Ui::Controls::Form,
 public Osp::Ui::IActionEventListener,
 public IListenerControlador
 {
-
-	// Construction
 public:
-	FormJogo(void);
-	virtual ~FormJogo(void);
-	bool Initialize(void);
-	void desenharCartas();
-
-	// Implementation
+    FormJogo(void);
+    virtual ~FormJogo(void);
+    bool Initialize(void);
+    void desenharCartas();
 protected:
-	static const int ID_BUTTON_PUXAR = 102;
-	static const int ID_BUTTON_PARAR = 103;
-	static const int ID_BUTTON_REINICIAR = 104;
-	Osp::Ui::Controls::Button *__pButtonPuxar;
-	Osp::Ui::Controls::Button *__pButtonParar;
-	Osp::Ui::Controls::Button *__pButtonReiniciar;
-	Osp::Ui::Controls::Label *__pLabelPontos;
-	//	Osp::System::Vibrator *myVibrator;
-	Controlador *controlador;
+    static const int ID_BUTTON_PUXAR = 101;
+    static const int ID_BUTTON_DOBRAR = 102;
+    static const int ID_BUTTON_PARAR = 103;
+    static const int ID_BUTTON_APOSTA1 = 104;
+    static const int ID_BUTTON_APOSTA2 = 105;
+    static const int ID_BUTTON_APOSTA3 = 106;
+    static const int ID_BUTTON_APOSTA4 = 107;
+    static const int ID_BUTTON_APOSTA5 = 108;
+    static const int ID_BUTTON_APOSTAR = 109;
+    static const int ID_BUTTON_LOBBY = 110;
+
+    Osp::Ui::Controls::Button *__pButtonPuxar;
+    Osp::Ui::Controls::Button *__pButtonParar;
+    Osp::Ui::Controls::Button *__pButtonDobrar;
+
+    Osp::Ui::Controls::Button *__pButtonLobby;
+    Osp::Ui::Controls::Button *__pButtonApostar;
+
+    Osp::Ui::Controls::Button *__pButtonAposta1;
+    Osp::Ui::Controls::Button *__pButtonAposta2;
+    Osp::Ui::Controls::Button *__pButtonAposta3;
+    Osp::Ui::Controls::Button *__pButtonAposta4;
+    Osp::Ui::Controls::Button *__pButtonAposta5;
+
+    Osp::Ui::Controls::Button *__pButtonReiniciar;
+
+    Osp::Ui::Controls::Label *__pLabelNome;
+    Osp::Ui::Controls::Label *__pLabelPontos;
+    Osp::Ui::Controls::Label *__pLabelAposta;
+    Controlador *controlador;
+private:
+    void MostrarBotoesAposta(bool mostrar);
+    void MostrarBotoesAcoes(bool mostrar);
+    void IrParaLobby();
+    void InicializaBotoes();
+    void Apostar(int valor);
+    void AtualizarInfoJogador();
+    void AtualizarInfoControlador();
 
 public:
 	virtual result OnInitializing(void);
@@ -40,6 +65,7 @@ public:
 	virtual void OnInicioJogadaJogador();
 	virtual void OnInicioJogadaMesa();
 	virtual void OnJogadorPuxaCarta();
+	virtual void OnJogadorDobra();
 	virtual void OnMesaPuxaCarta();
 	virtual void OnFimJogadaJogador();
 	virtual void OnFimJogadaMesa();

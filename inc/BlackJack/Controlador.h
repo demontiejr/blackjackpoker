@@ -12,19 +12,23 @@
 #include "BlackJack/Baralho.h"
 #include "BlackJack/Jogador.h"
 #include "BlackJack/IListenerControlador.h"
+#include "BlackJack/Mesa.h"
 
 using namespace Osp::Graphics;
 using namespace Osp::Base;
 
 class Jogador;
+class Mesa;
 
 class Controlador {
 public:
 	Controlador();
 	virtual ~Controlador();
+	void Construct();
 
 	void InicioJogadaJogador();
 	void JogadorPuxaCarta();
+	void JogadorDobra();
 	void FimJogadaJogador();
 
 	void InicioJogadaMesa();
@@ -39,17 +43,26 @@ public:
 
 	void PagarVencedor();
 
+	void SetListener(IListenerControlador* listener);
+	void SetJogador(Jogador* jogador);
+	void SetValorPote(int valor);
+
 protected:
 	Baralho* baralho;
+
 	Jogador* jogador;
-	Jogador* mesa;
+	Mesa* mesa;
 
 	int valorApostaAcumulado;
 
 	IListenerControlador* listener;
 
 public:
+	int GetValorPote();
+
 	Baralho* GetBaralho();
+	Jogador* GetJogador();
+	Mesa* GetMesa();
 private:
     bool JogadorGanhou();
     bool Empate();

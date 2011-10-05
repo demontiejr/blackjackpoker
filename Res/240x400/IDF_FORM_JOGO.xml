@@ -10,24 +10,69 @@
         <layout mode="Portrait" style="FORM_STYLE_NORMAL"/>
         <layout mode="Landscape" style="FORM_STYLE_NORMAL"/>
     </Form>
-    <Button id="BUTTON_PUXAR" parent="IDF_FORM_JOGO">
-        <property NormalBGBitmapPath="/240x400/carta_virada.png" PressedBGBitmapPath="/240x400/carta_virada_pressionada.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
-        <layout height="103" mode="Portrait" width="70" x="150" y="292"/>
-        <layout height="24" mode="Landscape" width="166" x="20" y="213"/>
+    <Button id="IDC_BUTTON_LOBBY" parent="IDF_FORM_JOGO">
+        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="Go to Lobby" vAlign="ALIGN_MIDDLE"/>
+        <layout height="40" mode="Portrait" width="100" x="10" y="220"/>
+        <layout height="24" mode="Landscape" width="168" x="33" y="120"/>
     </Button>
-    <Button id="BUTTON_PARAR" parent="IDF_FORM_JOGO">
-        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="PARAR" vAlign="ALIGN_MIDDLE"/>
-        <layout height="40" mode="Portrait" width="120" x="10" y="345"/>
-        <layout height="24" mode="Landscape" width="166" x="225" y="213"/>
+    <Button id="IDC_BUTTON_APOSTAR" parent="IDF_FORM_JOGO">
+        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="Bet" vAlign="ALIGN_MIDDLE"/>
+        <layout height="40" mode="Portrait" width="100" x="130" y="220"/>
+        <layout height="24" mode="Landscape" width="168" x="53" y="140"/>
     </Button>
-    <Button id="BUTTON_REINICIAR" parent="IDF_FORM_JOGO">
-        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="INICIAR" vAlign="ALIGN_MIDDLE"/>
-        <layout height="40" mode="Portrait" width="120" x="10" y="292"/>
-        <layout height="24" mode="Landscape" width="166" x="18" y="181"/>
+    <Button id="IDC_BUTTON_APOSTA1" parent="IDF_FORM_JOGO">
+        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="1" vAlign="ALIGN_MIDDLE"/>
+        <layout height="40" mode="Portrait" width="40" x="10" y="170"/>
+        <layout height="24" mode="Landscape" width="51" x="18" y="102"/>
     </Button>
-    <Label id="LABEL_PONTOS" parent="IDF_FORM_JOGO">
-        <property BGBitmapPath="" BGColor="#008000" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="" textColor="" textSize="25" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
-        <layout height="56" mode="Portrait" width="200" x="20" y="54"/>
-        <layout height="36" mode="Landscape" width="333" x="33" y="44"/>
+    <Button id="IDC_BUTTON_APOSTA2" parent="IDF_FORM_JOGO">
+        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="2" vAlign="ALIGN_MIDDLE"/>
+        <layout height="40" mode="Portrait" width="40" x="55" y="170"/>
+        <layout height="24" mode="Landscape" width="51" x="38" y="122"/>
+    </Button>
+    <Button id="IDC_BUTTON_APOSTA3" parent="IDF_FORM_JOGO">
+        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="3" vAlign="ALIGN_MIDDLE"/>
+        <layout height="40" mode="Portrait" width="40" x="100" y="170"/>
+        <layout height="24" mode="Landscape" width="51" x="38" y="122"/>
+    </Button>
+    <Button id="IDC_BUTTON_APOSTA4" parent="IDF_FORM_JOGO">
+        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="4" vAlign="ALIGN_MIDDLE"/>
+        <layout height="40" mode="Portrait" width="40" x="145" y="170"/>
+        <layout height="24" mode="Landscape" width="51" x="38" y="122"/>
+    </Button>
+    <Button id="IDC_BUTTON_APOSTA5" parent="IDF_FORM_JOGO">
+        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="5" vAlign="ALIGN_MIDDLE"/>
+        <layout height="40" mode="Portrait" width="40" x="190" y="170"/>
+        <layout height="24" mode="Landscape" width="51" x="38" y="122"/>
+    </Button>
+    <Button id="IDC_BUTTON_PARAR" parent="IDF_FORM_JOGO">
+        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="Stand" vAlign="ALIGN_MIDDLE"/>
+        <layout height="50" mode="Portrait" width="70" x="10" y="330"/>
+        <layout height="30" mode="Landscape" width="118" x="18" y="204"/>
+    </Button>
+    <Button id="IDC_BUTTON_PUXAR" parent="IDF_FORM_JOGO">
+        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="Hit" vAlign="ALIGN_MIDDLE"/>
+        <layout height="50" mode="Portrait" width="70" x="160" y="330"/>
+        <layout height="30" mode="Landscape" width="118" x="38" y="210"/>
+    </Button>
+    <Button id="IDC_BUTTON_DOBRAR" parent="IDF_FORM_JOGO">
+        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="Double" vAlign="ALIGN_MIDDLE"/>
+        <layout height="50" mode="Portrait" width="70" x="85" y="330"/>
+        <layout height="30" mode="Landscape" width="118" x="58" y="210"/>
+    </Button>
+    <Label id="IDC_LABEL_PONTOS" parent="IDF_FORM_JOGO">
+        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Money: $0" textColor="" textSize="16" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <layout height="20" mode="Portrait" width="130" x="110" y="20"/>
+        <layout height="12" mode="Landscape" width="141" x="18" y="6"/>
+    </Label>
+    <Label id="IDC_LABEL_APOSTA" parent="IDF_FORM_JOGO">
+        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Pot: $0" textColor="" textSize="16" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <layout height="20" mode="Portrait" width="80" x="0" y="0"/>
+        <layout height="12" mode="Landscape" width="141" x="38" y="26"/>
+    </Label>
+    <Label id="IDC_LABEL_NOME" parent="IDF_FORM_JOGO">
+        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Player Name" textColor="" textSize="16" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <layout height="20" mode="Portrait" width="130" x="110" y="0"/>
+        <layout height="12" mode="Landscape" width="141" x="38" y="26"/>
     </Label>
 </Scene>

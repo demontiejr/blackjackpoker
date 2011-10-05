@@ -1,4 +1,5 @@
 #include "BlackJack/FormJogo.h"
+#include "BlackJack/FormMgr.h"
 
 using namespace Osp::Base;
 using namespace Osp::Ui;
@@ -19,36 +20,108 @@ FormJogo::~FormJogo(void) {
 bool FormJogo::Initialize() {
 	// Construct an XML form
 	Construct(L"IDF_FORM_JOGO");
-	controlador = new Controlador();
+
 
 	return true;
 }
 
-result FormJogo::OnInitializing(void) {
-	result r = E_SUCCESS;
-
-	__pButtonPuxar = static_cast<Button *> (GetControl(L"BUTTON_PUXAR"));
+void FormJogo::InicializaBotoes()
+{
+	__pButtonPuxar = static_cast<Button*>(GetControl(L"IDC_BUTTON_PUXAR"));
 	if (__pButtonPuxar != null)
 	{
 		__pButtonPuxar->SetActionId(ID_BUTTON_PUXAR);
 		__pButtonPuxar->AddActionEventListener(*this);
 	}
-
-	__pButtonParar = static_cast<Button *>(GetControl(L"BUTTON_PARAR"));
+	__pButtonDobrar = static_cast<Button*>(GetControl(L"IDC_BUTTON_DOBRAR"));
+	if (__pButtonDobrar != null)
+	{
+		__pButtonDobrar->SetActionId(ID_BUTTON_DOBRAR);
+		__pButtonDobrar->AddActionEventListener(*this);
+	}
+	__pButtonParar = static_cast<Button*>(GetControl(L"IDC_BUTTON_PARAR"));
 	if (__pButtonParar != null)
 	{
 		__pButtonParar->SetActionId(ID_BUTTON_PARAR);
 		__pButtonParar->AddActionEventListener(*this);
 	}
-
-	__pButtonReiniciar = static_cast<Button *>(GetControl(L"BUTTON_REINICIAR"));
-	if (__pButtonReiniciar != null)
+	__pButtonAposta1 = static_cast<Button*>(GetControl(L"IDC_BUTTON_APOSTA1"));
+	if (__pButtonAposta1 != null)
 	{
-		__pButtonReiniciar->SetActionId(ID_BUTTON_REINICIAR);
-		__pButtonReiniciar->AddActionEventListener(*this);
+		__pButtonAposta1->SetActionId(ID_BUTTON_APOSTA1);
+		__pButtonAposta1->AddActionEventListener(*this);
 	}
+	__pButtonAposta2 = static_cast<Button*>(GetControl(L"IDC_BUTTON_APOSTA2"));
+	if (__pButtonAposta2 != null)
+	{
+		__pButtonAposta2->SetActionId(ID_BUTTON_APOSTA2);
+		__pButtonAposta2->AddActionEventListener(*this);
+	}
+	__pButtonAposta3 = static_cast<Button*>(GetControl(L"IDC_BUTTON_APOSTA3"));
+	if (__pButtonAposta3 != null)
+	{
+		__pButtonAposta3->SetActionId(ID_BUTTON_APOSTA3);
+		__pButtonAposta3->AddActionEventListener(*this);
+	}
+	__pButtonAposta4 = static_cast<Button*>(GetControl(L"IDC_BUTTON_APOSTA4"));
+	if (__pButtonAposta4 != null)
+	{
+		__pButtonAposta4->SetActionId(ID_BUTTON_APOSTA4);
+		__pButtonAposta4->AddActionEventListener(*this);
+	}
+	__pButtonAposta5 = static_cast<Button*>(GetControl(L"IDC_BUTTON_APOSTA5"));
+	if (__pButtonAposta5 != null)
+	{
+		__pButtonAposta5->SetActionId(ID_BUTTON_APOSTA5);
+		__pButtonAposta5->AddActionEventListener(*this);
+	}
+	__pButtonApostar = static_cast<Button*>(GetControl(L"IDC_BUTTON_APOSTAR"));
+	if (__pButtonApostar != null)
+	{
+		__pButtonApostar->SetActionId(ID_BUTTON_APOSTAR);
+		__pButtonApostar->AddActionEventListener(*this);
+	}
+	__pButtonLobby = static_cast<Button*>(GetControl(L"IDC_BUTTON_LOBBY"));
+	if (__pButtonLobby != null)
+	{
+		__pButtonLobby->SetActionId(ID_BUTTON_LOBBY);
+		__pButtonLobby->AddActionEventListener(*this);
+	}
+}
 
-	__pLabelPontos = static_cast<Label *>(GetControl(L"LABEL_PONTOS"));
+void FormJogo::AtualizarInfoJogador()
+{
+    this->__pLabelNome->SetText(controlador->GetJogador()->GetNome());
+    this->__pLabelPontos->SetText("Money: $" + Integer::ToString(controlador->GetJogador()->GetPontos()));
+}
+
+void FormJogo::AtualizarInfoControlador()
+{
+    __pLabelAposta->SetText("Pot: $" + Integer::ToString(controlador->GetValorPote()));
+}
+
+result FormJogo::OnInitializing(void) {
+	result r = E_SUCCESS;
+
+	InicializaBotoes();
+
+	__pLabelNome = static_cast<Label *>(GetControl(L"IDC_LABEL_NOME"));
+	__pLabelPontos = static_cast<Label *>(GetControl(L"IDC_LABEL_PONTOS"));
+	__pLabelAposta = static_cast<Label *>(GetControl(L"IDC_LABEL_APOSTA"));
+
+	controlador = new Controlador();
+	controlador->Construct();
+	controlador->SetListener(this);
+
+	Jogador* j = new Jogador();
+	j->Construct("Arthur");
+	j->Receber(100);
+	controlador->SetJogador(j);
+
+    AtualizarInfoJogador();
+    AtualizarInfoControlador();
+
+    controlador->IniciarPartida();
 
 	return r;
 }
@@ -61,43 +134,69 @@ result FormJogo::OnTerminating(void) {
 	return r;
 }
 
+void FormJogo::IrParaLobby()
+{
+	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
+	FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
+			"FormMgr"));
+	if (pFormMgr != null)
+		pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_LOBBY, null);
+}
+
 void FormJogo::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 
 	switch (actionId) {
 	case ID_BUTTON_PUXAR: {
-		/*
-		 int pontos = controlador->puxarCarta();
-		 __pLabelPontos->SetText("Pontos: " + Integer::ToString(pontos));
-		 __pLabelPontos->RequestRedraw();
-		 desenharCartas();
-		 if (pontos >= 21) {
-		 __pButtonPuxar->SetEnabled(false);
-		 __pButtonPuxar->RequestRedraw();
-		 }
-		 */
+		controlador->JogadorPuxaCarta();
 	}
-		break;
+	break;
+
+	case ID_BUTTON_DOBRAR: {
+		AppLog("Dobrar");
+	}
+	break;
+
 	case ID_BUTTON_PARAR: {
-		/*
-		 String s = controlador->parar();
-
-		 __pLabelPontos->SetText(s);
-		 __pLabelPontos->RequestRedraw();
-		 */
+		AppLog("Parar");
 	}
-		break;
+	break;
 
-	case ID_BUTTON_REINICIAR: {
-		/*
-		 String mao = controlador->reiniciar();
-
-		 __pLabelPontos->SetText(mao);
-		 desenharCartas();
-		 __pLabelPontos->RequestRedraw();
-
-		 __pButtonPuxar->SetEnabled(true);
-		 */
+	case ID_BUTTON_LOBBY: {
+		IrParaLobby();
 	}
+	break;
+
+	case ID_BUTTON_APOSTAR: {
+		AppLog("Apostar");
+	}
+	break;
+
+	case ID_BUTTON_APOSTA1: {
+		AppLog("Aposta 1");
+		Apostar(1);
+	}
+	break;
+
+	case ID_BUTTON_APOSTA2: {
+		AppLog("Aposta 2");
+	}
+	break;
+
+	case ID_BUTTON_APOSTA3: {
+		AppLog("Aposta 3");
+	}
+	break;
+
+	case ID_BUTTON_APOSTA4: {
+		AppLog("Aposta 4");
+	}
+	break;
+
+	case ID_BUTTON_APOSTA5: {
+		AppLog("Aposta 5");
+	}
+	break;
+
 	default:
 		break;
 	}
@@ -150,8 +249,9 @@ void FormJogo::OnFimJogadaMesa() {
 }
 
 void FormJogo::OnInicioPartida() {
-	//TODO - adicionar acao
-	controlador->InicioJogadaJogador();
+	MostrarBotoesAcoes(false);
+	MostrarBotoesAposta(true);
+	RequestRedraw(true);
 }
 
 void FormJogo::OnInicioJogadaMesa() {
@@ -173,15 +273,54 @@ void FormJogo::OnJogadorPuxaCarta() {
 	//TODO - adicionar acao
 }
 
+void FormJogo::MostrarBotoesAposta(bool mostrar)
+{
+	__pButtonAposta1->SetShowState(mostrar);
+	__pButtonAposta2->SetShowState(mostrar);
+	__pButtonAposta3->SetShowState(mostrar);
+	__pButtonAposta4->SetShowState(mostrar);
+	__pButtonAposta5->SetShowState(mostrar);
+	__pButtonApostar->SetShowState(mostrar);
+	__pButtonLobby->SetShowState(mostrar);
+}
+
+void FormJogo::MostrarBotoesAcoes(bool mostrar)
+{
+	__pButtonPuxar->SetShowState(mostrar);
+	__pButtonDobrar->SetShowState(mostrar);
+	__pButtonParar->SetShowState(mostrar);
+}
+
+void FormJogo::Apostar(int valor)
+{
+	//TODO - debitar quantia do jogador
+	//TODO - colocar quantia em dobro no valor da aposta do controlador
+	controlador->GetJogador()->Apostar(valor);
+	controlador->SetValorPote(valor*2);
+
+	AtualizarInfoControlador();
+	AtualizarInfoJogador();
+
+	RequestRedraw(true);
+
+	controlador->InicioJogadaJogador();
+}
+
 void FormJogo::OnPagarVencedor() {
 	//TODO - adicionar acao
 	controlador->FimPartida();
 }
 
 void FormJogo::OnInicioJogadaJogador() {
-	//TODO - adicionar acao
+	MostrarBotoesAposta(false);
+	MostrarBotoesAcoes(true);
+	RequestRedraw(true);
 }
 
 void FormJogo::OnFimPartida() {
+	//TODO - adicionar acao
+}
+
+void FormJogo::OnJogadorDobra() {
 	//TODO - adicionar acao
 }

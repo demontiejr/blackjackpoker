@@ -41,6 +41,16 @@ void Controlador::JogadorPuxaCarta()
 	}
 }
 
+void Controlador::JogadorDobra()
+{
+	jogador->PuxarCarta();
+	valorApostaAcumulado *= 2;
+
+	if(listener != null){
+		//this->listener->OnJogadorDobra();
+	}
+}
+
 void Controlador::JogadaMesa()
 {
 	if(mesa->GetMao()->GetValor() < 17){
@@ -58,12 +68,49 @@ void Controlador::IniciarPartida() {
 	baralho->ReporCartas();
 	jogador->IniciarPartida();
 	mesa->IniciarPartida();
+
+	//TODO dar duas cartas para cada jogador
+
+	if(listener != null){
+		listener->OnInicioPartida();
+	}else{
+		AppLog("[ERRO] Listener null");
+	}
 }
 
 bool Controlador::JogadorGanhou()
 {
 	//TODO decidir vencedor de forma correta
     return (jogador->GetMao()->GetValor() > mesa->GetMao()->GetValor());
+}
+
+void Controlador::Construct()
+{
+	mesa = new Mesa();
+	mesa->Construct();
+	mesa->SetControlador(this);
+	baralho = new Baralho();
+	valorApostaAcumulado = 0;
+}
+
+Mesa *Controlador::GetMesa()
+{
+	return this->mesa;
+}
+
+int Controlador::GetValorPote()
+{
+	return this->valorApostaAcumulado;
+}
+
+Jogador *Controlador::GetJogador()
+{
+	return this->jogador;
+}
+
+void Controlador::SetValorPote(int valor)
+{
+	valorApostaAcumulado = valor;
 }
 
 bool Controlador::Empate()
@@ -111,6 +158,14 @@ void Controlador::InicioJogadaMesa() {
 	if(listener != null){
 		this->listener->OnInicioJogadaMesa();
 	}
+}
+
+void Controlador::SetListener(IListenerControlador* listener){
+	this->listener = listener;
+}
+
+void Controlador::SetJogador(Jogador* jogador){
+	this->jogador = jogador;
 }
 
 /*
