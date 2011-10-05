@@ -47,12 +47,13 @@ void Controlador::JogadorDobra()
 	valorApostaAcumulado *= 2;
 
 	if(listener != null){
-		//this->listener->OnJogadorDobra();
+		this->listener->OnJogadorDobra();
 	}
 }
 
 void Controlador::JogadaMesa()
 {
+	AppLog("Mesa jogando...");
 	if(mesa->GetMao()->GetValor() < 17){
 		MesaPuxaCarta();
 	}else{
@@ -81,7 +82,19 @@ void Controlador::IniciarPartida() {
 bool Controlador::JogadorGanhou()
 {
 	//TODO decidir vencedor de forma correta
-    return (jogador->GetMao()->GetValor() > mesa->GetMao()->GetValor());
+	bool jogadorEhMaior = (jogador->GetMao()->GetValor() > mesa->GetMao()->GetValor());
+	bool jogadorEstourou = (jogador->GetMao()->GetValor() > 21);
+	bool mesaEstourou = (mesa->GetMao()->GetValor() > 21);
+
+	if(jogadorEstourou and ! mesaEstourou){
+		return false;
+	}else if(jogadorEstourou and mesaEstourou){
+		return false;
+	}else if(! jogadorEstourou and mesaEstourou){
+		return true;
+	}else{
+		return jogadorEhMaior;
+	}
 }
 
 void Controlador::Construct()
@@ -116,6 +129,23 @@ void Controlador::SetValorPote(int valor)
 bool Controlador::Empate()
 {
 	//TODO decidir empate
+
+	bool jogadorEstourou = (jogador->GetMao()->GetValor() > 21);
+	bool mesaEstourou = (mesa->GetMao()->GetValor() > 21);
+	bool saoIguais = (jogador->GetMao()->GetValor() == mesa->GetMao()->GetValor());
+
+	if(JogadorGanhou()){
+		return false;
+	}else if(jogadorEstourou && mesaEstourou){
+		return true;
+	}else if(jogadorEstourou && !mesaEstourou){
+		return false;
+	}else if(! jogadorEstourou && mesaEstourou){
+		return false;
+	}else{
+		return saoIguais;
+	}
+
     return (jogador->GetMao()->GetValor() == mesa->GetMao()->GetValor());
 }
 

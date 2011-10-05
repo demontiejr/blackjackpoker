@@ -251,6 +251,7 @@ src/BlackJack/FormMgr.d src/BlackJack/FormMgr.o: \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Jogador.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/IListenerControlador.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mesa.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMenu.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormInstrucoes.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormRanking.h \
@@ -798,6 +799,8 @@ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h:
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Jogador.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/IListenerControlador.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mesa.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMenu.h:
 

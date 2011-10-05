@@ -93,6 +93,7 @@ void FormJogo::AtualizarInfoJogador()
 {
     this->__pLabelNome->SetText(controlador->GetJogador()->GetNome());
     this->__pLabelPontos->SetText("Money: $" + Integer::ToString(controlador->GetJogador()->GetPontos()));
+    this->__pLabelPontosMao->SetText("Points: " + Integer::ToString(controlador->GetJogador()->GetMao()->GetValor()));
 }
 
 void FormJogo::AtualizarInfoControlador()
@@ -100,14 +101,20 @@ void FormJogo::AtualizarInfoControlador()
     __pLabelAposta->SetText("Pot: $" + Integer::ToString(controlador->GetValorPote()));
 }
 
+void FormJogo::InicializaLabels()
+{
+    __pLabelNome = static_cast<Label*>(GetControl(L"IDC_LABEL_NOME"));
+    __pLabelPontos = static_cast<Label*>(GetControl(L"IDC_LABEL_PONTOS"));
+    __pLabelAposta = static_cast<Label*>(GetControl(L"IDC_LABEL_APOSTA"));
+    __pLabelPontosMao = static_cast<Label*>(GetControl(L"IDC_LABEL_PONTOS_MAO"));
+    __pLabelPontosMesa = static_cast<Label*>(GetControl(L"IDC_LABEL_PONTOS_MESA"));
+}
+
 result FormJogo::OnInitializing(void) {
 	result r = E_SUCCESS;
 
 	InicializaBotoes();
-
-	__pLabelNome = static_cast<Label *>(GetControl(L"IDC_LABEL_NOME"));
-	__pLabelPontos = static_cast<Label *>(GetControl(L"IDC_LABEL_PONTOS"));
-	__pLabelAposta = static_cast<Label *>(GetControl(L"IDC_LABEL_APOSTA"));
+    InicializaLabels();
 
 	controlador = new Controlador();
 	controlador->Construct();
@@ -116,7 +123,9 @@ result FormJogo::OnInitializing(void) {
 	Jogador* j = new Jogador();
 	j->Construct("Arthur");
 	j->Receber(100);
+	j->SetControlador(controlador);
 	controlador->SetJogador(j);
+
 
     AtualizarInfoJogador();
     AtualizarInfoControlador();
@@ -147,17 +156,20 @@ void FormJogo::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 
 	switch (actionId) {
 	case ID_BUTTON_PUXAR: {
+		AppLog("Puxar");
 		controlador->JogadorPuxaCarta();
 	}
 	break;
 
 	case ID_BUTTON_DOBRAR: {
+		controlador->JogadorDobra();
 		AppLog("Dobrar");
 	}
 	break;
 
 	case ID_BUTTON_PARAR: {
 		AppLog("Parar");
+		controlador->FimJogadaJogador();
 	}
 	break;
 
@@ -243,8 +255,14 @@ result FormJogo::OnDraw(void) {
 
 //TODO - implementar os metodos da interface
 
+void FormJogo::AtualizaInfoMesa()
+{
+    __pLabelPontosMesa->SetText("Points: " + Integer::ToString(controlador->GetMesa()->GetMao()->GetValor()));
+}
+
 void FormJogo::OnFimJogadaMesa() {
-	//TODO - adicionar acao
+    AtualizaInfoMesa();
+    RequestRedraw(true);
 	controlador->FimPartida();
 }
 
@@ -269,8 +287,17 @@ void FormJogo::OnMesaPuxaCarta() {
 	controlador->JogadaMesa();
 }
 
+void FormJogo::AtualizaBotoesAcoes()
+{
+    bool cond = (controlador->GetJogador()->GetMao()->GetValor() >= 21);
+    __pButtonPuxar->SetEnabled(!cond);
+    __pButtonDobrar->SetEnabled(!cond);
+}
+
 void FormJogo::OnJogadorPuxaCarta() {
-	//TODO - adicionar acao
+    AtualizaBotoesAcoes();
+	AtualizarInfoJogador();
+	RequestRedraw(true);
 }
 
 void FormJogo::MostrarBotoesAposta(bool mostrar)
@@ -286,6 +313,7 @@ void FormJogo::MostrarBotoesAposta(bool mostrar)
 
 void FormJogo::MostrarBotoesAcoes(bool mostrar)
 {
+	AtualizaBotoesAcoes();
 	__pButtonPuxar->SetShowState(mostrar);
 	__pButtonDobrar->SetShowState(mostrar);
 	__pButtonParar->SetShowState(mostrar);
@@ -308,7 +336,14 @@ void FormJogo::Apostar(int valor)
 
 void FormJogo::OnPagarVencedor() {
 	//TODO - adicionar acao
-	controlador->FimPartida();
+
+	AtualizaInfoMesa();
+	AtualizarInfoControlador();
+	AtualizarInfoJogador();
+
+	RequestRedraw(true);
+
+	controlador->IniciarPartida();
 }
 
 void FormJogo::OnInicioJogadaJogador() {
@@ -319,8 +354,13 @@ void FormJogo::OnInicioJogadaJogador() {
 
 void FormJogo::OnFimPartida() {
 	//TODO - adicionar acao
+	controlador->PagarVencedor();
 }
 
 void FormJogo::OnJogadorDobra() {
-	//TODO - adicionar acao
+	AtualizarInfoJogador();
+	AtualizarInfoControlador();
+	RequestRedraw(true);
+
+	controlador->FimJogadaJogador();
 }

@@ -75,4 +75,14 @@
         <layout height="20" mode="Portrait" width="130" x="110" y="0"/>
         <layout height="12" mode="Landscape" width="141" x="38" y="26"/>
     </Label>
+    <Label id="IDC_LABEL_PONTOS_MAO" parent="IDF_FORM_JOGO">
+        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Points: 0" textColor="" textSize="16" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <layout height="20" mode="Portrait" width="80" x="161" y="40"/>
+        <layout height="12" mode="Landscape" width="141" x="38" y="26"/>
+    </Label>
+    <Label id="IDC_LABEL_PONTOS_MESA" parent="IDF_FORM_JOGO">
+        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Points: 0" textColor="" textSize="16" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <layout height="20" mode="Portrait" width="80" x="0" y="20"/>
+        <layout height="12" mode="Landscape" width="141" x="58" y="46"/>
+    </Label>
 </Scene>

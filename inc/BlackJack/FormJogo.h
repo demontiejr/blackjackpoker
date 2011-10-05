@@ -45,6 +45,8 @@ protected:
 
     Osp::Ui::Controls::Label *__pLabelNome;
     Osp::Ui::Controls::Label *__pLabelPontos;
+    Osp::Ui::Controls::Label *__pLabelPontosMao;
+    Osp::Ui::Controls::Label *__pLabelPontosMesa;
     Osp::Ui::Controls::Label *__pLabelAposta;
     Controlador *controlador;
 private:
@@ -55,6 +57,9 @@ private:
     void Apostar(int valor);
     void AtualizarInfoJogador();
     void AtualizarInfoControlador();
+    void AtualizaBotoesAcoes();
+    void InicializaLabels();
+    void AtualizaInfoMesa();
 
 public:
 	virtual result OnInitializing(void);

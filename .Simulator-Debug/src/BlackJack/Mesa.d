@@ -1,6 +1,8 @@
-src/BlackJack/FormJogo.d src/BlackJack/FormJogo.o: \
- ../src/BlackJack/FormJogo.cpp \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormJogo.h \
+src/BlackJack/Mesa.d src/BlackJack/Mesa.o: ../src/BlackJack/Mesa.cpp \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mesa.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Controlador.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Carta.h \
+ C:/bada/1.1.0b1/include/FMedia.h C:/bada/1.1.0b1/include/FMediaImage.h \
  C:/bada/1.1.0b1/include/FBase.h C:/bada/1.1.0b1/include/FBaseTypes.h \
  C:/bada/1.1.0b1/include/FBaseSys.h C:/bada/1.1.0b1/include/FBaseConfig.h \
  C:/bada/1.1.0b1/include/FBaseDataType.h \
@@ -83,20 +85,6 @@ src/BlackJack/FormJogo.d src/BlackJack/FormJogo.o: \
  C:/bada/1.1.0b1/include/FBaseUtilUri.h \
  C:/bada/1.1.0b1/include/FBaseUtilInflator.h \
  C:/bada/1.1.0b1/include/FBaseUtilDeflator.h \
- C:/bada/1.1.0b1/include/FUi.h C:/bada/1.1.0b1/include/FUiFocusManager.h \
- C:/bada/1.1.0b1/include/FUiConfig.h \
- C:/bada/1.1.0b1/include/FUiKeyboardMap.h \
- C:/bada/1.1.0b1/include/FUiIKeyEventListener.h \
- C:/bada/1.1.0b1/include/FUiKeyEventManager.h \
- C:/bada/1.1.0b1/include/FUiIActionEventListener.h \
- C:/bada/1.1.0b1/include/FUiIAdjustmentEventListener.h \
- C:/bada/1.1.0b1/include/FUiIAnimationEventListener.h \
- C:/bada/1.1.0b1/include/FUiIColorChangeEventListener.h \
- C:/bada/1.1.0b1/include/FUiICustomItemEventListener.h \
- C:/bada/1.1.0b1/include/FUiIItemEventListener.h \
- C:/bada/1.1.0b1/include/FUiIDateChangeEventListener.h \
- C:/bada/1.1.0b1/include/FUiIDateTimeChangeEventListener.h \
- C:/bada/1.1.0b1/include/FUiIDragDropEventListener.h \
  C:/bada/1.1.0b1/include/FGraphics.h C:/bada/1.1.0b1/include/FGrpPoint.h \
  C:/bada/1.1.0b1/include/FGrpConfig.h \
  C:/bada/1.1.0b1/include/FGrpFontCommon.h \
@@ -112,6 +100,50 @@ src/BlackJack/FormJogo.d src/BlackJack/FormJogo.o: \
  C:/bada/1.1.0b1/include/FGrpBitmap.h \
  C:/bada/1.1.0b1/include/FGrpEnrichedText.h \
  C:/bada/1.1.0b1/include/FGrpTextElement.h \
+ C:/bada/1.1.0b1/include/FMediaConfig.h \
+ C:/bada/1.1.0b1/include/FMediaImageCommon.h \
+ C:/bada/1.1.0b1/include/FMediaIImageEventListener.h \
+ C:/bada/1.1.0b1/include/FMediaPlayer.h \
+ C:/bada/1.1.0b1/include/FMediaPlayerCommon.h \
+ C:/bada/1.1.0b1/include/FMediaIPlayerEventListener.h \
+ C:/bada/1.1.0b1/include/FMediaCamera.h \
+ C:/bada/1.1.0b1/include/FMediaCameraCommon.h \
+ C:/bada/1.1.0b1/include/FMediaICameraEventListener.h \
+ C:/bada/1.1.0b1/include/FMediaAudioRecorder.h \
+ C:/bada/1.1.0b1/include/FMediaAudioRecorderCommon.h \
+ C:/bada/1.1.0b1/include/FMediaRecorderCommon.h \
+ C:/bada/1.1.0b1/include/FMediaIAudioRecorderEventListener.h \
+ C:/bada/1.1.0b1/include/FMediaVideoRecorder.h \
+ C:/bada/1.1.0b1/include/FMediaVideoRecorderCommon.h \
+ C:/bada/1.1.0b1/include/FMediaIVideoRecorderEventListener.h \
+ C:/bada/1.1.0b1/include/FMediaDrmInfo.h \
+ C:/bada/1.1.0b1/include/FMediaDrmConstants.h \
+ C:/bada/1.1.0b1/include/FMediaDrmConstraintInfo.h \
+ C:/bada/1.1.0b1/include/FMediaAudioIn.h \
+ C:/bada/1.1.0b1/include/FMediaAudioCommon.h \
+ C:/bada/1.1.0b1/include/FMediaIAudioInEventListener.h \
+ C:/bada/1.1.0b1/include/FMediaAudioOut.h \
+ C:/bada/1.1.0b1/include/FMediaIAudioOutEventListener.h \
+ C:/bada/1.1.0b1/include/FMediaBasicPlayerInfo.h \
+ C:/bada/1.1.0b1/include/FMediaBasicPlayerInfoCommon.h \
+ C:/bada/1.1.0b1/include/FMediaIBasicPlayerInfoEventListener.h \
+ C:/bada/1.1.0b1/include/FMediaCapability.h \
+ C:/bada/1.1.0b1/include/FMediaCapabilityCommon.h \
+ C:/bada/1.1.0b1/include/FUi.h C:/bada/1.1.0b1/include/FUiFocusManager.h \
+ C:/bada/1.1.0b1/include/FUiConfig.h \
+ C:/bada/1.1.0b1/include/FUiKeyboardMap.h \
+ C:/bada/1.1.0b1/include/FUiIKeyEventListener.h \
+ C:/bada/1.1.0b1/include/FUiKeyEventManager.h \
+ C:/bada/1.1.0b1/include/FUiIActionEventListener.h \
+ C:/bada/1.1.0b1/include/FUiIAdjustmentEventListener.h \
+ C:/bada/1.1.0b1/include/FUiIAnimationEventListener.h \
+ C:/bada/1.1.0b1/include/FUiIColorChangeEventListener.h \
+ C:/bada/1.1.0b1/include/FUiICustomItemEventListener.h \
+ C:/bada/1.1.0b1/include/FUiIItemEventListener.h \
+ C:/bada/1.1.0b1/include/FUiIDateChangeEventListener.h \
+ C:/bada/1.1.0b1/include/FUiIDateTimeChangeEventListener.h \
+ C:/bada/1.1.0b1/include/FUiIDragDropEventListener.h \
+ C:/bada/1.1.0b1/include/FGraphics.h \
  C:/bada/1.1.0b1/include/FUiIExpandableItemEventListener.h \
  C:/bada/1.1.0b1/include/FUiIFlashEventListener.h \
  C:/bada/1.1.0b1/include/FUiIFlashUrlListener.h \
@@ -197,62 +229,20 @@ src/BlackJack/FormJogo.d src/BlackJack/FormJogo.o: \
  C:/bada/1.1.0b1/include/FUiCtrlSlider.h \
  C:/bada/1.1.0b1/include/FUiCtrlTab.h \
  C:/bada/1.1.0b1/include/FUiCtrlTimePicker.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Controlador.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Carta.h \
- C:/bada/1.1.0b1/include/FMedia.h C:/bada/1.1.0b1/include/FMediaImage.h \
- C:/bada/1.1.0b1/include/FGraphics.h \
- C:/bada/1.1.0b1/include/FMediaConfig.h \
- C:/bada/1.1.0b1/include/FMediaImageCommon.h \
- C:/bada/1.1.0b1/include/FMediaIImageEventListener.h \
- C:/bada/1.1.0b1/include/FMediaPlayer.h \
- C:/bada/1.1.0b1/include/FMediaPlayerCommon.h \
- C:/bada/1.1.0b1/include/FMediaIPlayerEventListener.h \
- C:/bada/1.1.0b1/include/FMediaCamera.h \
- C:/bada/1.1.0b1/include/FMediaCameraCommon.h \
- C:/bada/1.1.0b1/include/FMediaICameraEventListener.h \
- C:/bada/1.1.0b1/include/FMediaAudioRecorder.h \
- C:/bada/1.1.0b1/include/FMediaAudioRecorderCommon.h \
- C:/bada/1.1.0b1/include/FMediaRecorderCommon.h \
- C:/bada/1.1.0b1/include/FMediaIAudioRecorderEventListener.h \
- C:/bada/1.1.0b1/include/FMediaVideoRecorder.h \
- C:/bada/1.1.0b1/include/FMediaVideoRecorderCommon.h \
- C:/bada/1.1.0b1/include/FMediaIVideoRecorderEventListener.h \
- C:/bada/1.1.0b1/include/FMediaDrmInfo.h \
- C:/bada/1.1.0b1/include/FMediaDrmConstants.h \
- C:/bada/1.1.0b1/include/FMediaDrmConstraintInfo.h \
- C:/bada/1.1.0b1/include/FMediaAudioIn.h \
- C:/bada/1.1.0b1/include/FMediaAudioCommon.h \
- C:/bada/1.1.0b1/include/FMediaIAudioInEventListener.h \
- C:/bada/1.1.0b1/include/FMediaAudioOut.h \
- C:/bada/1.1.0b1/include/FMediaIAudioOutEventListener.h \
- C:/bada/1.1.0b1/include/FMediaBasicPlayerInfo.h \
- C:/bada/1.1.0b1/include/FMediaBasicPlayerInfoCommon.h \
- C:/bada/1.1.0b1/include/FMediaIBasicPlayerInfoEventListener.h \
- C:/bada/1.1.0b1/include/FMediaCapability.h \
- C:/bada/1.1.0b1/include/FMediaCapabilityCommon.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mao.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Jogador.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/IListenerControlador.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mesa.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMgr.h \
- C:/bada/1.1.0b1/include/FApp.h C:/bada/1.1.0b1/include/FAppApplication.h \
- C:/bada/1.1.0b1/include/FSysBattery.h \
- C:/bada/1.1.0b1/include/FSysPower.h C:/bada/1.1.0b1/include/FAppConfig.h \
- C:/bada/1.1.0b1/include/FAppTypes.h \
- C:/bada/1.1.0b1/include/FAppAppManager.h \
- C:/bada/1.1.0b1/include/FAppAppControl.h \
- C:/bada/1.1.0b1/include/FAppIAppControlEventListener.h \
- C:/bada/1.1.0b1/include/FAppIPackageEventListener.h \
- C:/bada/1.1.0b1/include/FAppPackageManager.h \
- C:/bada/1.1.0b1/include/FAppAppRegistry.h \
- C:/bada/1.1.0b1/include/FAppAppResource.h \
- C:/bada/1.1.0b1/include/FAppIAppFrame.h \
- C:/bada/1.1.0b1/include/FAppNotificationManager.h \
- C:/bada/1.1.0b1/include/FAppPackageInfo.h \
- C:/bada/1.1.0b1/include/FAppDownloadUIManager.h
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/IListenerControlador.h
 
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormJogo.h:
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mesa.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Controlador.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Carta.h:
+
+C:/bada/1.1.0b1/include/FMedia.h:
+
+C:/bada/1.1.0b1/include/FMediaImage.h:
 
 C:/bada/1.1.0b1/include/FBase.h:
 
@@ -428,36 +418,6 @@ C:/bada/1.1.0b1/include/FBaseUtilInflator.h:
 
 C:/bada/1.1.0b1/include/FBaseUtilDeflator.h:
 
-C:/bada/1.1.0b1/include/FUi.h:
-
-C:/bada/1.1.0b1/include/FUiFocusManager.h:
-
-C:/bada/1.1.0b1/include/FUiConfig.h:
-
-C:/bada/1.1.0b1/include/FUiKeyboardMap.h:
-
-C:/bada/1.1.0b1/include/FUiIKeyEventListener.h:
-
-C:/bada/1.1.0b1/include/FUiKeyEventManager.h:
-
-C:/bada/1.1.0b1/include/FUiIActionEventListener.h:
-
-C:/bada/1.1.0b1/include/FUiIAdjustmentEventListener.h:
-
-C:/bada/1.1.0b1/include/FUiIAnimationEventListener.h:
-
-C:/bada/1.1.0b1/include/FUiIColorChangeEventListener.h:
-
-C:/bada/1.1.0b1/include/FUiICustomItemEventListener.h:
-
-C:/bada/1.1.0b1/include/FUiIItemEventListener.h:
-
-C:/bada/1.1.0b1/include/FUiIDateChangeEventListener.h:
-
-C:/bada/1.1.0b1/include/FUiIDateTimeChangeEventListener.h:
-
-C:/bada/1.1.0b1/include/FUiIDragDropEventListener.h:
-
 C:/bada/1.1.0b1/include/FGraphics.h:
 
 C:/bada/1.1.0b1/include/FGrpPoint.h:
@@ -491,6 +451,96 @@ C:/bada/1.1.0b1/include/FGrpBitmap.h:
 C:/bada/1.1.0b1/include/FGrpEnrichedText.h:
 
 C:/bada/1.1.0b1/include/FGrpTextElement.h:
+
+C:/bada/1.1.0b1/include/FMediaConfig.h:
+
+C:/bada/1.1.0b1/include/FMediaImageCommon.h:
+
+C:/bada/1.1.0b1/include/FMediaIImageEventListener.h:
+
+C:/bada/1.1.0b1/include/FMediaPlayer.h:
+
+C:/bada/1.1.0b1/include/FMediaPlayerCommon.h:
+
+C:/bada/1.1.0b1/include/FMediaIPlayerEventListener.h:
+
+C:/bada/1.1.0b1/include/FMediaCamera.h:
+
+C:/bada/1.1.0b1/include/FMediaCameraCommon.h:
+
+C:/bada/1.1.0b1/include/FMediaICameraEventListener.h:
+
+C:/bada/1.1.0b1/include/FMediaAudioRecorder.h:
+
+C:/bada/1.1.0b1/include/FMediaAudioRecorderCommon.h:
+
+C:/bada/1.1.0b1/include/FMediaRecorderCommon.h:
+
+C:/bada/1.1.0b1/include/FMediaIAudioRecorderEventListener.h:
+
+C:/bada/1.1.0b1/include/FMediaVideoRecorder.h:
+
+C:/bada/1.1.0b1/include/FMediaVideoRecorderCommon.h:
+
+C:/bada/1.1.0b1/include/FMediaIVideoRecorderEventListener.h:
+
+C:/bada/1.1.0b1/include/FMediaDrmInfo.h:
+
+C:/bada/1.1.0b1/include/FMediaDrmConstants.h:
+
+C:/bada/1.1.0b1/include/FMediaDrmConstraintInfo.h:
+
+C:/bada/1.1.0b1/include/FMediaAudioIn.h:
+
+C:/bada/1.1.0b1/include/FMediaAudioCommon.h:
+
+C:/bada/1.1.0b1/include/FMediaIAudioInEventListener.h:
+
+C:/bada/1.1.0b1/include/FMediaAudioOut.h:
+
+C:/bada/1.1.0b1/include/FMediaIAudioOutEventListener.h:
+
+C:/bada/1.1.0b1/include/FMediaBasicPlayerInfo.h:
+
+C:/bada/1.1.0b1/include/FMediaBasicPlayerInfoCommon.h:
+
+C:/bada/1.1.0b1/include/FMediaIBasicPlayerInfoEventListener.h:
+
+C:/bada/1.1.0b1/include/FMediaCapability.h:
+
+C:/bada/1.1.0b1/include/FMediaCapabilityCommon.h:
+
+C:/bada/1.1.0b1/include/FUi.h:
+
+C:/bada/1.1.0b1/include/FUiFocusManager.h:
+
+C:/bada/1.1.0b1/include/FUiConfig.h:
+
+C:/bada/1.1.0b1/include/FUiKeyboardMap.h:
+
+C:/bada/1.1.0b1/include/FUiIKeyEventListener.h:
+
+C:/bada/1.1.0b1/include/FUiKeyEventManager.h:
+
+C:/bada/1.1.0b1/include/FUiIActionEventListener.h:
+
+C:/bada/1.1.0b1/include/FUiIAdjustmentEventListener.h:
+
+C:/bada/1.1.0b1/include/FUiIAnimationEventListener.h:
+
+C:/bada/1.1.0b1/include/FUiIColorChangeEventListener.h:
+
+C:/bada/1.1.0b1/include/FUiICustomItemEventListener.h:
+
+C:/bada/1.1.0b1/include/FUiIItemEventListener.h:
+
+C:/bada/1.1.0b1/include/FUiIDateChangeEventListener.h:
+
+C:/bada/1.1.0b1/include/FUiIDateTimeChangeEventListener.h:
+
+C:/bada/1.1.0b1/include/FUiIDragDropEventListener.h:
+
+C:/bada/1.1.0b1/include/FGraphics.h:
 
 C:/bada/1.1.0b1/include/FUiIExpandableItemEventListener.h:
 
@@ -664,74 +714,6 @@ C:/bada/1.1.0b1/include/FUiCtrlTab.h:
 
 C:/bada/1.1.0b1/include/FUiCtrlTimePicker.h:
 
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Controlador.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Carta.h:
-
-C:/bada/1.1.0b1/include/FMedia.h:
-
-C:/bada/1.1.0b1/include/FMediaImage.h:
-
-C:/bada/1.1.0b1/include/FGraphics.h:
-
-C:/bada/1.1.0b1/include/FMediaConfig.h:
-
-C:/bada/1.1.0b1/include/FMediaImageCommon.h:
-
-C:/bada/1.1.0b1/include/FMediaIImageEventListener.h:
-
-C:/bada/1.1.0b1/include/FMediaPlayer.h:
-
-C:/bada/1.1.0b1/include/FMediaPlayerCommon.h:
-
-C:/bada/1.1.0b1/include/FMediaIPlayerEventListener.h:
-
-C:/bada/1.1.0b1/include/FMediaCamera.h:
-
-C:/bada/1.1.0b1/include/FMediaCameraCommon.h:
-
-C:/bada/1.1.0b1/include/FMediaICameraEventListener.h:
-
-C:/bada/1.1.0b1/include/FMediaAudioRecorder.h:
-
-C:/bada/1.1.0b1/include/FMediaAudioRecorderCommon.h:
-
-C:/bada/1.1.0b1/include/FMediaRecorderCommon.h:
-
-C:/bada/1.1.0b1/include/FMediaIAudioRecorderEventListener.h:
-
-C:/bada/1.1.0b1/include/FMediaVideoRecorder.h:
-
-C:/bada/1.1.0b1/include/FMediaVideoRecorderCommon.h:
-
-C:/bada/1.1.0b1/include/FMediaIVideoRecorderEventListener.h:
-
-C:/bada/1.1.0b1/include/FMediaDrmInfo.h:
-
-C:/bada/1.1.0b1/include/FMediaDrmConstants.h:
-
-C:/bada/1.1.0b1/include/FMediaDrmConstraintInfo.h:
-
-C:/bada/1.1.0b1/include/FMediaAudioIn.h:
-
-C:/bada/1.1.0b1/include/FMediaAudioCommon.h:
-
-C:/bada/1.1.0b1/include/FMediaIAudioInEventListener.h:
-
-C:/bada/1.1.0b1/include/FMediaAudioOut.h:
-
-C:/bada/1.1.0b1/include/FMediaIAudioOutEventListener.h:
-
-C:/bada/1.1.0b1/include/FMediaBasicPlayerInfo.h:
-
-C:/bada/1.1.0b1/include/FMediaBasicPlayerInfoCommon.h:
-
-C:/bada/1.1.0b1/include/FMediaIBasicPlayerInfoEventListener.h:
-
-C:/bada/1.1.0b1/include/FMediaCapability.h:
-
-C:/bada/1.1.0b1/include/FMediaCapabilityCommon.h:
-
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mao.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h:
@@ -739,41 +721,3 @@ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h:
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Jogador.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/IListenerControlador.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mesa.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMgr.h:
-
-C:/bada/1.1.0b1/include/FApp.h:
-
-C:/bada/1.1.0b1/include/FAppApplication.h:
-
-C:/bada/1.1.0b1/include/FSysBattery.h:
-
-C:/bada/1.1.0b1/include/FSysPower.h:
-
-C:/bada/1.1.0b1/include/FAppConfig.h:
-
-C:/bada/1.1.0b1/include/FAppTypes.h:
-
-C:/bada/1.1.0b1/include/FAppAppManager.h:
-
-C:/bada/1.1.0b1/include/FAppAppControl.h:
-
-C:/bada/1.1.0b1/include/FAppIAppControlEventListener.h:
-
-C:/bada/1.1.0b1/include/FAppIPackageEventListener.h:
-
-C:/bada/1.1.0b1/include/FAppPackageManager.h:
-
-C:/bada/1.1.0b1/include/FAppAppRegistry.h:
-
-C:/bada/1.1.0b1/include/FAppAppResource.h:
-
-C:/bada/1.1.0b1/include/FAppIAppFrame.h:
-
-C:/bada/1.1.0b1/include/FAppNotificationManager.h:
-
-C:/bada/1.1.0b1/include/FAppPackageInfo.h:
-
-C:/bada/1.1.0b1/include/FAppDownloadUIManager.h:
