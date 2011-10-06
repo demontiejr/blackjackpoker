@@ -6,11 +6,13 @@
 #include "BlackJack/Controlador.h"
 #include "BlackJack/IListenerControlador.h"
 #include "BlackJack/Desenhadora.h"
+#include "BlackJack/SmartTimer.h"
 
 class FormJogo:
 public Osp::Ui::Controls::Form,
 public Osp::Ui::IActionEventListener,
-public IListenerControlador
+public IListenerControlador,
+public Osp::Base::Runtime::ITimerEventListener
 {
 public:
     FormJogo(void);
@@ -28,6 +30,8 @@ protected:
     static const int ID_BUTTON_APOSTA5 = 108;
     static const int ID_BUTTON_APOSTAR = 109;
     static const int ID_BUTTON_LOBBY = 110;
+
+    static const int ID_TIMER_JOGADA_MESA = 201;
 
     Osp::Ui::Controls::Button *__pButtonPuxar;
     Osp::Ui::Controls::Button *__pButtonParar;
@@ -52,6 +56,7 @@ protected:
     Controlador* controlador;
 
     Desenhadora desenhadora;
+    SmartTimer* timer;
 
 private:
     void MostrarBotoesAposta(bool mostrar);
@@ -66,6 +71,8 @@ private:
     void AtualizaInfoMesa();
 
 public:
+    virtual void  OnTimerExpired(Osp::Base::Runtime::Timer &timer);
+
 	virtual result OnInitializing(void);
 	virtual result OnTerminating(void);
 	virtual result OnDraw(void);

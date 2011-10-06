@@ -20,6 +20,7 @@ CPP_SRCS += \
 ../src/BlackJack/Mao.cpp \
 ../src/BlackJack/Mesa.cpp \
 ../src/BlackJack/Ranking.cpp \
+../src/BlackJack/SmartTimer.cpp \
 ../src/BlackJack/blackjackpoker.cpp \
 ../src/BlackJack/blackjackpokerEntry.cpp 
 
@@ -40,6 +41,7 @@ OBJS += \
 ./src/BlackJack/Mao.o \
 ./src/BlackJack/Mesa.o \
 ./src/BlackJack/Ranking.o \
+./src/BlackJack/SmartTimer.o \
 ./src/BlackJack/blackjackpoker.o \
 ./src/BlackJack/blackjackpokerEntry.o 
 
@@ -60,6 +62,7 @@ CPP_DEPS += \
 ./src/BlackJack/Mao.d \
 ./src/BlackJack/Mesa.d \
 ./src/BlackJack/Ranking.d \
+./src/BlackJack/SmartTimer.d \
 ./src/BlackJack/blackjackpoker.d \
 ./src/BlackJack/blackjackpokerEntry.d 
 
