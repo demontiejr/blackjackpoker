@@ -4,13 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../inc/BlackJack/InfoRanking.cpp 
+../inc/BlackJack/SmartTimer.cpp 
 
 OBJS += \
-./inc/BlackJack/InfoRanking.o 
+./inc/BlackJack/SmartTimer.o 
 
 CPP_DEPS += \
-./inc/BlackJack/InfoRanking.d 
+./inc/BlackJack/SmartTimer.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

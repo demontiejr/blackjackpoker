@@ -5,6 +5,7 @@ using namespace Osp::Base;
 using namespace Osp::Ui;
 using namespace Osp::Ui::Controls;
 using namespace Osp::Base::Utility;
+using namespace Osp::Base::Runtime;
 using namespace Osp::App;
 using namespace Osp::Media;
 using namespace Osp::Graphics;
@@ -117,6 +118,9 @@ result FormJogo::OnInitializing(void) {
     InicializaLabels();
 
     desenhadora.Construct();
+
+    timer = new SmartTimer();
+    timer->Construct(*this);
 
     controlador = Controlador::GetInstance();
 	controlador->Construct();
@@ -267,8 +271,7 @@ void FormJogo::OnFimJogadaJogador() {
 }
 
 void FormJogo::OnMesaPuxaCarta() {
-	//TODO - adicionar acao
-	controlador->JogadaMesa();
+	timer->Iniciar(ID_TIMER_JOGADA_MESA, 800);
 }
 
 void FormJogo::AtualizaBotoesAcoes()
@@ -316,6 +319,20 @@ void FormJogo::Apostar(int valor)
 	RequestRedraw(true);
 
 	controlador->InicioJogadaJogador();
+}
+
+void FormJogo::OnTimerExpired(Timer & timer)
+{
+	int actionId = ((SmartTimer*) &timer)->actionId;
+
+	switch (actionId) {
+		case ID_TIMER_JOGADA_MESA:
+			controlador->JogadaMesa();
+			break;
+
+		default:
+			break;
+	}
 }
 
 void FormJogo::OnPagarVencedor() {
