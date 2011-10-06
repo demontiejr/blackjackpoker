@@ -11,18 +11,18 @@
         <layout mode="Landscape" style="FORM_STYLE_NORMAL"/>
     </Form>
     <Button id="IDC_BUTTON_NOVO_JOGO" parent="IDF_FORM_MENU">
-        <property NormalBGBitmapPath="/240x400/bt-game.png" PressedBGBitmapPath="/240x400/bt-game-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
-        <layout height="40" mode="Portrait" width="140" x="51" y="123"/>
+        <property NormalBGBitmapPath="/240x400/botao_newgame.png" PressedBGBitmapPath="/240x400/botao_newgame.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
+        <layout height="40" mode="Portrait" width="174" x="33" y="202"/>
         <layout height="51" mode="Landscape" width="200" x="100" y="98"/>
     </Button>
     <Button id="IDC_BUTTON_RANKING" parent="IDF_FORM_MENU">
-        <property NormalBGBitmapPath="/240x400/bt-ranking.png" PressedBGBitmapPath="/240x400/bt-ranking-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
-        <layout height="40" mode="Portrait" width="140" x="51" y="197"/>
+        <property NormalBGBitmapPath="/240x400/botao_ranking.png" PressedBGBitmapPath="/240x400/botao_ranking.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
+        <layout height="40" mode="Portrait" width="174" x="33" y="252"/>
         <layout height="51" mode="Landscape" width="200" x="120" y="118"/>
     </Button>
     <Button id="IDC_BUTTON_INSTRUCOES" parent="IDF_FORM_MENU">
-        <property NormalBGBitmapPath="/240x400/bt-instr.png" PressedBGBitmapPath="/240x400/bt-instr-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
-        <layout height="40" mode="Portrait" width="174" x="34" y="270"/>
+        <property NormalBGBitmapPath="/240x400/botao_instructions.png" PressedBGBitmapPath="/240x400/botao_instructions.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
+        <layout height="40" mode="Portrait" width="174" x="33" y="303"/>
         <layout height="51" mode="Landscape" width="200" x="140" y="138"/>
     </Button>
     <Label id="IDC_LABEL1" parent="IDF_FORM_MENU">
@@ -31,8 +31,8 @@
         <layout height="24" mode="Landscape" width="118" x="66" y="12"/>
     </Label>
     <Button id="IDC_BUTTON_SAIR" parent="IDF_FORM_MENU">
-        <property NormalBGBitmapPath="/240x400/bt-exit.png" PressedBGBitmapPath="/240x400/bt-exit-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
-        <layout height="40" mode="Portrait" width="40" x="187" y="355"/>
+        <property NormalBGBitmapPath="/240x400/botao_sair.png" PressedBGBitmapPath="/240x400/botao_sair.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
+        <layout height="29" mode="Portrait" width="29" x="211" y="0"/>
         <layout height="24" mode="Landscape" width="63" x="283" y="204"/>
     </Button>
 </Scene>

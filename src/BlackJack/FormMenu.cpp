@@ -118,7 +118,7 @@ result FormMenu::OnDraw(void) {
 	result r = pImage->Construct();
 	if (IsFailed(r))
 		return r;
-	Bitmap *pBitmap = pImage->DecodeN("/Home/background-menu.png",
+	Bitmap *pBitmap = pImage->DecodeN("/Home/imagensblackjack/background.jpg",
 			BITMAP_PIXEL_FORMAT_ARGB8888);
 
 	Label *pLabel = new Label();

@@ -23,7 +23,7 @@ class Mesa;
 
 class Controlador {
 public:
-	Controlador();
+
 	virtual ~Controlador();
 	void Construct();
 
@@ -66,7 +66,12 @@ public:
 	Baralho* GetBaralho();
 	Jogador* GetJogador();
 	Mesa* GetMesa();
+	static Controlador* GetInstance();
+
 private:
+
+	static Controlador* controlador;
+	Controlador();
     bool JogadorGanhou();
     bool Empate();
 };
