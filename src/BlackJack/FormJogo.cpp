@@ -116,8 +116,9 @@ result FormJogo::OnInitializing(void) {
 	InicializaBotoes();
     InicializaLabels();
 
+    desenhadora.Construct();
+
     controlador = Controlador::GetInstance();
-	//controlador = new Controlador();
 	controlador->Construct();
 	controlador->SetListener(this);
 
@@ -126,7 +127,6 @@ result FormJogo::OnInitializing(void) {
 	j->Receber(100);
 	j->SetControlador(controlador);
 	controlador->SetJogador(j);
-
 
     AtualizarInfoJogador();
     AtualizarInfoControlador();
@@ -222,34 +222,17 @@ void FormJogo::desenharCartas() {
 }
 
 result FormJogo::OnDraw(void) {
-	/*
-	 Image *pImage = new Image();
 
-	 result r = pImage->Construct();
+	Canvas* pCanvas = GetCanvasN();
 
-	 if (IsFailed(r))
-	 return r;
+	if(pCanvas != null){
 
-	 Bitmap *pBitmap = pImage->DecodeN("/Home/background.png",
-	 BITMAP_PIXEL_FORMAT_ARGB8888);
+		desenhadora.DesenhaMao(controlador->GetJogador()->GetMao(), 5, 160, pCanvas);
 
-	 Canvas* pCanvas = GetCanvasN();
-	 if(pCanvas){
-	 pCanvas->Clear();
+		pCanvas->Show();
 
-	 pCanvas->DrawBitmap(Point(0, 0), *pBitmap);
-	 controlador->desenharCartas(pCanvas);
-
-	 pCanvas->Show();
-
-	 delete pCanvas;
-	 }
-
-	 delete pImage;
-	 delete pBitmap;
-
-	 return r;
-	 */
+		delete pCanvas;
+	}
 
 	return E_SUCCESS;
 }

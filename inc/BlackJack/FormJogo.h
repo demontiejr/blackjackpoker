@@ -5,6 +5,7 @@
 #include <FUi.h>
 #include "BlackJack/Controlador.h"
 #include "BlackJack/IListenerControlador.h"
+#include "BlackJack/Desenhadora.h"
 
 class FormJogo:
 public Osp::Ui::Controls::Form,
@@ -49,6 +50,8 @@ protected:
     Osp::Ui::Controls::Label *__pLabelPontosMesa;
     Osp::Ui::Controls::Label *__pLabelAposta;
     Controlador* controlador;
+
+    Desenhadora desenhadora;
 
 private:
     void MostrarBotoesAposta(bool mostrar);

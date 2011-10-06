@@ -7,9 +7,13 @@
 
 #include "BlackJack/Carta.h"
 
-Carta::Carta() {}
+Carta::Carta() {
+}
 
 Carta::Carta(int numero, int naipe) {
+
+	this->bonus = false;
+
 	String numeros[13] = { "AS", "DOIS", "TRES", "QUATRO", "CINCO", "SEIS",
 			"SETE", "OITO", "NOVE", "DEZ", "VALETE", "DAMA", "REI" };
 	String naipes[4] = { "ESPADAS", "COPAS", "PAUS", "OUROS" };
@@ -32,17 +36,23 @@ Carta::~Carta() {
 	// TODO Auto-generated destructor stub
 }
 
-int Carta::GetValor()
-{
+int Carta::GetValor() {
 	return valor;
 }
 
-String Carta::ToString()
-{
+String Carta::ToString() {
 	return nome;
 }
 
-int Carta::GetNumero()
-{
+int Carta::GetNumero() {
 	return this->numero;
 }
+
+void Carta::SetBonus(bool ehBonus) {
+	this->bonus = ehBonus;
+}
+
+bool Carta::IsBonus() {
+	return this->bonus;
+}
+
