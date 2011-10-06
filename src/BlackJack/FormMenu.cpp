@@ -6,13 +6,16 @@
 
 #include "BlackJack/FormMenu.h"
 #include "BlackJack/FormMgr.h"
+#include <FSystem.h>
 
 using namespace Osp::App;
 using namespace Osp::Base;
+using namespace Osp::Base::Utility;
 using namespace Osp::Ui;
 using namespace Osp::Ui::Controls;
 using namespace Osp::Media;
 using namespace Osp::Graphics;
+using namespace Osp::System;
 
 FormMenu::FormMenu() {
 	// TODO Auto-generated constructor stub
