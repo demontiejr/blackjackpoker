@@ -12,6 +12,12 @@ using namespace Osp::Base::Utility;
 using namespace std;
 
 Baralho::Baralho() {
+
+
+	long long ticks;
+	SystemTime::GetTicks(ticks);
+	Math::Srand((unsigned int) ticks);
+
 	this->topo = 52;
 
 	int i = 0;
@@ -34,17 +40,19 @@ Carta* Baralho::DarCarta() {
 	if (this->topo <= 0)
 		return NULL;
 	Carta* cartaRetirada = cartas[--this->topo];
+
+	//decide se eh bonus
+	int bonusNumber = Math::Rand() % 200;
+	cartaRetirada->SetBonus(bonusNumber <= 20);
+
 	return cartaRetirada;
 }
 
 void Baralho::Embaralhar() {
 	int posicao;
-	long long ticks;
-	SystemTime::GetTicks(ticks);
-	Math::Srand((unsigned int) ticks);
 	for (posicao = 0; posicao < topo - 1; posicao++) {
 		// escolhe uma posição aleatória entre posição e númeroDeCartas()-1
-		int posAleatoria = posicao + (rand() % (topo - posicao));
+		int posAleatoria = posicao + (Math::Rand() % (topo - posicao));
 		// troca as cartas em posição e posAleatória
 		Carta* temp = cartas[posicao];
 		cartas[posicao] = cartas[posAleatoria];

@@ -26,8 +26,6 @@ void SmartTimer::Iniciar(int acionId, int milisegundos) {
 	return;
 
 	CATCH: return;
-
-	//TODO - iniciar timer de 'milisegundos'
 }
 
 void SmartTimer::Construir(Osp::Base::Runtime::ITimerEventListener & listener)
