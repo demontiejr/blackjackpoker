@@ -48,7 +48,8 @@ protected:
     Osp::Ui::Controls::Label *__pLabelPontosMao;
     Osp::Ui::Controls::Label *__pLabelPontosMesa;
     Osp::Ui::Controls::Label *__pLabelAposta;
-    Controlador *controlador;
+    Controlador* controlador;
+
 private:
     void MostrarBotoesAposta(bool mostrar);
     void MostrarBotoesAcoes(bool mostrar);

@@ -116,7 +116,8 @@ result FormJogo::OnInitializing(void) {
 	InicializaBotoes();
     InicializaLabels();
 
-	controlador = new Controlador();
+    controlador = Controlador::GetInstance();
+	//controlador = new Controlador();
 	controlador->Construct();
 	controlador->SetListener(this);
 
