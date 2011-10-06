@@ -42,10 +42,14 @@ public:
 	int GetNumero();
 	int valor;
 	int naipe;
+	int numero;
+
+	void SetBonus(bool ehBonus);
+	bool IsBonus();
 
 private:
 	String nome;
-	int numero;
+	bool bonus;
 };
 
 #endif /* CARTA_H_ */

@@ -17,8 +17,6 @@ CPP_SRCS += \
 ../src/BlackJack/IListenerControlador.cpp \
 ../src/BlackJack/InfoRanking.cpp \
 ../src/BlackJack/Jogador.cpp \
-../src/BlackJack/JogadorMesa.cpp \
-../src/BlackJack/JogadorPessoa.cpp \
 ../src/BlackJack/Mao.cpp \
 ../src/BlackJack/Mesa.cpp \
 ../src/BlackJack/Ranking.cpp \
@@ -39,8 +37,6 @@ OBJS += \
 ./src/BlackJack/IListenerControlador.o \
 ./src/BlackJack/InfoRanking.o \
 ./src/BlackJack/Jogador.o \
-./src/BlackJack/JogadorMesa.o \
-./src/BlackJack/JogadorPessoa.o \
 ./src/BlackJack/Mao.o \
 ./src/BlackJack/Mesa.o \
 ./src/BlackJack/Ranking.o \
@@ -61,8 +57,6 @@ CPP_DEPS += \
 ./src/BlackJack/IListenerControlador.d \
 ./src/BlackJack/InfoRanking.d \
 ./src/BlackJack/Jogador.d \
-./src/BlackJack/JogadorMesa.d \
-./src/BlackJack/JogadorPessoa.d \
 ./src/BlackJack/Mao.d \
 ./src/BlackJack/Mesa.d \
 ./src/BlackJack/Ranking.d \
