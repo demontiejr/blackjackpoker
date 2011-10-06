@@ -13,6 +13,7 @@
 #include "BlackJack/Jogador.h"
 #include "BlackJack/IListenerControlador.h"
 #include "BlackJack/Mesa.h"
+#include "BlackJack/Ranking.h"
 
 using namespace Osp::Graphics;
 using namespace Osp::Base;
@@ -56,6 +57,8 @@ protected:
 	int valorApostaAcumulado;
 
 	IListenerControlador* listener;
+
+	Ranking* ranking;
 
 public:
 	int GetValorPote();

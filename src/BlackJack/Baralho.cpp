@@ -7,6 +7,8 @@
 #include "BlackJack/Baralho.h"
 #include <stdlib.h>
 
+using namespace Osp::System;
+using namespace Osp::Base::Utility;
 using namespace std;
 
 Baralho::Baralho() {
@@ -37,6 +39,9 @@ Carta* Baralho::DarCarta() {
 
 void Baralho::Embaralhar() {
 	int posicao;
+	long long ticks;
+	SystemTime::GetTicks(ticks);
+	Math::Srand((unsigned int) ticks);
 	for (posicao = 0; posicao < topo - 1; posicao++) {
 		// escolhe uma posição aleatória entre posição e númeroDeCartas()-1
 		int posAleatoria = posicao + (rand() % (topo - posicao));

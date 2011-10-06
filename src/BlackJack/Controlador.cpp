@@ -5,6 +5,7 @@
  */
 
 #include "BlackJack/Controlador.h"
+#include "BlackJack/InfoRanking.h"
 
 using namespace Osp::Base;
 using namespace Osp::Graphics;
@@ -104,6 +105,8 @@ void Controlador::Construct()
 	mesa->SetControlador(this);
 	baralho = new Baralho();
 	valorApostaAcumulado = 0;
+	ranking = new Ranking();
+	ranking->Construct();
 }
 
 Mesa *Controlador::GetMesa()
@@ -170,6 +173,10 @@ void Controlador::FimJogadaJogador() {
 }
 
 void Controlador::FimPartida() {
+	InfoRanking *info = new InfoRanking();
+	info->Construct(jogador->GetNome(), jogador->GetPontos(), jogador->GetMaxVitoriasConsecutivas());
+	ranking->Inserir(info);
+
 	if(listener != null){
 		listener->OnFimPartida();
 	}

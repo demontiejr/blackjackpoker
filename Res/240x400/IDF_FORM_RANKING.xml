@@ -15,59 +15,19 @@
         <layout height="31" mode="Portrait" width="101" x="70" y="10"/>
         <layout height="24" mode="Landscape" width="218" x="100" y="6"/>
     </Label>
-    <EditField id="IDC_EDITFIELD_NOME" parent="IDF_FORM_RANKING">
-        <property GroupStyle="GROUP_STYLE_NONE" InputStyle="INPUT_STYLE_FULLSCREEN" KeypadEnabled="TRUE" LimitLength="1000" bShowTitleText="FALSE" guideText="" text="" titleText=""/>
-        <layout height="40" mode="Portrait" style="EDIT_FIELD_STYLE_NORMAL" width="201" x="20" y="41"/>
-        <layout height="40" mode="Landscape" style="EDIT_FIELD_STYLE_NORMAL" width="335" x="33" y="48"/>
-    </EditField>
-    <EditField id="IDC_EDITFIELD_PONTOS" parent="IDF_FORM_RANKING">
-        <property GroupStyle="GROUP_STYLE_NONE" InputStyle="INPUT_STYLE_FULLSCREEN" KeypadEnabled="TRUE" LimitLength="1000" bShowTitleText="FALSE" guideText="" text="" titleText=""/>
-        <layout height="40" mode="Portrait" style="EDIT_FIELD_STYLE_NORMAL" width="51" x="20" y="91"/>
-        <layout height="40" mode="Landscape" style="EDIT_FIELD_STYLE_NORMAL" width="335" x="53" y="68"/>
-    </EditField>
-    <EditField id="IDC_EDITFIELD_VITORIAS" parent="IDF_FORM_RANKING">
-        <property GroupStyle="GROUP_STYLE_NONE" InputStyle="INPUT_STYLE_FULLSCREEN" KeypadEnabled="TRUE" LimitLength="1000" bShowTitleText="FALSE" guideText="" text="" titleText=""/>
-        <layout height="40" mode="Portrait" style="EDIT_FIELD_STYLE_NORMAL" width="49" x="83" y="91"/>
-        <layout height="40" mode="Landscape" style="EDIT_FIELD_STYLE_NORMAL" width="335" x="65" y="88"/>
-    </EditField>
-    <Button id="IDC_BUTTON_ADD" parent="IDF_FORM_RANKING">
-        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="ADD" vAlign="ALIGN_MIDDLE"/>
-        <layout height="37" mode="Portrait" width="69" x="148" y="95"/>
-        <layout height="25" mode="Landscape" width="85" x="166" y="102"/>
-    </Button>
-    <EditField id="IDC_EDITFIELD_POSICAO" parent="IDF_FORM_RANKING">
-        <property GroupStyle="GROUP_STYLE_NONE" InputStyle="INPUT_STYLE_FULLSCREEN" KeypadEnabled="TRUE" LimitLength="1000" bShowTitleText="FALSE" guideText="" text="" titleText=""/>
-        <layout height="40" mode="Portrait" style="EDIT_FIELD_STYLE_NORMAL" width="51" x="20" y="186"/>
-        <layout height="40" mode="Landscape" style="EDIT_FIELD_STYLE_NORMAL" width="335" x="53" y="68"/>
-    </EditField>
-    <Button id="IDC_BUTTON_GET" parent="IDF_FORM_RANKING">
-        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="GET" vAlign="ALIGN_MIDDLE"/>
-        <layout height="37" mode="Portrait" width="66" x="95" y="190"/>
-        <layout height="25" mode="Landscape" width="85" x="186" y="122"/>
-    </Button>
-    <Label id="IDC_LABEL_NOME" parent="IDF_FORM_RANKING">
-        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Nome" textColor="" textSize="22" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
-        <layout height="31" mode="Portrait" width="200" x="21" y="236"/>
-        <layout height="24" mode="Landscape" width="333" x="35" y="168"/>
-    </Label>
-    <Label id="IDC_LABEL_PONTOS" parent="IDF_FORM_RANKING">
-        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Pontos" textColor="" textSize="22" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
-        <layout height="41" mode="Portrait" width="75" x="22" y="280"/>
-        <layout height="24" mode="Landscape" width="333" x="55" y="188"/>
-    </Label>
-    <Label id="IDC_LABEL_VITORIAS" parent="IDF_FORM_RANKING">
-        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Vitorias" textColor="" textSize="22" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
-        <layout height="41" mode="Portrait" width="86" x="140" y="280"/>
-        <layout height="24" mode="Landscape" width="333" x="55" y="188"/>
-    </Label>
     <Button id="IDC_BUTTON_LIMPAR" parent="IDF_FORM_RANKING">
-        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="LIMPAR" vAlign="ALIGN_MIDDLE"/>
+        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="CLEAN" vAlign="ALIGN_MIDDLE"/>
         <layout height="37" mode="Portrait" width="66" x="29" y="350"/>
         <layout height="25" mode="Landscape" width="85" x="206" y="142"/>
     </Button>
     <Button id="IDC_BUTTON_VOLTAR" parent="IDF_FORM_RANKING">
-        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="Voltar" vAlign="ALIGN_MIDDLE"/>
+        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="BACK" vAlign="ALIGN_MIDDLE"/>
         <layout height="38" mode="Portrait" width="86" x="132" y="351"/>
         <layout height="24" mode="Landscape" width="143" x="220" y="210"/>
     </Button>
+    <EditArea id="IDC_EDITAREA_RANKING" parent="IDF_FORM_RANKING">
+        <property InputStyle="INPUT_STYLE_FULLSCREEN" LimitLength="1000" guideText="" text=""/>
+        <layout height="250" mode="Portrait" width="198" x="21" y="50"/>
+        <layout height="40" mode="Landscape" width="166" x="33" y="38"/>
+    </EditArea>
 </Scene>

@@ -38,3 +38,12 @@ int InfoRanking::GetVitorias() {
 int InfoRanking::GetPontos() {
 	return this->pontuacao;
 }
+
+String InfoRanking::ToString() {
+	String result = nome;
+	result.Append("    ");
+	result.Append(this->pontuacao);
+	result.Append("    ");
+	result.Append(this->vitorias);
+	return result;
+}

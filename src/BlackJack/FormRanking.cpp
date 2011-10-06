@@ -33,20 +33,6 @@ result FormRanking::OnInitializing(void) {
 
 	ranking.Construct();
 
-	__pButtonAdd = static_cast<Button *> (GetControl(L"IDC_BUTTON_ADD"));
-	if (__pButtonAdd != null)
-	{
-		__pButtonAdd->SetActionId(ID_BUTTON_ADD);
-		__pButtonAdd->AddActionEventListener(*this);
-	}
-
-	__pButtonGet = static_cast<Button *>(GetControl(L"IDC_BUTTON_GET"));
-	if (__pButtonGet != null)
-	{
-		__pButtonGet->SetActionId(ID_BUTTON_GET);
-		__pButtonGet->AddActionEventListener(*this);
-	}
-
 	__pButtonLimpar = static_cast<Button *>(GetControl(L"IDC_BUTTON_LIMPAR"));
 	if (__pButtonLimpar != null)
 	{
@@ -61,14 +47,14 @@ result FormRanking::OnInitializing(void) {
 		__pButtonVoltar->AddActionEventListener(*this);
 	}
 
-	__pEditFieldNome = static_cast<EditField *>(GetControl(L"IDC_EDITFIELD_NOME"));
-	__pEditFieldPontos = static_cast<EditField *>(GetControl(L"IDC_EDITFIELD_PONTOS"));
-	__pEditFieldVitorias = static_cast<EditField *>(GetControl(L"IDC_EDITFIELD_VITORIAS"));
-	__pEditFieldPosicao = static_cast<EditField *>(GetControl(L"IDC_EDITFIELD_POSICAO"));
+	//Criando lista do ranking
+	__pEditAreaRanking = static_cast<EditArea *>(GetControl(L"IDC_EDITAREA_RANKING"));
+	if (__pEditAreaRanking != null)
+	{
+		__pEditAreaRanking->SetEnabled(false);
+	}
 
-	__pLabelNome = static_cast<Label *>(GetControl(L"IDC_LABEL_NOME"));
-	__pLabelPontos = static_cast<Label *>(GetControl(L"IDC_LABEL_PONTOS"));
-	__pLabelVitorias = static_cast<Label *>(GetControl(L"IDC_LABEL_VITORIAS"));
+	RetrieveData();
 
 	return r;
 }
@@ -81,56 +67,55 @@ result FormRanking::OnTerminating(void) {
 	return r;
 }
 
-void FormRanking::Add() {
-	InfoRanking* info = new InfoRanking();
-
-	String nome = __pEditFieldNome->GetText();
-
-	int pontos;
-	Integer::Parse(__pEditFieldPontos->GetText(), pontos);
-
-	int vitorias;
-	Integer::Parse(__pEditFieldVitorias->GetText(), vitorias);
-
-	info->Construct(nome, pontos, vitorias);
-
-	ranking.Inserir(info);
+void FormRanking::RetrieveData() {
+	String text;
+	for (int i=1; i <= 5; i++) {
+		InfoRanking* info = ranking.GetInfoPorPosicaoInserir(i);
+		text.Append(info->ToString());
+		text.Append("\n");
+	}
+	__pEditAreaRanking->SetText(text);
 }
 
-void FormRanking::Get() {
-	int posicao;
-	Integer::Parse(__pEditFieldPosicao->GetText(), posicao);
+//void FormRanking::Add() {
+//	InfoRanking* info = new InfoRanking();
+//
+//	String nome = __pEditFieldNome->GetText();
+//
+//	int pontos;
+//	Integer::Parse(__pEditFieldPontos->GetText(), pontos);
+//
+//	int vitorias;
+//	Integer::Parse(__pEditFieldVitorias->GetText(), vitorias);
+//
+//	info->Construct(nome, pontos, vitorias);
+//
+//	ranking.Inserir(info);
+//}
 
-	InfoRanking* info = ranking.GetInfoPorPosicaoInserir(posicao);
-
-	__pLabelNome->SetText(info->GetNome());
-	__pLabelPontos->SetText(Integer::ToString(info->GetPontos()));
-	__pLabelVitorias->SetText(Integer::ToString(info->GetVitorias()));
-
-	RequestRedraw(true);
-
-}
+//void FormRanking::Get() {
+//	int posicao;
+//	Integer::Parse(__pEditFieldPosicao->GetText(), posicao);
+//
+//	InfoRanking* info = ranking.GetInfoPorPosicaoInserir(posicao);
+//
+//	__pLabelNome->SetText(info->GetNome());
+//	__pLabelPontos->SetText(Integer::ToString(info->GetPontos()));
+//	__pLabelVitorias->SetText(Integer::ToString(info->GetVitorias()));
+//
+//	RequestRedraw(true);
+//
+//}
 
 void FormRanking::OnActionPerformed(const Osp::Ui::Control& source,
 		int actionId) {
 	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
 	switch (actionId) {
-
-	case ID_BUTTON_ADD: {
-		AppLog("ADD Button is clicked! \n");
-		Add();
-	}
-		break;
-
-	case ID_BUTTON_GET: {
-		AppLog("GET Button is clicked! \n");
-		Get();
-	}
-		break;
-
 	case ID_BUTTON_LIMPAR: {
 		AppLog("LIMPAR Button is clicked! \n");
 		ranking.Limpar();
+		RetrieveData();
+		__pEditAreaRanking->RequestRedraw(true);
 	}
 		break;
 
@@ -163,17 +148,9 @@ result FormRanking::OnDraw(void) {
 	AddControl(*pLabel);
 	delete pImage;
 	delete pBitmap;
-	__pButtonAdd->RequestRedraw(true);
-	__pButtonGet->RequestRedraw(true);
 	__pButtonLimpar->RequestRedraw(true);
 	__pButtonVoltar->RequestRedraw(true);
-	__pEditFieldNome->RequestRedraw(true);
-	__pEditFieldPontos->RequestRedraw(true);
-	__pEditFieldVitorias->RequestRedraw(true);
-	__pEditFieldPosicao->RequestRedraw(true);
-	__pLabelNome->RequestRedraw(true);
-	__pLabelPontos->RequestRedraw(true);
-	__pLabelVitorias->RequestRedraw(true);
+	__pEditAreaRanking->RequestRedraw(true);
 
 	return r;
 }

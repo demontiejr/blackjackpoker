@@ -1,17 +1,45 @@
 src/BlackJack/Baralho.d src/BlackJack/Baralho.o: \
  ../src/BlackJack/Baralho.cpp \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Carta.h \
- C:/bada/1.1.0b1/include/FMedia.h C:/bada/1.1.0b1/include/FMediaImage.h \
- C:/bada/1.1.0b1/include/FBase.h C:/bada/1.1.0b1/include/FBaseTypes.h \
- C:/bada/1.1.0b1/include/FBaseSys.h C:/bada/1.1.0b1/include/FBaseConfig.h \
+ C:/bada/1.1.0b1/include/FSystem.h C:/bada/1.1.0b1/include/FSysAlarm.h \
+ C:/bada/1.1.0b1/include/FBaseDateTime.h \
+ C:/bada/1.1.0b1/include/FBaseObject.h \
+ C:/bada/1.1.0b1/include/FBaseTypes.h C:/bada/1.1.0b1/include/FBaseSys.h \
+ C:/bada/1.1.0b1/include/FBaseConfig.h \
  C:/bada/1.1.0b1/include/FBaseDataType.h \
+ C:/bada/1.1.0b1/include/FBaseTimeSpan.h \
+ C:/bada/1.1.0b1/include/FBaseString.h \
+ C:/bada/1.1.0b1/include/FSysConfig.h \
+ C:/bada/1.1.0b1/include/FSysIAlarmEventListener.h \
+ C:/bada/1.1.0b1/include/FBaseResult.h \
  C:/bada/1.1.0b1/include/FBaseErrors.h \
  C:/bada/1.1.0b1/include/FBaseErrorDefine.h \
- C:/bada/1.1.0b1/include/FBaseResult.h \
- C:/bada/1.1.0b1/include/FBaseObject.h \
- C:/bada/1.1.0b1/include/FBaseChar.h \
- C:/bada/1.1.0b1/include/FBaseString.h \
+ C:/bada/1.1.0b1/include/FBaseRtIEventListener.h \
+ C:/bada/1.1.0b1/include/FSysSystemTime.h \
+ C:/bada/1.1.0b1/include/FSysVibrator.h \
+ C:/bada/1.1.0b1/include/FSysBattery.h \
+ C:/bada/1.1.0b1/include/FSysPower.h \
+ C:/bada/1.1.0b1/include/FSysSystemInfo.h \
+ C:/bada/1.1.0b1/include/FBaseUuId.h \
+ C:/bada/1.1.0b1/include/FBaseColIList.h \
+ C:/bada/1.1.0b1/include/FBaseColICollection.h \
+ C:/bada/1.1.0b1/include/FBaseColIEnumerator.h \
+ C:/bada/1.1.0b1/include/FBaseRtThreadMutex.h \
+ C:/bada/1.1.0b1/include/FBaseColIComparer.h \
+ C:/bada/1.1.0b1/include/FSysRuntimeInfo.h \
+ C:/bada/1.1.0b1/include/FSysSettingInfo.h \
+ C:/bada/1.1.0b1/include/FSysIScreenEventListener.h \
+ C:/bada/1.1.0b1/include/FSysIChargingEventListener.h \
+ C:/bada/1.1.0b1/include/FSysPowerManager.h \
+ C:/bada/1.1.0b1/include/FSysFeatureList.h \
+ C:/bada/1.1.0b1/include/FSysDeviceManager.h \
+ C:/bada/1.1.0b1/include/FSysIDeviceEventListener.h \
+ C:/bada/1.1.0b1/include/FSysISystemKeyEventListener.h \
+ C:/bada/1.1.0b1/include/FSysSystemKeyEventManager.h \
+ C:/bada/1.1.0b1/include/FSysSystemTime.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Carta.h \
+ C:/bada/1.1.0b1/include/FMedia.h C:/bada/1.1.0b1/include/FMediaImage.h \
+ C:/bada/1.1.0b1/include/FBase.h C:/bada/1.1.0b1/include/FBaseChar.h \
  C:/bada/1.1.0b1/include/FBaseNumber.h \
  C:/bada/1.1.0b1/include/FBaseBoolean.h \
  C:/bada/1.1.0b1/include/FBaseInt8.h \
@@ -21,7 +49,6 @@ src/BlackJack/Baralho.d src/BlackJack/Baralho.o: \
  C:/bada/1.1.0b1/include/FBaseFloat.h \
  C:/bada/1.1.0b1/include/FBaseDouble.h \
  C:/bada/1.1.0b1/include/FBaseInt8Comparer.h \
- C:/bada/1.1.0b1/include/FBaseColIComparer.h \
  C:/bada/1.1.0b1/include/FBaseIntegerComparer.h \
  C:/bada/1.1.0b1/include/FBaseShortComparer.h \
  C:/bada/1.1.0b1/include/FBaseLongComparer.h \
@@ -31,17 +58,11 @@ src/BlackJack/Baralho.d src/BlackJack/Baralho.o: \
  C:/bada/1.1.0b1/include/FBaseStringComparer.h \
  C:/bada/1.1.0b1/include/FBaseComparerT.h \
  C:/bada/1.1.0b1/include/FBaseColIComparerT.h \
- C:/bada/1.1.0b1/include/FBaseDateTime.h \
- C:/bada/1.1.0b1/include/FBaseTimeSpan.h \
  C:/bada/1.1.0b1/include/FBaseBuffer.h \
  C:/bada/1.1.0b1/include/FBaseBufferBase.h \
- C:/bada/1.1.0b1/include/FBaseRtThreadMutex.h \
  C:/bada/1.1.0b1/include/FBaseByteBuffer.h \
- C:/bada/1.1.0b1/include/FBaseUuId.h C:/bada/1.1.0b1/include/FBaseCol.h \
+ C:/bada/1.1.0b1/include/FBaseCol.h \
  C:/bada/1.1.0b1/include/FBaseColArrayList.h \
- C:/bada/1.1.0b1/include/FBaseColIList.h \
- C:/bada/1.1.0b1/include/FBaseColICollection.h \
- C:/bada/1.1.0b1/include/FBaseColIEnumerator.h \
  C:/bada/1.1.0b1/include/FBaseColLinkedList.h \
  C:/bada/1.1.0b1/include/FBaseColQueue.h \
  C:/bada/1.1.0b1/include/FBaseColStack.h \
@@ -69,7 +90,6 @@ src/BlackJack/Baralho.d src/BlackJack/Baralho.o: \
  C:/bada/1.1.0b1/include/FBaseColMultiHashMapT.h \
  C:/bada/1.1.0b1/include/FBaseColIMultiMapT.h \
  C:/bada/1.1.0b1/include/FBaseRt.h C:/bada/1.1.0b1/include/FBaseRtTypes.h \
- C:/bada/1.1.0b1/include/FBaseRtIEventListener.h \
  C:/bada/1.1.0b1/include/FBaseRtTimer.h \
  C:/bada/1.1.0b1/include/FBaseResource.h \
  C:/bada/1.1.0b1/include/FBaseRtITimerEventListener.h \
@@ -155,7 +175,7 @@ src/BlackJack/Baralho.d src/BlackJack/Baralho.o: \
  C:/bada/1.1.0b1/include/FUiITextEventListener.h \
  C:/bada/1.1.0b1/include/FUiITimeChangeEventListener.h \
  C:/bada/1.1.0b1/include/FUiITouchEventListener.h \
- C:/bada/1.1.0b1/include/FUiTouch.h C:/bada/1.1.0b1/include/FSysConfig.h \
+ C:/bada/1.1.0b1/include/FUiTouch.h \
  C:/bada/1.1.0b1/include/FUiIWindowEventListener.h \
  C:/bada/1.1.0b1/include/FUiControl.h \
  C:/bada/1.1.0b1/include/FUiClassType.h \
@@ -232,13 +252,13 @@ src/BlackJack/Baralho.d src/BlackJack/Baralho.o: \
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h:
 
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Carta.h:
+C:/bada/1.1.0b1/include/FSystem.h:
 
-C:/bada/1.1.0b1/include/FMedia.h:
+C:/bada/1.1.0b1/include/FSysAlarm.h:
 
-C:/bada/1.1.0b1/include/FMediaImage.h:
+C:/bada/1.1.0b1/include/FBaseDateTime.h:
 
-C:/bada/1.1.0b1/include/FBase.h:
+C:/bada/1.1.0b1/include/FBaseObject.h:
 
 C:/bada/1.1.0b1/include/FBaseTypes.h:
 
@@ -248,17 +268,75 @@ C:/bada/1.1.0b1/include/FBaseConfig.h:
 
 C:/bada/1.1.0b1/include/FBaseDataType.h:
 
+C:/bada/1.1.0b1/include/FBaseTimeSpan.h:
+
+C:/bada/1.1.0b1/include/FBaseString.h:
+
+C:/bada/1.1.0b1/include/FSysConfig.h:
+
+C:/bada/1.1.0b1/include/FSysIAlarmEventListener.h:
+
+C:/bada/1.1.0b1/include/FBaseResult.h:
+
 C:/bada/1.1.0b1/include/FBaseErrors.h:
 
 C:/bada/1.1.0b1/include/FBaseErrorDefine.h:
 
-C:/bada/1.1.0b1/include/FBaseResult.h:
+C:/bada/1.1.0b1/include/FBaseRtIEventListener.h:
 
-C:/bada/1.1.0b1/include/FBaseObject.h:
+C:/bada/1.1.0b1/include/FSysSystemTime.h:
+
+C:/bada/1.1.0b1/include/FSysVibrator.h:
+
+C:/bada/1.1.0b1/include/FSysBattery.h:
+
+C:/bada/1.1.0b1/include/FSysPower.h:
+
+C:/bada/1.1.0b1/include/FSysSystemInfo.h:
+
+C:/bada/1.1.0b1/include/FBaseUuId.h:
+
+C:/bada/1.1.0b1/include/FBaseColIList.h:
+
+C:/bada/1.1.0b1/include/FBaseColICollection.h:
+
+C:/bada/1.1.0b1/include/FBaseColIEnumerator.h:
+
+C:/bada/1.1.0b1/include/FBaseRtThreadMutex.h:
+
+C:/bada/1.1.0b1/include/FBaseColIComparer.h:
+
+C:/bada/1.1.0b1/include/FSysRuntimeInfo.h:
+
+C:/bada/1.1.0b1/include/FSysSettingInfo.h:
+
+C:/bada/1.1.0b1/include/FSysIScreenEventListener.h:
+
+C:/bada/1.1.0b1/include/FSysIChargingEventListener.h:
+
+C:/bada/1.1.0b1/include/FSysPowerManager.h:
+
+C:/bada/1.1.0b1/include/FSysFeatureList.h:
+
+C:/bada/1.1.0b1/include/FSysDeviceManager.h:
+
+C:/bada/1.1.0b1/include/FSysIDeviceEventListener.h:
+
+C:/bada/1.1.0b1/include/FSysISystemKeyEventListener.h:
+
+C:/bada/1.1.0b1/include/FSysSystemKeyEventManager.h:
+
+C:/bada/1.1.0b1/include/FSysSystemTime.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Carta.h:
+
+C:/bada/1.1.0b1/include/FMedia.h:
+
+C:/bada/1.1.0b1/include/FMediaImage.h:
+
+C:/bada/1.1.0b1/include/FBase.h:
 
 C:/bada/1.1.0b1/include/FBaseChar.h:
-
-C:/bada/1.1.0b1/include/FBaseString.h:
 
 C:/bada/1.1.0b1/include/FBaseNumber.h:
 
@@ -280,8 +358,6 @@ C:/bada/1.1.0b1/include/FBaseDouble.h:
 
 C:/bada/1.1.0b1/include/FBaseInt8Comparer.h:
 
-C:/bada/1.1.0b1/include/FBaseColIComparer.h:
-
 C:/bada/1.1.0b1/include/FBaseIntegerComparer.h:
 
 C:/bada/1.1.0b1/include/FBaseShortComparer.h:
@@ -300,29 +376,15 @@ C:/bada/1.1.0b1/include/FBaseComparerT.h:
 
 C:/bada/1.1.0b1/include/FBaseColIComparerT.h:
 
-C:/bada/1.1.0b1/include/FBaseDateTime.h:
-
-C:/bada/1.1.0b1/include/FBaseTimeSpan.h:
-
 C:/bada/1.1.0b1/include/FBaseBuffer.h:
 
 C:/bada/1.1.0b1/include/FBaseBufferBase.h:
 
-C:/bada/1.1.0b1/include/FBaseRtThreadMutex.h:
-
 C:/bada/1.1.0b1/include/FBaseByteBuffer.h:
-
-C:/bada/1.1.0b1/include/FBaseUuId.h:
 
 C:/bada/1.1.0b1/include/FBaseCol.h:
 
 C:/bada/1.1.0b1/include/FBaseColArrayList.h:
-
-C:/bada/1.1.0b1/include/FBaseColIList.h:
-
-C:/bada/1.1.0b1/include/FBaseColICollection.h:
-
-C:/bada/1.1.0b1/include/FBaseColIEnumerator.h:
 
 C:/bada/1.1.0b1/include/FBaseColLinkedList.h:
 
@@ -379,8 +441,6 @@ C:/bada/1.1.0b1/include/FBaseColIMultiMapT.h:
 C:/bada/1.1.0b1/include/FBaseRt.h:
 
 C:/bada/1.1.0b1/include/FBaseRtTypes.h:
-
-C:/bada/1.1.0b1/include/FBaseRtIEventListener.h:
 
 C:/bada/1.1.0b1/include/FBaseRtTimer.h:
 
@@ -559,8 +619,6 @@ C:/bada/1.1.0b1/include/FUiITimeChangeEventListener.h:
 C:/bada/1.1.0b1/include/FUiITouchEventListener.h:
 
 C:/bada/1.1.0b1/include/FUiTouch.h:
-
-C:/bada/1.1.0b1/include/FSysConfig.h:
 
 C:/bada/1.1.0b1/include/FUiIWindowEventListener.h:
 

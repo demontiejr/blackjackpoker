@@ -249,12 +249,25 @@ src/BlackJack/FormMgr.d src/BlackJack/FormMgr.o: \
  C:/bada/1.1.0b1/include/FMediaCapabilityCommon.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mao.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h \
+ C:/bada/1.1.0b1/include/FSystem.h C:/bada/1.1.0b1/include/FSysAlarm.h \
+ C:/bada/1.1.0b1/include/FSysIAlarmEventListener.h \
+ C:/bada/1.1.0b1/include/FSysSystemTime.h \
+ C:/bada/1.1.0b1/include/FSysVibrator.h \
+ C:/bada/1.1.0b1/include/FSysSystemInfo.h \
+ C:/bada/1.1.0b1/include/FSysRuntimeInfo.h \
+ C:/bada/1.1.0b1/include/FSysSettingInfo.h \
+ C:/bada/1.1.0b1/include/FSysIScreenEventListener.h \
+ C:/bada/1.1.0b1/include/FSysIChargingEventListener.h \
+ C:/bada/1.1.0b1/include/FSysPowerManager.h \
+ C:/bada/1.1.0b1/include/FSysFeatureList.h \
+ C:/bada/1.1.0b1/include/FSysDeviceManager.h \
+ C:/bada/1.1.0b1/include/FSysIDeviceEventListener.h \
+ C:/bada/1.1.0b1/include/FSysISystemKeyEventListener.h \
+ C:/bada/1.1.0b1/include/FSysSystemKeyEventManager.h \
+ C:/bada/1.1.0b1/include/FSysSystemTime.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Jogador.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/IListenerControlador.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mesa.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMenu.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormInstrucoes.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormRanking.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Ranking.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h \
  C:/bada/1.1.0b1/include/FIo.h C:/bada/1.1.0b1/include/FIoDirectory.h \
@@ -273,6 +286,9 @@ src/BlackJack/FormMgr.d src/BlackJack/FormMgr.o: \
  C:/bada/1.1.0b1/include/FIoDbStatement.h \
  C:/bada/1.1.0b1/include/FIoDbTypes.h \
  C:/bada/1.1.0b1/include/FIoDbEnumerator.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMenu.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormInstrucoes.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormRanking.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormLobby.h
 
@@ -796,17 +812,45 @@ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mao.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h:
 
+C:/bada/1.1.0b1/include/FSystem.h:
+
+C:/bada/1.1.0b1/include/FSysAlarm.h:
+
+C:/bada/1.1.0b1/include/FSysIAlarmEventListener.h:
+
+C:/bada/1.1.0b1/include/FSysSystemTime.h:
+
+C:/bada/1.1.0b1/include/FSysVibrator.h:
+
+C:/bada/1.1.0b1/include/FSysSystemInfo.h:
+
+C:/bada/1.1.0b1/include/FSysRuntimeInfo.h:
+
+C:/bada/1.1.0b1/include/FSysSettingInfo.h:
+
+C:/bada/1.1.0b1/include/FSysIScreenEventListener.h:
+
+C:/bada/1.1.0b1/include/FSysIChargingEventListener.h:
+
+C:/bada/1.1.0b1/include/FSysPowerManager.h:
+
+C:/bada/1.1.0b1/include/FSysFeatureList.h:
+
+C:/bada/1.1.0b1/include/FSysDeviceManager.h:
+
+C:/bada/1.1.0b1/include/FSysIDeviceEventListener.h:
+
+C:/bada/1.1.0b1/include/FSysISystemKeyEventListener.h:
+
+C:/bada/1.1.0b1/include/FSysSystemKeyEventManager.h:
+
+C:/bada/1.1.0b1/include/FSysSystemTime.h:
+
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Jogador.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/IListenerControlador.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mesa.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMenu.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormInstrucoes.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormRanking.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Ranking.h:
 
@@ -849,6 +893,12 @@ C:/bada/1.1.0b1/include/FIoDbStatement.h:
 C:/bada/1.1.0b1/include/FIoDbTypes.h:
 
 C:/bada/1.1.0b1/include/FIoDbEnumerator.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMenu.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormInstrucoes.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormRanking.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h:
 

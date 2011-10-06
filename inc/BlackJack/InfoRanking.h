@@ -19,6 +19,7 @@ public:
 	String GetNome();
 	int GetPontos();
 	int GetVitorias();
+	String ToString();
 
 	virtual ~InfoRanking();
 

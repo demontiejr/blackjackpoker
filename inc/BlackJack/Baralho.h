@@ -7,6 +7,8 @@
 #ifndef BARALHO_H_
 #define BARALHO_H_
 
+#include<FSystem.h>
+#include<FSysSystemTime.h>
 #include "BlackJack/Carta.h"
 
 class Baralho {

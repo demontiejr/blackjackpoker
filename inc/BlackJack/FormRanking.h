@@ -24,24 +24,12 @@ public:
 	bool Initialize(void);
 
 protected:
-	static const int ID_BUTTON_ADD = 101;
-	static const int ID_BUTTON_GET = 102;
 	static const int ID_BUTTON_LIMPAR = 103;
 	static const int ID_BUTTON_VOLTAR = 104;
 
-	 Osp::Ui::Controls::Button *__pButtonAdd;
-	 Osp::Ui::Controls::Button *__pButtonGet;
 	 Osp::Ui::Controls::Button *__pButtonLimpar;
 	 Osp::Ui::Controls::Button *__pButtonVoltar;
-
-	 Osp::Ui::Controls::EditField *__pEditFieldNome;
-	 Osp::Ui::Controls::EditField *__pEditFieldPontos;
-	 Osp::Ui::Controls::EditField *__pEditFieldVitorias;
-	 Osp::Ui::Controls::EditField *__pEditFieldPosicao;
-
-	 Osp::Ui::Controls::Label *__pLabelNome;
-	 Osp::Ui::Controls::Label *__pLabelPontos;
-	 Osp::Ui::Controls::Label *__pLabelVitorias;
+	 Osp::Ui::Controls::EditArea *__pEditAreaRanking;
 
 public:
 	virtual result OnInitializing(void);
@@ -51,8 +39,9 @@ public:
 	virtual result OnDraw(void);
 
 private:
-    void Add();
-    void Get();
+	void RetrieveData();
+//    void Add();
+//    void Get();
 };
 
 #endif /* FORMRANKING_H_ */
