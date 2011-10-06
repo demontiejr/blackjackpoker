@@ -14,50 +14,54 @@ using namespace Osp::Media;
 Controlador::Controlador() {
 }
 
+Controlador* Controlador::controlador = 0;
+Controlador* Controlador::GetInstance() {
+	if (!controlador) {
+		controlador = new Controlador();
+	}
+	return controlador;
+}
+
 Controlador::~Controlador() {
 
 }
 
 void Controlador::InicioJogadaJogador() {
-	if(listener != null){
+	if (listener != null) {
 		listener->OnInicioJogadaJogador();
 	}
 }
 
-void Controlador::MesaPuxaCarta()
-{
+void Controlador::MesaPuxaCarta() {
 	mesa->PuxarCarta();
 
-	if(listener != null){
+	if (listener != null) {
 		listener->OnMesaPuxaCarta();
 	}
 }
 
-void Controlador::JogadorPuxaCarta()
-{
+void Controlador::JogadorPuxaCarta() {
 	jogador->PuxarCarta();
 
-	if(listener != null){
+	if (listener != null) {
 		this->listener->OnJogadorPuxaCarta();
 	}
 }
 
-void Controlador::JogadorDobra()
-{
+void Controlador::JogadorDobra() {
 	jogador->PuxarCarta();
 	valorApostaAcumulado *= 2;
 
-	if(listener != null){
+	if (listener != null) {
 		this->listener->OnJogadorDobra();
 	}
 }
 
-void Controlador::JogadaMesa()
-{
+void Controlador::JogadaMesa() {
 	AppLog("Mesa jogando...");
-	if(mesa->GetMao()->GetValor() < 17){
+	if (mesa->GetMao()->GetValor() < 17) {
 		MesaPuxaCarta();
-	}else{
+	} else {
 		FimJogadaMesa();
 	}
 }
@@ -73,33 +77,32 @@ void Controlador::IniciarPartida() {
 
 	//TODO dar duas cartas para cada jogador
 
-	if(listener != null){
+	if (listener != null) {
 		listener->OnInicioPartida();
-	}else{
+	} else {
 		AppLog("[ERRO] Listener null");
 	}
 }
 
-bool Controlador::JogadorGanhou()
-{
+bool Controlador::JogadorGanhou() {
 	//TODO decidir vencedor de forma correta
-	bool jogadorEhMaior = (jogador->GetMao()->GetValor() > mesa->GetMao()->GetValor());
+	bool jogadorEhMaior = (jogador->GetMao()->GetValor()
+			> mesa->GetMao()->GetValor());
 	bool jogadorEstourou = (jogador->GetMao()->GetValor() > 21);
 	bool mesaEstourou = (mesa->GetMao()->GetValor() > 21);
 
-	if(jogadorEstourou and ! mesaEstourou){
+	if (jogadorEstourou and !mesaEstourou) {
 		return false;
-	}else if(jogadorEstourou and mesaEstourou){
+	} else if (jogadorEstourou and mesaEstourou) {
 		return false;
-	}else if(! jogadorEstourou and mesaEstourou){
+	} else if (!jogadorEstourou and mesaEstourou) {
 		return true;
-	}else{
+	} else {
 		return jogadorEhMaior;
 	}
 }
 
-void Controlador::Construct()
-{
+void Controlador::Construct() {
 	mesa = new Mesa();
 	mesa->Construct();
 	mesa->SetControlador(this);
@@ -109,65 +112,61 @@ void Controlador::Construct()
 	ranking->Construct();
 }
 
-Mesa *Controlador::GetMesa()
-{
+Mesa *Controlador::GetMesa() {
 	return this->mesa;
 }
 
-int Controlador::GetValorPote()
-{
+int Controlador::GetValorPote() {
 	return this->valorApostaAcumulado;
 }
 
-Jogador *Controlador::GetJogador()
-{
+Jogador *Controlador::GetJogador() {
 	return this->jogador;
 }
 
-void Controlador::SetValorPote(int valor)
-{
+void Controlador::SetValorPote(int valor) {
 	valorApostaAcumulado = valor;
 }
 
-bool Controlador::Empate()
-{
+bool Controlador::Empate() {
 	//TODO decidir empate
 
 	bool jogadorEstourou = (jogador->GetMao()->GetValor() > 21);
 	bool mesaEstourou = (mesa->GetMao()->GetValor() > 21);
-	bool saoIguais = (jogador->GetMao()->GetValor() == mesa->GetMao()->GetValor());
+	bool saoIguais = (jogador->GetMao()->GetValor()
+			== mesa->GetMao()->GetValor());
 
-	if(JogadorGanhou()){
+	if (JogadorGanhou()) {
 		return false;
-	}else if(jogadorEstourou && mesaEstourou){
+	} else if (jogadorEstourou && mesaEstourou) {
 		return true;
-	}else if(jogadorEstourou && !mesaEstourou){
+	} else if (jogadorEstourou && !mesaEstourou) {
 		return false;
-	}else if(! jogadorEstourou && mesaEstourou){
+	} else if (!jogadorEstourou && mesaEstourou) {
 		return false;
-	}else{
+	} else {
 		return saoIguais;
 	}
 
-    return (jogador->GetMao()->GetValor() == mesa->GetMao()->GetValor());
+	return (jogador->GetMao()->GetValor() == mesa->GetMao()->GetValor());
 }
 
 void Controlador::PagarVencedor() {
-	if(JogadorGanhou()){
+	if (JogadorGanhou()) {
 		jogador->Receber(valorApostaAcumulado);
-	}else if(Empate()){
-		jogador->Receber(valorApostaAcumulado/2);
+	} else if (Empate()) {
+		jogador->Receber(valorApostaAcumulado / 2);
 	}
 
 	valorApostaAcumulado = 0;
 
-	if(listener != null){
+	if (listener != null) {
 		listener->OnPagarVencedor();
 	}
 }
 
 void Controlador::FimJogadaJogador() {
-	if(listener != null){
+	if (listener != null) {
 		listener->OnFimJogadaJogador();
 	}
 }
@@ -177,7 +176,7 @@ void Controlador::FimPartida() {
 	info->Construct(jogador->GetNome(), jogador->GetPontos(), jogador->GetMaxVitoriasConsecutivas());
 	ranking->Inserir(info);
 
-	if(listener != null){
+	if (listener != null) {
 		listener->OnFimPartida();
 	}
 }
@@ -186,22 +185,22 @@ void Controlador::AtualizarAposta() {
 }
 
 void Controlador::FimJogadaMesa() {
-	if(listener != null){
+	if (listener != null) {
 		this->listener->OnFimJogadaMesa();
 	}
 }
 
 void Controlador::InicioJogadaMesa() {
-	if(listener != null){
+	if (listener != null) {
 		this->listener->OnInicioJogadaMesa();
 	}
 }
 
-void Controlador::SetListener(IListenerControlador* listener){
+void Controlador::SetListener(IListenerControlador* listener) {
 	this->listener = listener;
 }
 
-void Controlador::SetJogador(Jogador* jogador){
+void Controlador::SetJogador(Jogador* jogador) {
 	this->jogador = jogador;
 }
 
