@@ -60,6 +60,10 @@ protected:
     Desenhadora desenhadora;
     SmartTimer* timer;
 
+    int apostaMinima;
+    int apostaMaxima;
+    Osp::Base::String backgroundPath;
+
 private:
     void MostrarBotoesAposta(bool mostrar);
     void MostrarBotoesAcoes(bool mostrar);
@@ -92,6 +96,11 @@ public:
 	virtual void OnInicioPartida();
 	virtual void OnFimPartida();
 	virtual void OnPagarVencedor();
+
+	void SetAtributos(Osp::Base::Integer apostaMinima, Osp::Base::Integer apostaMaxima,
+			Osp::Base::String imgPath);
+
+	int valoresApostas[5];
 
 };
 

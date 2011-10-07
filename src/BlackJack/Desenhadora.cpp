@@ -33,6 +33,14 @@ void Desenhadora::DesenhaBackground(Canvas* pCanvas)
 	pCanvas->DrawBitmap(Point(0,0), *bitmapBackground);
 }
 
+void Desenhadora::DesenhaBackground(Canvas* pCanvas, String imgPath)
+{
+	Image decoder;
+	decoder.Construct();
+	Bitmap* img = decoder.DecodeN(imgPath, BITMAP_PIXEL_FORMAT_ARGB8888);
+	pCanvas->DrawBitmap(Point(0,0), *img);
+}
+
 Desenhadora::~Desenhadora() {
 	delete bitmapEspadas;
 	delete bitmapPaus;

@@ -32,8 +32,21 @@ bool FormJogo::Initialize() {
 	// Construct an XML form
 	Construct(L"IDF_FORM_JOGO");
 
+	valoresApostas[0] = 1;
+	valoresApostas[1] = 5;
+	valoresApostas[2] = 10;
+	valoresApostas[3] = 25;
+	valoresApostas[4] = 50;
 
 	return true;
+}
+
+void FormJogo::SetAtributos(Integer apostaMinima, Integer apostaMaxima, String imgPath) {
+	this->apostaMinima = apostaMinima.ToInt();
+	this->apostaMaxima = apostaMaxima.ToInt();
+	this->backgroundPath = imgPath;
+	AppLog("%d", this->apostaMinima);
+	AppLog("%d", this->apostaMaxima);
 }
 
 void FormJogo::InicializaBotoes()
@@ -61,30 +74,45 @@ void FormJogo::InicializaBotoes()
 	{
 		__pButtonAposta1->SetActionId(ID_BUTTON_APOSTA1);
 		__pButtonAposta1->AddActionEventListener(*this);
+		if (this->apostaMinima > valoresApostas[0] || this->apostaMaxima < valoresApostas[0]) {
+			__pButtonAposta1->SetEnabled(false);
+		}
 	}
 	__pButtonAposta2 = static_cast<Button*>(GetControl(L"IDC_BUTTON_APOSTA2"));
 	if (__pButtonAposta2 != null)
 	{
 		__pButtonAposta2->SetActionId(ID_BUTTON_APOSTA2);
 		__pButtonAposta2->AddActionEventListener(*this);
+		if (this->apostaMinima > valoresApostas[1] || this->apostaMaxima < valoresApostas[1]) {
+			__pButtonAposta2->SetEnabled(false);
+		}
 	}
 	__pButtonAposta3 = static_cast<Button*>(GetControl(L"IDC_BUTTON_APOSTA3"));
 	if (__pButtonAposta3 != null)
 	{
 		__pButtonAposta3->SetActionId(ID_BUTTON_APOSTA3);
 		__pButtonAposta3->AddActionEventListener(*this);
+		if (this->apostaMinima > valoresApostas[2] || this->apostaMaxima < valoresApostas[3]) {
+			__pButtonAposta3->SetEnabled(false);
+		}
 	}
 	__pButtonAposta4 = static_cast<Button*>(GetControl(L"IDC_BUTTON_APOSTA4"));
 	if (__pButtonAposta4 != null)
 	{
 		__pButtonAposta4->SetActionId(ID_BUTTON_APOSTA4);
 		__pButtonAposta4->AddActionEventListener(*this);
+		if (this->apostaMinima > valoresApostas[3] || this->apostaMaxima < valoresApostas[3]) {
+			__pButtonAposta4->SetEnabled(false);
+		}
 	}
 	__pButtonAposta5 = static_cast<Button*>(GetControl(L"IDC_BUTTON_APOSTA5"));
 	if (__pButtonAposta5 != null)
 	{
 		__pButtonAposta5->SetActionId(ID_BUTTON_APOSTA5);
 		__pButtonAposta5->AddActionEventListener(*this);
+		if (this->apostaMinima > valoresApostas[4] || this->apostaMaxima < valoresApostas[4]) {
+			__pButtonAposta5->SetEnabled(false);
+		}
 	}
 	__pButtonApostar = static_cast<Button*>(GetControl(L"IDC_BUTTON_APOSTAR"));
 	if (__pButtonApostar != null)
@@ -210,27 +238,31 @@ void FormJogo::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 
 	case ID_BUTTON_APOSTA1: {
 		AppLog("Aposta 1");
-		Apostar(1);
+		Apostar(valoresApostas[0]);
 	}
 	break;
 
 	case ID_BUTTON_APOSTA2: {
 		AppLog("Aposta 2");
+		Apostar(valoresApostas[1]);
 	}
 	break;
 
 	case ID_BUTTON_APOSTA3: {
 		AppLog("Aposta 3");
+		Apostar(valoresApostas[2]);
 	}
 	break;
 
 	case ID_BUTTON_APOSTA4: {
 		AppLog("Aposta 4");
+		Apostar(valoresApostas[3]);
 	}
 	break;
 
 	case ID_BUTTON_APOSTA5: {
 		AppLog("Aposta 5");
+		Apostar(valoresApostas[4]);
 	}
 	break;
 
@@ -253,7 +285,7 @@ result FormJogo::OnDraw(void) {
 
 	if(pCanvas != null){
 
-		desenhadora.DesenhaBackground(pCanvas);
+		desenhadora.DesenhaBackground(pCanvas, this->backgroundPath);
 
 		switch (controlador->GetStatus()) {
 			case PARADO:
@@ -270,14 +302,14 @@ result FormJogo::OnDraw(void) {
 
 			case JOGADOR_JOGANDO:
 				AppLog("Jogador joganddo");
-				desenhadora.DesenhaBackground(pCanvas);
+				desenhadora.DesenhaBackground(pCanvas, this->backgroundPath);
 				desenhadora.DesenhaMao(controlador->GetJogador()->GetMao(), 5, 160, pCanvas);
 				desenhadora.DesenhaMaoMesaParcial(controlador->GetMesa()->GetMao(), 5, 65, pCanvas);
 				break;
 
 			case MESA_JOGANDO:
 				AppLog("Mesa jogando");
-				desenhadora.DesenhaBackground(pCanvas);
+				desenhadora.DesenhaBackground(pCanvas, this->backgroundPath);
 				desenhadora.DesenhaMao(controlador->GetJogador()->GetMao(), 5, 235, pCanvas);
 				desenhadora.DesenhaMao(controlador->GetMesa()->GetMao(), 5, 65, pCanvas);
 				break;
@@ -285,7 +317,7 @@ result FormJogo::OnDraw(void) {
 			case PAGANDO:
 				AppLog("Pagando");
 				AppLog("Mostra vencedor");
-				desenhadora.DesenhaBackground(pCanvas);
+				desenhadora.DesenhaBackground(pCanvas, this->backgroundPath);
 				desenhadora.DesenhaMao(controlador->GetJogador()->GetMao(), 5, 235, pCanvas);
 				desenhadora.DesenhaMao(controlador->GetMesa()->GetMao(), 5, 65, pCanvas);
 				MostrarVencedor(pCanvas);

@@ -74,8 +74,13 @@ void FormLobby::IrParaMesa1()
 	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
 	FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
 			"FormMgr"));
+	Osp::Base::Collection::ArrayList* args = new Osp::Base::Collection::ArrayList();
+	args->Construct();
+	args->Add(*new Integer(1));
+	args->Add(*new Integer(25));
+	args->Add(*new String("/Home/background3.jpg"));
 	if (pFormMgr != null)
-		pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, null);
+		pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, args);
 }
 
 void FormLobby::IrParaMesa2()
@@ -84,8 +89,13 @@ void FormLobby::IrParaMesa2()
 	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
 	FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
 				"FormMgr"));
-		if (pFormMgr != null)
-			pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, null);
+	Osp::Base::Collection::ArrayList* args = new Osp::Base::Collection::ArrayList();
+	args->Construct();
+	args->Add(*new Integer(10));
+	args->Add(*new Integer(50));
+	args->Add(*new String("/Home/background.jpg"));
+	if (pFormMgr != null)
+		pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, args);
 }
 
 void FormLobby::IrParaMesa3()
@@ -94,8 +104,13 @@ void FormLobby::IrParaMesa3()
 	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
 	FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
 				"FormMgr"));
-		if (pFormMgr != null)
-			pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, null);
+	Osp::Base::Collection::ArrayList* args = new Osp::Base::Collection::ArrayList();
+	args->Construct();
+	args->Add(*new Integer(50));
+	args->Add(*new Integer(100));
+	args->Add(*new String("/Home/background2.jpg"));
+	if (pFormMgr != null)
+		pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, args);
 }
 
 void FormLobby::IrParaMenu()

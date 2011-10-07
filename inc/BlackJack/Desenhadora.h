@@ -25,6 +25,7 @@ public:
 	void DesenhaMao(Mao* m, int x, int y, Canvas* pCanvas);
 	void DesenhaMaoMesaParcial(Mao* m, int x, int y, Canvas* pCanvas);
 	void DesenhaBackground(Canvas* pCanvas);
+	void DesenhaBackground(Canvas* pCanvas, String imagPath);
 	virtual ~Desenhadora();
 
 private:
