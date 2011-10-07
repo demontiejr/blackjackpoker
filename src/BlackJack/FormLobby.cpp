@@ -9,8 +9,10 @@ using namespace Osp::Base;
 using namespace Osp::Ui;
 using namespace Osp::Ui::Controls;
 using namespace Osp::App;
+using namespace Osp::Media;
+using namespace Osp::Graphics;
 
-FormLobby::FormLobby(void)
+FormLobby::FormLobby()
 {
 }
 
@@ -55,6 +57,12 @@ FormLobby::OnInitializing(void)
 		__pButtonVoltar->AddActionEventListener(*this);
 	}
 
+	__pLabelNome = static_cast<Label *>(GetControl(L"IDC_LABEL_NOME"));
+	__pLabelNome->SetText("Name: " + Controlador::GetInstance()->GetJogador()->GetNome());
+
+
+	__pLabelDinheiro = static_cast<Label *>(GetControl(L"IDC_LABEL_DINHEIRO"));
+	__pLabelDinheiro->SetText("Points: " );//+ Controlador::GetInstance()->GetJogador()->GetPontos());
 	return r;
 }
 
@@ -74,13 +82,8 @@ void FormLobby::IrParaMesa1()
 	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
 	FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
 			"FormMgr"));
-	Osp::Base::Collection::ArrayList* args = new Osp::Base::Collection::ArrayList();
-	args->Construct();
-	args->Add(*new Integer(1));
-	args->Add(*new Integer(25));
-	args->Add(*new String("/Home/background3.jpg"));
 	if (pFormMgr != null)
-		pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, args);
+		pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, null);
 }
 
 void FormLobby::IrParaMesa2()
@@ -89,13 +92,8 @@ void FormLobby::IrParaMesa2()
 	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
 	FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
 				"FormMgr"));
-	Osp::Base::Collection::ArrayList* args = new Osp::Base::Collection::ArrayList();
-	args->Construct();
-	args->Add(*new Integer(10));
-	args->Add(*new Integer(50));
-	args->Add(*new String("/Home/background.jpg"));
-	if (pFormMgr != null)
-		pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, args);
+		if (pFormMgr != null)
+			pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, null);
 }
 
 void FormLobby::IrParaMesa3()
@@ -104,13 +102,8 @@ void FormLobby::IrParaMesa3()
 	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
 	FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
 				"FormMgr"));
-	Osp::Base::Collection::ArrayList* args = new Osp::Base::Collection::ArrayList();
-	args->Construct();
-	args->Add(*new Integer(50));
-	args->Add(*new Integer(100));
-	args->Add(*new String("/Home/background2.jpg"));
-	if (pFormMgr != null)
-		pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, args);
+		if (pFormMgr != null)
+			pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, null);
 }
 
 void FormLobby::IrParaMenu()
@@ -148,3 +141,29 @@ void FormLobby::OnActionPerformed(const Osp::Ui::Control & source, int actionId)
 		break;
 	}
 }
+
+result FormLobby::OnDraw(void) {
+
+	Image *pImage = new Image();
+	result r = pImage->Construct();
+	if (IsFailed(r))
+		return r;
+	Bitmap *pBitmap = pImage->DecodeN("/Home/imagensblackjack/background.jpg",
+			BITMAP_PIXEL_FORMAT_ARGB8888);
+
+	Label *pLabel = new Label();
+	pLabel->Construct(Rectangle(0, 0, 240, 400), null);
+	pLabel->SetBackgroundBitmap(*pBitmap);
+	AddControl(*pLabel);
+	delete pImage;
+	delete pBitmap;
+	__pButtonMesa1->RequestRedraw(true);
+	__pButtonMesa2->RequestRedraw(true);
+	__pButtonMesa3->RequestRedraw(true);
+	__pButtonVoltar->RequestRedraw(true);
+	__pLabelNome->RequestRedraw(true);
+	__pLabelDinheiro->RequestRedraw(true);
+
+	return r;
+}
+
