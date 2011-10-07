@@ -48,11 +48,11 @@ result FormRanking::OnInitializing(void) {
 	}
 
 	//Criando lista do ranking
-	__pEditAreaRanking = static_cast<EditArea *>(GetControl(L"IDC_EDITAREA_RANKING"));
-	if (__pEditAreaRanking != null)
-	{
-		__pEditAreaRanking->SetEnabled(false);
-	}
+	__pLabelPosicao1 = static_cast<Label *>(GetControl(L"IDC_LABEL_POSICAO1"));
+	__pLabelPosicao2 = static_cast<Label *>(GetControl(L"IDC_LABEL_POSICAO2"));
+	__pLabelPosicao3 = static_cast<Label *>(GetControl(L"IDC_LABEL_POSICAO3"));
+	__pLabelPosicao4 = static_cast<Label *>(GetControl(L"IDC_LABEL_POSICAO4"));
+	__pLabelPosicao5 = static_cast<Label *>(GetControl(L"IDC_LABEL_POSICAO5"));
 
 	RetrieveData();
 
@@ -68,44 +68,21 @@ result FormRanking::OnTerminating(void) {
 }
 
 void FormRanking::RetrieveData() {
-	String text;
-	for (int i=1; i <= 5; i++) {
-		InfoRanking* info = ranking.GetInfoPorPosicaoInserir(i);
-		text.Append(info->ToString());
-		text.Append("\n");
-	}
-	__pEditAreaRanking->SetText(text);
+	InfoRanking* info = ranking.GetInfoPorPosicaoInserir(1);
+	__pLabelPosicao1->SetText(info->ToString());
+
+	info = ranking.GetInfoPorPosicaoInserir(2);
+	__pLabelPosicao2->SetText(info->ToString());
+
+	info = ranking.GetInfoPorPosicaoInserir(3);
+	__pLabelPosicao3->SetText(info->ToString());
+
+	info = ranking.GetInfoPorPosicaoInserir(4);
+	__pLabelPosicao4->SetText(info->ToString());
+
+	info = ranking.GetInfoPorPosicaoInserir(5);
+	__pLabelPosicao5->SetText(info->ToString());
 }
-
-//void FormRanking::Add() {
-//	InfoRanking* info = new InfoRanking();
-//
-//	String nome = __pEditFieldNome->GetText();
-//
-//	int pontos;
-//	Integer::Parse(__pEditFieldPontos->GetText(), pontos);
-//
-//	int vitorias;
-//	Integer::Parse(__pEditFieldVitorias->GetText(), vitorias);
-//
-//	info->Construct(nome, pontos, vitorias);
-//
-//	ranking.Inserir(info);
-//}
-
-//void FormRanking::Get() {
-//	int posicao;
-//	Integer::Parse(__pEditFieldPosicao->GetText(), posicao);
-//
-//	InfoRanking* info = ranking.GetInfoPorPosicaoInserir(posicao);
-//
-//	__pLabelNome->SetText(info->GetNome());
-//	__pLabelPontos->SetText(Integer::ToString(info->GetPontos()));
-//	__pLabelVitorias->SetText(Integer::ToString(info->GetVitorias()));
-//
-//	RequestRedraw(true);
-//
-//}
 
 void FormRanking::OnActionPerformed(const Osp::Ui::Control& source,
 		int actionId) {
@@ -115,7 +92,7 @@ void FormRanking::OnActionPerformed(const Osp::Ui::Control& source,
 		AppLog("LIMPAR Button is clicked! \n");
 		ranking.Limpar();
 		RetrieveData();
-		__pEditAreaRanking->RequestRedraw(true);
+		RedesenhaLabels();
 	}
 		break;
 
@@ -150,7 +127,15 @@ result FormRanking::OnDraw(void) {
 	delete pBitmap;
 	__pButtonLimpar->RequestRedraw(true);
 	__pButtonVoltar->RequestRedraw(true);
-	__pEditAreaRanking->RequestRedraw(true);
+	RedesenhaLabels();
 
 	return r;
+}
+
+void FormRanking::RedesenhaLabels() {
+	__pLabelPosicao1->RequestRedraw(true);
+	__pLabelPosicao2->RequestRedraw(true);
+	__pLabelPosicao3->RequestRedraw(true);
+	__pLabelPosicao4->RequestRedraw(true);
+	__pLabelPosicao5->RequestRedraw(true);
 }

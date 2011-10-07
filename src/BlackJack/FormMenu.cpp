@@ -6,16 +6,15 @@
 
 #include "BlackJack/FormMenu.h"
 #include "BlackJack/FormMgr.h"
-#include <FSystem.h>
+#include "BlackJack/Controlador.h"
+#include "BlackJack/Jogador.h"
 
 using namespace Osp::App;
 using namespace Osp::Base;
-using namespace Osp::Base::Utility;
 using namespace Osp::Ui;
 using namespace Osp::Ui::Controls;
 using namespace Osp::Media;
 using namespace Osp::Graphics;
-using namespace Osp::System;
 
 FormMenu::FormMenu() {
 	// TODO Auto-generated constructor stub
@@ -63,6 +62,9 @@ result FormMenu::OnInitializing(void) {
 		__pButtonSair->AddActionEventListener(*this);
 	}
 
+	//TODO pegar nome a partir da entrada do usuario
+	nomeJogador = L"Arthur";
+
 	return r;
 }
 
@@ -72,12 +74,22 @@ result FormMenu::OnTerminating(void) {
 	return r;
 }
 
+void FormMenu::CriaJogador() {
+	Controlador* controlador = Controlador::GetInstance();
+	Jogador* j = new Jogador();
+	j->Construct(nomeJogador);
+	j->Receber(100);
+	j->SetControlador(controlador);
+	controlador->SetJogador(j);
+}
+
 void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
 	switch (actionId) {
 
 	case ID_BUTTON_NOVO_JOGO: {
 		AppLog("NOVO JOGO Button is clicked! \n");
+		CriaJogador();
 		FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
 				"FormMgr"));
 		if (pFormMgr != null)

@@ -29,6 +29,7 @@ void Mesa::SetControlador(Controlador *controlador) {
 
 void Mesa::PuxarCarta() {
 	Carta* c = this->controlador->GetBaralho()->DarCarta();
+	c->SetBonus(false);
 	this->mao->PegarCarta(c);
 }
 

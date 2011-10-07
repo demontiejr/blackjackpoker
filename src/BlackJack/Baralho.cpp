@@ -43,7 +43,7 @@ Carta* Baralho::DarCarta() {
 
 	//decide se eh bonus
 	int bonusNumber = Math::Rand() % 200;
-	cartaRetirada->SetBonus(bonusNumber <= 20);
+	cartaRetirada->SetBonus(bonusNumber <= 10);
 
 	return cartaRetirada;
 }

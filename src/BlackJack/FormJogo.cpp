@@ -10,12 +10,22 @@ using namespace Osp::App;
 using namespace Osp::Media;
 using namespace Osp::Graphics;
 
+#define TEMPO_JOGADA_MESA 1500
+
 FormJogo::FormJogo(void) {
 
 }
 
 FormJogo::~FormJogo(void) {
 	//	delete myVibrator;
+}
+
+result FormJogo::OnTerminating(void) {
+	result r = E_SUCCESS;
+
+	// TODO: Add your termination code here
+
+	return r;
 }
 
 bool FormJogo::Initialize() {
@@ -111,6 +121,38 @@ void FormJogo::InicializaLabels()
     __pLabelPontosMesa = static_cast<Label*>(GetControl(L"IDC_LABEL_PONTOS_MESA"));
 }
 
+void FormJogo::IrParaLobby()
+{
+	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
+	FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
+			"FormMgr"));
+	if (pFormMgr != null)
+		pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_LOBBY, null);
+}
+
+void FormJogo::AtualizaBotoesAcoes()
+{
+    bool cond = (controlador->GetJogador()->GetMao()->GetValor() >= 21);
+    __pButtonPuxar->SetEnabled(!cond);
+    __pButtonDobrar->SetEnabled(!cond);
+}
+
+void FormJogo::AtualizaInfoMesa()
+{
+
+	int pontos;
+
+	if(controlador->GetStatus() == APOSTANDO){
+		pontos = 0;
+	}else if(controlador->GetStatus() == JOGADOR_JOGANDO){
+		pontos = controlador->GetMesa()->GetMao()->GetCarta(0)->valor;
+	}else{
+		pontos = controlador->GetMesa()->GetMao()->GetValor();
+	}
+
+    __pLabelPontosMesa->SetText("Points: " + Integer::ToString(pontos));
+}
+
 result FormJogo::OnInitializing(void) {
 	result r = E_SUCCESS;
 
@@ -126,35 +168,12 @@ result FormJogo::OnInitializing(void) {
 	controlador->Construct();
 	controlador->SetListener(this);
 
-	Jogador* j = new Jogador();
-	j->Construct("Arthur");
-	j->Receber(100);
-	j->SetControlador(controlador);
-	controlador->SetJogador(j);
-
     AtualizarInfoJogador();
     AtualizarInfoControlador();
 
     controlador->IniciarPartida();
 
 	return r;
-}
-
-result FormJogo::OnTerminating(void) {
-	result r = E_SUCCESS;
-
-	// TODO: Add your termination code here
-
-	return r;
-}
-
-void FormJogo::IrParaLobby()
-{
-	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
-	FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
-			"FormMgr"));
-	if (pFormMgr != null)
-		pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_LOBBY, null);
 }
 
 void FormJogo::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
@@ -175,6 +194,7 @@ void FormJogo::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 	case ID_BUTTON_PARAR: {
 		AppLog("Parar");
 		controlador->FimJogadaJogador();
+		MostrarBotoesAcoes(false);
 	}
 	break;
 
@@ -231,7 +251,49 @@ result FormJogo::OnDraw(void) {
 
 	if(pCanvas != null){
 
-		desenhadora.DesenhaMao(controlador->GetJogador()->GetMao(), 5, 160, pCanvas);
+		//PARADO = 0, INICIO_PARTIDA=1, APOSTANDO=2, PAGANDO=5, TERMINADO=6
+
+		switch (controlador->GetStatus()) {
+			case PARADO:
+				AppLog("Parado");
+				break;
+
+			case INICIO_PARTIDA:
+				AppLog("InicioPartida");
+				break;
+
+			case APOSTANDO:
+				AppLog("Apostando");
+				break;
+
+			case JOGADOR_JOGANDO:
+				AppLog("Jogador joganddo");
+				desenhadora.DesenhaMao(controlador->GetJogador()->GetMao(), 5, 160, pCanvas);
+				desenhadora.DesenhaMaoMesaParcial(controlador->GetMesa()->GetMao(), 5, 65, pCanvas);
+				break;
+
+			case MESA_JOGANDO:
+				AppLog("Mesa jogando");
+				desenhadora.DesenhaMao(controlador->GetJogador()->GetMao(), 5, 235, pCanvas);
+				desenhadora.DesenhaMao(controlador->GetMesa()->GetMao(), 5, 65, pCanvas);
+				break;
+
+			case PAGANDO:
+				AppLog("Pagando");
+				desenhadora.DesenhaMao(controlador->GetJogador()->GetMao(), 5, 235, pCanvas);
+				desenhadora.DesenhaMao(controlador->GetMesa()->GetMao(), 5, 65, pCanvas);
+				break;
+
+			case TERMINADO:
+				AppLog("Terminado");
+				break;
+
+			default:
+				AppLog("Status: %d", controlador->GetStatus());
+				break;
+		}
+
+		//desenhadora.DesenhaMao(controlador->GetJogador()->GetMao(), 5, 160, pCanvas);
 
 		pCanvas->Show();
 
@@ -243,11 +305,6 @@ result FormJogo::OnDraw(void) {
 
 //TODO - implementar os metodos da interface
 
-void FormJogo::AtualizaInfoMesa()
-{
-    __pLabelPontosMesa->SetText("Points: " + Integer::ToString(controlador->GetMesa()->GetMao()->GetValor()));
-}
-
 void FormJogo::OnFimJogadaMesa() {
     AtualizaInfoMesa();
     RequestRedraw(true);
@@ -257,28 +314,56 @@ void FormJogo::OnFimJogadaMesa() {
 void FormJogo::OnInicioPartida() {
 	MostrarBotoesAcoes(false);
 	MostrarBotoesAposta(true);
+	AtualizaInfoMesa();
 	RequestRedraw(true);
 }
 
 void FormJogo::OnInicioJogadaMesa() {
 	//TODO - adicionar acao
-	controlador->JogadaMesa();
+	RequestRedraw(true);
+	timer->Iniciar(ID_TIMER_JOGADA_MESA, TEMPO_JOGADA_MESA);
+}
+
+void FormJogo::OnMesaPuxaCarta() {
+	AtualizaInfoMesa();
+	RequestRedraw(true);
+	timer->Iniciar(ID_TIMER_JOGADA_MESA, TEMPO_JOGADA_MESA);
 }
 
 void FormJogo::OnFimJogadaJogador() {
 	//TODO - adicionar acao
-	controlador->InicioJogadaMesa();
+	timer->Iniciar(ID_TIMER_INICIO_JOGADA_MESA, 500);
 }
 
-void FormJogo::OnMesaPuxaCarta() {
-	timer->Iniciar(ID_TIMER_JOGADA_MESA, 800);
+void FormJogo::OnInicioJogadaJogador() {
+	MostrarBotoesAposta(false);
+	MostrarBotoesAcoes(true);
+	RequestRedraw(true);
 }
 
-void FormJogo::AtualizaBotoesAcoes()
-{
-    bool cond = (controlador->GetJogador()->GetMao()->GetValor() >= 21);
-    __pButtonPuxar->SetEnabled(!cond);
-    __pButtonDobrar->SetEnabled(!cond);
+void FormJogo::OnJogadorDobra() {
+	AtualizarInfoJogador();
+	AtualizarInfoControlador();
+	RequestRedraw(true);
+
+	controlador->FimJogadaJogador();
+}
+void FormJogo::OnFimPartida() {
+	//TODO - adicionar acao
+	controlador->PagarVencedor();
+}
+
+void FormJogo::OnPagarVencedor() {
+	//TODO - adicionar acao
+
+	AtualizaInfoMesa();
+	AtualizarInfoControlador();
+	AtualizarInfoJogador();
+
+	RequestRedraw(true);
+
+	timer->Iniciar(ID_TIMER_INICIAR_PARTIDA, 2000);
+	//controlador->IniciarPartida();
 }
 
 void FormJogo::OnJogadorPuxaCarta() {
@@ -330,38 +415,16 @@ void FormJogo::OnTimerExpired(Timer & timer)
 			controlador->JogadaMesa();
 			break;
 
+		case ID_TIMER_INICIAR_PARTIDA:
+			controlador->IniciarPartida();
+			break;
+
+		case ID_TIMER_INICIO_JOGADA_MESA:
+			controlador->InicioJogadaMesa();
+			break;
+
 		default:
 			break;
 	}
 }
 
-void FormJogo::OnPagarVencedor() {
-	//TODO - adicionar acao
-
-	AtualizaInfoMesa();
-	AtualizarInfoControlador();
-	AtualizarInfoJogador();
-
-	RequestRedraw(true);
-
-	controlador->IniciarPartida();
-}
-
-void FormJogo::OnInicioJogadaJogador() {
-	MostrarBotoesAposta(false);
-	MostrarBotoesAcoes(true);
-	RequestRedraw(true);
-}
-
-void FormJogo::OnFimPartida() {
-	//TODO - adicionar acao
-	controlador->PagarVencedor();
-}
-
-void FormJogo::OnJogadorDobra() {
-	AtualizarInfoJogador();
-	AtualizarInfoControlador();
-	RequestRedraw(true);
-
-	controlador->FimJogadaJogador();
-}

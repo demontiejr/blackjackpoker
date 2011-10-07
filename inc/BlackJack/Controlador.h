@@ -21,6 +21,8 @@ using namespace Osp::Base;
 class Jogador;
 class Mesa;
 
+enum StatusJogo {PARADO = 0, INICIO_PARTIDA=1, APOSTANDO=2, JOGADOR_JOGANDO=3, MESA_JOGANDO=4, PAGANDO=5, TERMINADO=6};
+
 class Controlador {
 public:
 
@@ -47,6 +49,7 @@ public:
 	void SetListener(IListenerControlador* listener);
 	void SetJogador(Jogador* jogador);
 	void SetValorPote(int valor);
+	StatusJogo GetStatus();
 
 protected:
 	Baralho* baralho;
@@ -55,10 +58,9 @@ protected:
 	Mesa* mesa;
 
 	int valorApostaAcumulado;
+	StatusJogo status;
 
 	IListenerControlador* listener;
-
-	Ranking* ranking;
 
 public:
 	int GetValorPote();
@@ -74,6 +76,7 @@ private:
 	Controlador();
     bool JogadorGanhou();
     bool Empate();
+    bool constructed;
 };
 
 #endif /* CONTROLADOR_H_ */

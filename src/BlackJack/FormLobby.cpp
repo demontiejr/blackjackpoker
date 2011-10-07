@@ -1,5 +1,9 @@
 #include "BlackJack/FormLobby.h"
 #include "BlackJack/FormMgr.h"
+#include "BlackJack/Ranking.h"
+#include "BlackJack/InfoRanking.h"
+#include "BlackJack/Controlador.h"
+#include "BlackJack/Jogador.h"
 
 using namespace Osp::Base;
 using namespace Osp::Ui;
@@ -96,6 +100,14 @@ void FormLobby::IrParaMesa3()
 
 void FormLobby::IrParaMenu()
 {
+	Ranking* ranking = new Ranking();
+	ranking->Construct();
+	Jogador* jogador = Controlador::GetInstance()->GetJogador();
+	// if (jogador->GetNumeroDePartidas() > 0)
+	InfoRanking *info = new InfoRanking();
+	info->Construct(jogador->GetNome(), jogador->GetPontos(), jogador->GetMaxVitoriasConsecutivas());
+	ranking->Inserir(info);
+
 	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
 	FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
 				"FormMgr"));
@@ -121,7 +133,3 @@ void FormLobby::OnActionPerformed(const Osp::Ui::Control & source, int actionId)
 		break;
 	}
 }
-
-
-
-

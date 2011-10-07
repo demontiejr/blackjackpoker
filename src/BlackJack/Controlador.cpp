@@ -12,6 +12,7 @@ using namespace Osp::Graphics;
 using namespace Osp::Media;
 
 Controlador::Controlador() {
+	constructed = false;
 }
 
 Controlador* Controlador::controlador = 0;
@@ -27,6 +28,8 @@ Controlador::~Controlador() {
 }
 
 void Controlador::InicioJogadaJogador() {
+	status = JOGADOR_JOGANDO;
+
 	if (listener != null) {
 		listener->OnInicioJogadaJogador();
 	}
@@ -58,7 +61,6 @@ void Controlador::JogadorDobra() {
 }
 
 void Controlador::JogadaMesa() {
-	AppLog("Mesa jogando...");
 	if (mesa->GetMao()->GetValor() < 17) {
 		MesaPuxaCarta();
 	} else {
@@ -73,9 +75,15 @@ Baralho* Controlador::GetBaralho() {
 void Controlador::IniciarPartida() {
 	baralho->ReporCartas();
 	jogador->IniciarPartida();
-	mesa->IniciarPartida();
 
-	//TODO dar duas cartas para cada jogador
+	mesa->IniciarPartida();
+	jogador->PuxarCarta();
+	mesa->PuxarCarta();
+	jogador->PuxarCarta();
+
+	mesa->PuxarCarta();
+
+	status = APOSTANDO;
 
 	if (listener != null) {
 		listener->OnInicioPartida();
@@ -103,13 +111,15 @@ bool Controlador::JogadorGanhou() {
 }
 
 void Controlador::Construct() {
-	mesa = new Mesa();
-	mesa->Construct();
-	mesa->SetControlador(this);
-	baralho = new Baralho();
-	valorApostaAcumulado = 0;
-	ranking = new Ranking();
-	ranking->Construct();
+	if(! constructed){
+		constructed = true;
+		mesa = new Mesa();
+		mesa->Construct();
+		mesa->SetControlador(this);
+		baralho = new Baralho();
+		valorApostaAcumulado = 0;
+		status = PARADO;
+	}
 }
 
 Mesa *Controlador::GetMesa() {
@@ -126,6 +136,11 @@ Jogador *Controlador::GetJogador() {
 
 void Controlador::SetValorPote(int valor) {
 	valorApostaAcumulado = valor;
+}
+
+StatusJogo Controlador::GetStatus()
+{
+	return this->status;
 }
 
 bool Controlador::Empate() {
@@ -152,6 +167,8 @@ bool Controlador::Empate() {
 }
 
 void Controlador::PagarVencedor() {
+	status = PAGANDO;
+
 	if (JogadorGanhou()) {
 		jogador->Receber(valorApostaAcumulado);
 	} else if (Empate()) {
@@ -172,9 +189,7 @@ void Controlador::FimJogadaJogador() {
 }
 
 void Controlador::FimPartida() {
-	InfoRanking *info = new InfoRanking();
-	info->Construct(jogador->GetNome(), jogador->GetPontos(), jogador->GetMaxVitoriasConsecutivas());
-	ranking->Inserir(info);
+	status = PARADO;
 
 	if (listener != null) {
 		listener->OnFimPartida();
@@ -191,6 +206,7 @@ void Controlador::FimJogadaMesa() {
 }
 
 void Controlador::InicioJogadaMesa() {
+	status = MESA_JOGANDO;
 	if (listener != null) {
 		this->listener->OnInicioJogadaMesa();
 	}

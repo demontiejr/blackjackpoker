@@ -27,9 +27,14 @@ protected:
 	static const int ID_BUTTON_LIMPAR = 103;
 	static const int ID_BUTTON_VOLTAR = 104;
 
-	 Osp::Ui::Controls::Button *__pButtonLimpar;
-	 Osp::Ui::Controls::Button *__pButtonVoltar;
-	 Osp::Ui::Controls::EditArea *__pEditAreaRanking;
+	Osp::Ui::Controls::Button *__pButtonLimpar;
+	Osp::Ui::Controls::Button *__pButtonVoltar;
+
+	Osp::Ui::Controls::Label *__pLabelPosicao1;
+	Osp::Ui::Controls::Label *__pLabelPosicao2;
+	Osp::Ui::Controls::Label *__pLabelPosicao3;
+	Osp::Ui::Controls::Label *__pLabelPosicao4;
+	Osp::Ui::Controls::Label *__pLabelPosicao5;
 
 public:
 	virtual result OnInitializing(void);
@@ -40,8 +45,8 @@ public:
 
 private:
 	void RetrieveData();
-//    void Add();
-//    void Get();
+	void RedesenhaLabels();
 };
 
 #endif /* FORMRANKING_H_ */
+
