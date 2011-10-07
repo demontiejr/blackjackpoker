@@ -13,6 +13,21 @@ using namespace Osp::Graphics;
 Desenhadora::Desenhadora() {
 }
 
+void Desenhadora::DesenhaMaoMesaParcial(Mao *m, int x, int y, Canvas *pCanvas)
+{
+
+	if(m->NumeroCartas() == 2){
+		DesenhaCarta(m->GetCarta(0), x, y, pCanvas);
+		DesenhaCartaVirada(x+60, y, pCanvas);
+
+	}
+}
+
+void Desenhadora::DesenhaCartaVirada(int x, int y, Canvas *pCanvas)
+{
+	pCanvas->DrawBitmap(Point(x, y), *bitmapFundoVerso);
+}
+
 Desenhadora::~Desenhadora() {
 	delete bitmapEspadas;
 	delete bitmapPaus;
@@ -49,6 +64,7 @@ void Desenhadora::Construct() {
 	//constroi bitmaps fundos
 	bitmapFundoNormal = decoder.DecodeN(PASTA_FUNDOS + "fundo-normal.png", BITMAP_PIXEL_FORMAT_ARGB8888);
 	bitmapFundoBonus = decoder.DecodeN(PASTA_FUNDOS + "fundo-bonus.png", BITMAP_PIXEL_FORMAT_ARGB8888);
+	bitmapFundoVerso = decoder.DecodeN(PASTA_FUNDOS + "fundo-verso.png", BITMAP_PIXEL_FORMAT_ARGB8888);
 
 	Bitmap* temp;
 

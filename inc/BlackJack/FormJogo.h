@@ -32,6 +32,8 @@ protected:
     static const int ID_BUTTON_LOBBY = 110;
 
     static const int ID_TIMER_JOGADA_MESA = 201;
+    static const int ID_TIMER_INICIAR_PARTIDA = 202;
+    static const int ID_TIMER_INICIO_JOGADA_MESA = 203;
 
     Osp::Ui::Controls::Button *__pButtonPuxar;
     Osp::Ui::Controls::Button *__pButtonParar;

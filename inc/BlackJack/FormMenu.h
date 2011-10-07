@@ -33,11 +33,16 @@ protected:
 	Osp::Ui::Controls::Button *__pButtonInstrucoes;
 	Osp::Ui::Controls::Button *__pButtonSair;
 
+	Osp::Base::String nomeJogador;
+
 public:
 	virtual result OnInitializing(void);
 	virtual result OnTerminating(void);
 	virtual void OnActionPerformed(const Osp::Ui::Control& source, int actionId);
 	virtual result OnDraw(void);
+
+private:
+	void CriaJogador();
 
 };
 
