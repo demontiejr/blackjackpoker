@@ -49,6 +49,8 @@ public:
 
 private:
 	void CriaJogador(Osp::Base::String nomeJogador);
+    void MostraPanel();
+    void EscondePanel();
 
 };
 

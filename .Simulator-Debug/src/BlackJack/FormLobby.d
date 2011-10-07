@@ -212,28 +212,6 @@ src/BlackJack/FormLobby.d src/BlackJack/FormLobby.o: \
  C:/bada/1.1.0b1/include/FAppNotificationManager.h \
  C:/bada/1.1.0b1/include/FAppPackageInfo.h \
  C:/bada/1.1.0b1/include/FAppDownloadUIManager.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMgr.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Ranking.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h \
- C:/bada/1.1.0b1/include/FIo.h C:/bada/1.1.0b1/include/FIoDirectory.h \
- C:/bada/1.1.0b1/include/FBaseTypes.h \
- C:/bada/1.1.0b1/include/FBaseDateTime.h \
- C:/bada/1.1.0b1/include/FBaseString.h \
- C:/bada/1.1.0b1/include/FBaseResource.h \
- C:/bada/1.1.0b1/include/FBaseColArrayList.h \
- C:/bada/1.1.0b1/include/FIoConfig.h C:/bada/1.1.0b1/include/FIoFile.h \
- C:/bada/1.1.0b1/include/FBaseResult.h \
- C:/bada/1.1.0b1/include/FBaseByteBuffer.h \
- C:/bada/1.1.0b1/include/FIoRegistry.h \
- C:/bada/1.1.0b1/include/FBaseUuId.h C:/bada/1.1.0b1/include/FIoDbTypes.h \
- C:/bada/1.1.0b1/include/FIoDatabase.h \
- C:/bada/1.1.0b1/include/FBaseRtThreadMutex.h \
- C:/bada/1.1.0b1/include/FIoDbStatement.h \
- C:/bada/1.1.0b1/include/FIoDbTypes.h \
- C:/bada/1.1.0b1/include/FIoDbEnumerator.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Controlador.h \
- C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Carta.h \
  C:/bada/1.1.0b1/include/FMedia.h C:/bada/1.1.0b1/include/FMediaImage.h \
  C:/bada/1.1.0b1/include/FGraphics.h \
  C:/bada/1.1.0b1/include/FMediaConfig.h \
@@ -265,6 +243,28 @@ src/BlackJack/FormLobby.d src/BlackJack/FormLobby.o: \
  C:/bada/1.1.0b1/include/FMediaIBasicPlayerInfoEventListener.h \
  C:/bada/1.1.0b1/include/FMediaCapability.h \
  C:/bada/1.1.0b1/include/FMediaCapabilityCommon.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMgr.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Ranking.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h \
+ C:/bada/1.1.0b1/include/FIo.h C:/bada/1.1.0b1/include/FIoDirectory.h \
+ C:/bada/1.1.0b1/include/FBaseTypes.h \
+ C:/bada/1.1.0b1/include/FBaseDateTime.h \
+ C:/bada/1.1.0b1/include/FBaseString.h \
+ C:/bada/1.1.0b1/include/FBaseResource.h \
+ C:/bada/1.1.0b1/include/FBaseColArrayList.h \
+ C:/bada/1.1.0b1/include/FIoConfig.h C:/bada/1.1.0b1/include/FIoFile.h \
+ C:/bada/1.1.0b1/include/FBaseResult.h \
+ C:/bada/1.1.0b1/include/FBaseByteBuffer.h \
+ C:/bada/1.1.0b1/include/FIoRegistry.h \
+ C:/bada/1.1.0b1/include/FBaseUuId.h C:/bada/1.1.0b1/include/FIoDbTypes.h \
+ C:/bada/1.1.0b1/include/FIoDatabase.h \
+ C:/bada/1.1.0b1/include/FBaseRtThreadMutex.h \
+ C:/bada/1.1.0b1/include/FIoDbStatement.h \
+ C:/bada/1.1.0b1/include/FIoDbTypes.h \
+ C:/bada/1.1.0b1/include/FIoDbEnumerator.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Controlador.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Carta.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mao.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Baralho.h \
  C:/bada/1.1.0b1/include/FSystem.h C:/bada/1.1.0b1/include/FSysAlarm.h \
@@ -733,56 +733,6 @@ C:/bada/1.1.0b1/include/FAppPackageInfo.h:
 
 C:/bada/1.1.0b1/include/FAppDownloadUIManager.h:
 
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMgr.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Ranking.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h:
-
-C:/bada/1.1.0b1/include/FIo.h:
-
-C:/bada/1.1.0b1/include/FIoDirectory.h:
-
-C:/bada/1.1.0b1/include/FBaseTypes.h:
-
-C:/bada/1.1.0b1/include/FBaseDateTime.h:
-
-C:/bada/1.1.0b1/include/FBaseString.h:
-
-C:/bada/1.1.0b1/include/FBaseResource.h:
-
-C:/bada/1.1.0b1/include/FBaseColArrayList.h:
-
-C:/bada/1.1.0b1/include/FIoConfig.h:
-
-C:/bada/1.1.0b1/include/FIoFile.h:
-
-C:/bada/1.1.0b1/include/FBaseResult.h:
-
-C:/bada/1.1.0b1/include/FBaseByteBuffer.h:
-
-C:/bada/1.1.0b1/include/FIoRegistry.h:
-
-C:/bada/1.1.0b1/include/FBaseUuId.h:
-
-C:/bada/1.1.0b1/include/FIoDbTypes.h:
-
-C:/bada/1.1.0b1/include/FIoDatabase.h:
-
-C:/bada/1.1.0b1/include/FBaseRtThreadMutex.h:
-
-C:/bada/1.1.0b1/include/FIoDbStatement.h:
-
-C:/bada/1.1.0b1/include/FIoDbTypes.h:
-
-C:/bada/1.1.0b1/include/FIoDbEnumerator.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Controlador.h:
-
-C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Carta.h:
-
 C:/bada/1.1.0b1/include/FMedia.h:
 
 C:/bada/1.1.0b1/include/FMediaImage.h:
@@ -846,6 +796,56 @@ C:/bada/1.1.0b1/include/FMediaIBasicPlayerInfoEventListener.h:
 C:/bada/1.1.0b1/include/FMediaCapability.h:
 
 C:/bada/1.1.0b1/include/FMediaCapabilityCommon.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMgr.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Ranking.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h:
+
+C:/bada/1.1.0b1/include/FIo.h:
+
+C:/bada/1.1.0b1/include/FIoDirectory.h:
+
+C:/bada/1.1.0b1/include/FBaseTypes.h:
+
+C:/bada/1.1.0b1/include/FBaseDateTime.h:
+
+C:/bada/1.1.0b1/include/FBaseString.h:
+
+C:/bada/1.1.0b1/include/FBaseResource.h:
+
+C:/bada/1.1.0b1/include/FBaseColArrayList.h:
+
+C:/bada/1.1.0b1/include/FIoConfig.h:
+
+C:/bada/1.1.0b1/include/FIoFile.h:
+
+C:/bada/1.1.0b1/include/FBaseResult.h:
+
+C:/bada/1.1.0b1/include/FBaseByteBuffer.h:
+
+C:/bada/1.1.0b1/include/FIoRegistry.h:
+
+C:/bada/1.1.0b1/include/FBaseUuId.h:
+
+C:/bada/1.1.0b1/include/FIoDbTypes.h:
+
+C:/bada/1.1.0b1/include/FIoDatabase.h:
+
+C:/bada/1.1.0b1/include/FBaseRtThreadMutex.h:
+
+C:/bada/1.1.0b1/include/FIoDbStatement.h:
+
+C:/bada/1.1.0b1/include/FIoDbTypes.h:
+
+C:/bada/1.1.0b1/include/FIoDbEnumerator.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/InfoRanking.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Controlador.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Carta.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mao.h:
 
