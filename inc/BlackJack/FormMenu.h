@@ -15,7 +15,7 @@
 class FormMenu:
 	public Osp::Ui::Controls::Form,
 	public Osp::Ui::IActionEventListener
-{
+	{
 public:
 	FormMenu();
 	virtual ~FormMenu();

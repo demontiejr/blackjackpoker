@@ -5,6 +5,9 @@
 #include <FBase.h>
 #include <FUi.h>
 #include <FApp.h>
+#include <FMedia.h>
+#include <FGraphics.h>
+
 
 class FormLobby :
 public Osp::Ui::Controls::Form,
@@ -13,12 +16,13 @@ public Osp::Ui::IActionEventListener
 
 	// Construction
 public:
-	FormLobby(void);
+	FormLobby();
 	virtual ~FormLobby(void);
 	bool Initialize();
 	result OnInitializing(void);
 	result OnTerminating(void);
 	virtual void OnActionPerformed(const Osp::Ui::Control& source, int actionId);
+	result OnDraw(void);
 
 	// Implementation
 protected:
@@ -32,6 +36,8 @@ protected:
 	Osp::Ui::Controls::Button* __pButtonMesa3;
 	Osp::Ui::Controls::Button* __pButtonVoltar;
 
+	Osp::Ui::Controls::Label *__pLabelNome;
+	Osp::Ui::Controls::Label *__pLabelDinheiro;
 
 	// Generated call-back functions
 public:
