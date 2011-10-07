@@ -271,6 +271,8 @@ src/BlackJack/FormJogo.d src/BlackJack/FormJogo.o: \
  C:/bada/1.1.0b1/include/FIoDbStatement.h \
  C:/bada/1.1.0b1/include/FIoDbTypes.h \
  C:/bada/1.1.0b1/include/FIoDbEnumerator.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Desenhadora.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/SmartTimer.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMgr.h \
  C:/bada/1.1.0b1/include/FApp.h C:/bada/1.1.0b1/include/FAppApplication.h \
  C:/bada/1.1.0b1/include/FAppConfig.h C:/bada/1.1.0b1/include/FAppTypes.h \
@@ -855,6 +857,10 @@ C:/bada/1.1.0b1/include/FIoDbStatement.h:
 C:/bada/1.1.0b1/include/FIoDbTypes.h:
 
 C:/bada/1.1.0b1/include/FIoDbEnumerator.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Desenhadora.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/SmartTimer.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMgr.h:
 
