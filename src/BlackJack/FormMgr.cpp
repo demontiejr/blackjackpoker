@@ -55,6 +55,10 @@ void FormMgr::SwitchToForm(RequestId requestId, Osp::Base::Collection::IList* pA
 	{
 		FormJogo *pFormJogo = new FormJogo();
 		pFormJogo->Initialize();
+		Integer apostaMinima = *static_cast<Integer*>(pArgs->GetAt(0));
+		Integer apostaMaxima = *static_cast<Integer*>(pArgs->GetAt(1));
+		String imgPath = *static_cast<String*>(pArgs->GetAt(2));
+		pFormJogo->SetAtributos(apostaMinima, apostaMaxima, imgPath);
 		pFrame->AddControl(*pFormJogo);
 		pFrame->SetCurrentForm(*pFormJogo);
 		pFormJogo->Draw();
