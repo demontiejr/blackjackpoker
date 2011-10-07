@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bada>
+    <type>0</type>
+    <sdk>C:\bada\1.1.0b1</sdk>
+    <model>WaveWQ_LP1</model>
+    <apiversioncheck>false</apiversioncheck>
+    <properties/>
+</bada>
