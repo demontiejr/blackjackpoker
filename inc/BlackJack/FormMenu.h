@@ -12,6 +12,11 @@
 #include <FMedia.h>
 #include <FGraphics.h>
 
+#define NORMAL 0
+#define JOGO 1
+#define RANKING 2
+#define INSTRUCOES 3
+
 class FormMenu:
 	public Osp::Ui::Controls::Form,
 	public Osp::Ui::IActionEventListener
@@ -51,6 +56,7 @@ private:
 	void CriaJogador(Osp::Base::String nomeJogador);
     void MostraPanel();
     void EscondePanel();
+    int fundo;
 
 };
 

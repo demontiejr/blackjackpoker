@@ -33,6 +33,8 @@ bool FormMenu::Initialize() {
 result FormMenu::OnInitializing(void) {
 	result r = E_SUCCESS;
 
+	fundo = NORMAL;
+
 	__pButtonNovoJogo = static_cast<Button *> (GetControl(L"IDC_BUTTON_NOVO_JOGO"));
 	if (__pButtonNovoJogo != null)
 	{
@@ -100,20 +102,18 @@ void FormMenu::CriaJogador(String nomeJogador) {
 	controlador->SetJogador(j);
 }
 
-void FormMenu::MostraPanel()
-{
-    __pPanelNome->SetShowState(true);
-    __pButtonNovoJogo->SetEnabled(false);
-    __pButtonRanking->SetEnabled(false);
-    __pButtonInstrucoes->SetEnabled(false);
+void FormMenu::MostraPanel() {
+	__pPanelNome->SetShowState(true);
+	__pButtonNovoJogo->SetEnabled(false);
+	__pButtonRanking->SetEnabled(false);
+	__pButtonInstrucoes->SetEnabled(false);
 }
 
-void FormMenu::EscondePanel()
-{
-    __pPanelNome->SetShowState(false);
-    __pButtonNovoJogo->SetEnabled(true);
-        __pButtonRanking->SetEnabled(true);
-        __pButtonInstrucoes->SetEnabled(true);
+void FormMenu::EscondePanel() {
+	__pPanelNome->SetShowState(false);
+	__pButtonNovoJogo->SetEnabled(true);
+	__pButtonRanking->SetEnabled(true);
+	__pButtonInstrucoes->SetEnabled(true);
 }
 
 void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
@@ -121,35 +121,41 @@ void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 	switch (actionId) {
 
 	case ID_BUTTON_NOVO_JOGO: {
+		fundo = JOGO;
+		RequestRedraw(true);
 		AppLog("NOVO JOGO Button is clicked! \n");
 		MostraPanel();
 		__pPanelNome->RequestRedraw(true);
 	}
-	break;
+		break;
 
 	case ID_BUTTON_RANKING: {
+		fundo = RANKING;
+		RequestRedraw(true);
 		AppLog("RANKING Button is clicked! \n");
 		FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
 				"FormMgr"));
 		if (pFormMgr != null)
 			pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_RANKING, null);
 	}
-	break;
+		break;
 
 	case ID_BUTTON_INSTRUCOES: {
+		fundo = INSTRUCOES;
+		RequestRedraw(true);
 		AppLog("INSTRUCOES Button is clicked! \n");
 		FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
 				"FormMgr"));
 		if (pFormMgr != null)
 			pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_INSTRUCOES, null);
 	}
-	break;
+		break;
 
 	case ID_BUTTON_SAIR: {
 		AppLog("SAIR Button is clicked! \n");
 		Application::GetInstance()->Terminate();
 	}
-	break;
+		break;
 
 	case ID_BUTTON_PLAY: {
 		AppLog("PLAY Button is clicked! \n");
@@ -174,8 +180,8 @@ void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 	break;
 
 	default:
-		break;
-	}
+	break;
+}
 
 }
 
@@ -186,11 +192,26 @@ result FormMenu::OnDraw(void) {
 
 	if (IsFailed(r))
 		return r;
-	Bitmap *pBitmap = pImage->DecodeN("/Home/imagensblackjack/background-menu.png",
-			BITMAP_PIXEL_FORMAT_ARGB8888);
+	Bitmap *pBitmap;
+
+	if (fundo == NORMAL) {
+		pBitmap = pImage->DecodeN("/Home/imagensblackjack/background-menu.png",
+				BITMAP_PIXEL_FORMAT_ARGB8888);
+	} else if (fundo == RANKING) {
+		pBitmap = pImage->DecodeN(
+				"/Home/imagensblackjack/background-menu2-ranking.png",
+				BITMAP_PIXEL_FORMAT_ARGB8888);
+	} else if (fundo == INSTRUCOES) {
+		pBitmap = pImage->DecodeN(
+				"/Home/imagensblackjack/background-menu2-instrucoes.png",
+				BITMAP_PIXEL_FORMAT_ARGB8888);
+	} else {
+		pBitmap = pImage->DecodeN("/Home/imagensblackjack/background-menu.png",
+				BITMAP_PIXEL_FORMAT_ARGB8888);
+	}
 
 	Canvas* pCanvas = GetCanvasN();
-	if(pCanvas != null){
+	if (pCanvas != null) {
 
 		pCanvas->DrawBitmap(Point(0, 0), *pBitmap);
 

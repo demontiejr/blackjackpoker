@@ -1,1 +1,1 @@
--nostdlib -lc-newlib -lm-newlib -L"/Model//Target" -L"/Tools/Toolchains/ARM/arm-samsung-nucleuseabi/lib" -L"/Tools/Toolchains/ARM/lib/gcc/arm-samsung-nucleuseabi/4.4.1" -L"C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/lib" -shared -o"blackjackpoker.exe"
+-nostdlib -lc-newlib -lm-newlib -L"C:/bada/1.1.0b1/Model/WaveWQ_LP1/Target" -L"C:/bada/1.1.0b1/Tools/Toolchains/ARM/arm-samsung-nucleuseabi/lib" -L"C:/bada/1.1.0b1/Tools/Toolchains/ARM/lib/gcc/arm-samsung-nucleuseabi/4.4.1" -L"C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/lib" -shared -o"blackjackpoker.exe"
