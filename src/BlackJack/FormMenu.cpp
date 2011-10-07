@@ -59,7 +59,10 @@ result FormMenu::OnInitializing(void) {
 	{
 		__pButtonSair->SetActionId(ID_BUTTON_SAIR);
 		__pButtonSair->AddActionEventListener(*this);
+		__pButtonSair->SetShowState(false);
 	}
+
+
 
 	//--- Panel inserir nome
 	__pPanelNome = static_cast<Panel *>(GetControl(L"IDC_PANEL_INSERIR_NOME"));
@@ -97,13 +100,29 @@ void FormMenu::CriaJogador(String nomeJogador) {
 	controlador->SetJogador(j);
 }
 
+void FormMenu::MostraPanel()
+{
+    __pPanelNome->SetShowState(true);
+    __pButtonNovoJogo->SetEnabled(false);
+    __pButtonRanking->SetEnabled(false);
+    __pButtonInstrucoes->SetEnabled(false);
+}
+
+void FormMenu::EscondePanel()
+{
+    __pPanelNome->SetShowState(false);
+    __pButtonNovoJogo->SetEnabled(true);
+        __pButtonRanking->SetEnabled(true);
+        __pButtonInstrucoes->SetEnabled(true);
+}
+
 void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
 	switch (actionId) {
 
 	case ID_BUTTON_NOVO_JOGO: {
 		AppLog("NOVO JOGO Button is clicked! \n");
-		__pPanelNome->SetShowState(true);
+		MostraPanel();
 		__pPanelNome->RequestRedraw(true);
 	}
 	break;
@@ -148,9 +167,9 @@ void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 
 	case ID_BUTTON_CANCEL: {
 		AppLog("CANCEL Button is clicked! \n");
-		__pPanelNome->SetShowState(false);
-		__pPanelNome->RequestRedraw(true);
+		EscondePanel();
 		__pEditFieldNome->SetText(L"");
+		RequestRedraw(true);
 	}
 	break;
 
@@ -164,21 +183,22 @@ result FormMenu::OnDraw(void) {
 
 	Image *pImage = new Image();
 	result r = pImage->Construct();
+
 	if (IsFailed(r))
 		return r;
-	Bitmap *pBitmap = pImage->DecodeN("/Home/imagensblackjack/background.jpg",
+	Bitmap *pBitmap = pImage->DecodeN("/Home/imagensblackjack/background-menu.png",
 			BITMAP_PIXEL_FORMAT_ARGB8888);
 
-	Label *pLabel = new Label();
-	pLabel->Construct(Rectangle(0, 0, 240, 400), null);
-	pLabel->SetBackgroundBitmap(*pBitmap);
-	AddControl(*pLabel);
+	Canvas* pCanvas = GetCanvasN();
+	if(pCanvas != null){
+
+		pCanvas->DrawBitmap(Point(0, 0), *pBitmap);
+
+		delete pCanvas;
+	}
+
 	delete pImage;
 	delete pBitmap;
-	__pButtonNovoJogo->RequestRedraw(true);
-	__pButtonRanking->RequestRedraw(true);
-	__pButtonInstrucoes->RequestRedraw(true);
-	__pButtonSair->RequestRedraw(true);
 
 	return r;
 }
