@@ -64,20 +64,20 @@ void FormInstrucoes::OnActionPerformed(const Osp::Ui::Control& source,
 }
 
 result FormInstrucoes::OnDraw(void) {
-	Image *pImage = new Image();
-	result r = pImage->Construct();
-	if (IsFailed(r))
-		return r;
-	Bitmap *pBitmap = pImage->DecodeN("/Home/background-instr.png",
-			BITMAP_PIXEL_FORMAT_ARGB8888);
-
-	Label *pLabel = new Label();
-	pLabel->Construct(Rectangle(0, 0, 240, 400), null);
-	pLabel->SetBackgroundBitmap(*pBitmap);
-	AddControl(*pLabel);
-	delete pImage;
-	delete pBitmap;
+//	Image *pImage = new Image();
+//	result r = pImage->Construct();
+//	if (IsFailed(r))
+//		return r;
+//	Bitmap *pBitmap = pImage->DecodeN("/Home/background-instr.png",
+//			BITMAP_PIXEL_FORMAT_ARGB8888);
+//
+//	Label *pLabel = new Label();
+//	pLabel->Construct(Rectangle(0, 0, 240, 400), null);
+//	pLabel->SetBackgroundBitmap(*pBitmap);
+//	AddControl(*pLabel);
+//	delete pImage;
+//	delete pBitmap;
 	__pButtonVoltar->RequestRedraw(true);
-
-	return r;
+//
+	return E_SUCCESS;
 }
