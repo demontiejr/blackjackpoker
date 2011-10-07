@@ -69,6 +69,8 @@ private:
     void AtualizarInfoJogador();
     void AtualizarInfoControlador();
     void AtualizaBotoesAcoes();
+    void MostrarVencedor(Canvas* pCanvas);
+
     void InicializaLabels();
     void AtualizaInfoMesa();
 

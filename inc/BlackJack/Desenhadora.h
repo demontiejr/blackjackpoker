@@ -24,6 +24,7 @@ public:
 	void DesenhaCartaVirada(int x, int y, Canvas* pCanvas);
 	void DesenhaMao(Mao* m, int x, int y, Canvas* pCanvas);
 	void DesenhaMaoMesaParcial(Mao* m, int x, int y, Canvas* pCanvas);
+	void DesenhaBackground(Canvas* pCanvas);
 	virtual ~Desenhadora();
 
 private:
@@ -35,6 +36,7 @@ private:
 	Bitmap* bitmapFundoNormal;
 	Bitmap* bitmapFundoBonus;
 	Bitmap* bitmapFundoVerso;
+	Bitmap* bitmapBackground;
 
 	ArrayList listaBitmapsVermelhos;
 	ArrayList listaBitmapsPretos;

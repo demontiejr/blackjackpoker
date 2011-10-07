@@ -28,6 +28,11 @@ void Desenhadora::DesenhaCartaVirada(int x, int y, Canvas *pCanvas)
 	pCanvas->DrawBitmap(Point(x, y), *bitmapFundoVerso);
 }
 
+void Desenhadora::DesenhaBackground(Canvas* pCanvas)
+{
+	pCanvas->DrawBitmap(Point(0,0), *bitmapBackground);
+}
+
 Desenhadora::~Desenhadora() {
 	delete bitmapEspadas;
 	delete bitmapPaus;
@@ -65,6 +70,7 @@ void Desenhadora::Construct() {
 	bitmapFundoNormal = decoder.DecodeN(PASTA_FUNDOS + "fundo-normal.png", BITMAP_PIXEL_FORMAT_ARGB8888);
 	bitmapFundoBonus = decoder.DecodeN(PASTA_FUNDOS + "fundo-bonus.png", BITMAP_PIXEL_FORMAT_ARGB8888);
 	bitmapFundoVerso = decoder.DecodeN(PASTA_FUNDOS + "fundo-verso.png", BITMAP_PIXEL_FORMAT_ARGB8888);
+	bitmapBackground = decoder.DecodeN("/Home/background.png", BITMAP_PIXEL_FORMAT_ARGB8888);
 
 	Bitmap* temp;
 

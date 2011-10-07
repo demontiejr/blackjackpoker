@@ -50,6 +50,8 @@ public:
 	void SetJogador(Jogador* jogador);
 	void SetValorPote(int valor);
 	StatusJogo GetStatus();
+    bool JogadorGanhou();
+    bool Empate();
 
 protected:
 	Baralho* baralho;
@@ -74,8 +76,6 @@ private:
 
 	static Controlador* controlador;
 	Controlador();
-    bool JogadorGanhou();
-    bool Empate();
     bool constructed;
 };
 

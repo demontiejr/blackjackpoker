@@ -247,11 +247,13 @@ void FormJogo::desenharCartas() {
 
 result FormJogo::OnDraw(void) {
 
+	AtualizaInfoMesa();
+
 	Canvas* pCanvas = GetCanvasN();
 
 	if(pCanvas != null){
 
-		//PARADO = 0, INICIO_PARTIDA=1, APOSTANDO=2, PAGANDO=5, TERMINADO=6
+		desenhadora.DesenhaBackground(pCanvas);
 
 		switch (controlador->GetStatus()) {
 			case PARADO:
@@ -268,20 +270,25 @@ result FormJogo::OnDraw(void) {
 
 			case JOGADOR_JOGANDO:
 				AppLog("Jogador joganddo");
+				desenhadora.DesenhaBackground(pCanvas);
 				desenhadora.DesenhaMao(controlador->GetJogador()->GetMao(), 5, 160, pCanvas);
 				desenhadora.DesenhaMaoMesaParcial(controlador->GetMesa()->GetMao(), 5, 65, pCanvas);
 				break;
 
 			case MESA_JOGANDO:
 				AppLog("Mesa jogando");
+				desenhadora.DesenhaBackground(pCanvas);
 				desenhadora.DesenhaMao(controlador->GetJogador()->GetMao(), 5, 235, pCanvas);
 				desenhadora.DesenhaMao(controlador->GetMesa()->GetMao(), 5, 65, pCanvas);
 				break;
 
 			case PAGANDO:
 				AppLog("Pagando");
+				AppLog("Mostra vencedor");
+				desenhadora.DesenhaBackground(pCanvas);
 				desenhadora.DesenhaMao(controlador->GetJogador()->GetMao(), 5, 235, pCanvas);
 				desenhadora.DesenhaMao(controlador->GetMesa()->GetMao(), 5, 65, pCanvas);
+				MostrarVencedor(pCanvas);
 				break;
 
 			case TERMINADO:
@@ -332,6 +339,7 @@ void FormJogo::OnMesaPuxaCarta() {
 
 void FormJogo::OnFimJogadaJogador() {
 	//TODO - adicionar acao
+	MostrarBotoesAcoes(false);
 	timer->Iniciar(ID_TIMER_INICIO_JOGADA_MESA, 500);
 }
 
@@ -351,6 +359,28 @@ void FormJogo::OnJogadorDobra() {
 void FormJogo::OnFimPartida() {
 	//TODO - adicionar acao
 	controlador->PagarVencedor();
+}
+
+void FormJogo::MostrarVencedor(Canvas *pCanvas)
+{
+	if(pCanvas != null){
+		Image decoder;
+		decoder.Construct();
+
+		Bitmap* img;
+
+		if(controlador->JogadorGanhou()){
+			img = decoder.DecodeN("/Home/you-win.png", BITMAP_PIXEL_FORMAT_ARGB8888);
+		}else if(controlador->Empate()){
+			img = decoder.DecodeN("/Home/draw.png", BITMAP_PIXEL_FORMAT_ARGB8888);
+		}else{
+			img = decoder.DecodeN("/Home/you-lose.png", BITMAP_PIXEL_FORMAT_ARGB8888);
+		}
+
+		pCanvas->DrawBitmap(Point(15, 170), *img);
+
+		delete img;
+	}
 }
 
 void FormJogo::OnPagarVencedor() {
@@ -379,7 +409,6 @@ void FormJogo::MostrarBotoesAposta(bool mostrar)
 	__pButtonAposta3->SetShowState(mostrar);
 	__pButtonAposta4->SetShowState(mostrar);
 	__pButtonAposta5->SetShowState(mostrar);
-	__pButtonApostar->SetShowState(mostrar);
 	__pButtonLobby->SetShowState(mostrar);
 }
 
