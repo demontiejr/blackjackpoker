@@ -53,6 +53,8 @@ public:
     bool JogadorGanhou();
     bool Empate();
 
+    bool constructed;
+
 protected:
 	Baralho* baralho;
 
@@ -76,7 +78,6 @@ private:
 
 	static Controlador* controlador;
 	Controlador();
-    bool constructed;
 };
 
 #endif /* CONTROLADOR_H_ */

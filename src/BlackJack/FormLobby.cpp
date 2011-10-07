@@ -62,7 +62,7 @@ FormLobby::OnInitializing(void)
 
 
 	__pLabelDinheiro = static_cast<Label *>(GetControl(L"IDC_LABEL_DINHEIRO"));
-	__pLabelDinheiro->SetText("Points: " );//+ Controlador::GetInstance()->GetJogador()->GetPontos());
+	__pLabelDinheiro->SetText("Points: " + Integer::ToString(Controlador::GetInstance()->GetJogador()->GetPontos()));
 	return r;
 }
 
@@ -97,8 +97,15 @@ void FormLobby::IrParaMesa2()
 	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
 	FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
 			"FormMgr"));
+
+	Osp::Base::Collection::ArrayList* args = new Osp::Base::Collection::ArrayList();
+	args->Construct();
+	args->Add(*new Integer(1));
+	args->Add(*new Integer(25));
+	args->Add(*new String("/Home/background.jpg"));
+
 	if (pFormMgr != null)
-		pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, null);
+		pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, args);
 }
 
 void FormLobby::IrParaMesa3()
@@ -107,8 +114,15 @@ void FormLobby::IrParaMesa3()
 	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
 	FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
 			"FormMgr"));
+
+	Osp::Base::Collection::ArrayList* args = new Osp::Base::Collection::ArrayList();
+	args->Construct();
+	args->Add(*new Integer(1));
+	args->Add(*new Integer(25));
+	args->Add(*new String("/Home/background2.jpg"));
+
 	if (pFormMgr != null)
-		pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, null);
+		pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, args);
 }
 
 void FormLobby::IrParaMenu()
@@ -120,6 +134,9 @@ void FormLobby::IrParaMenu()
 	InfoRanking *info = new InfoRanking();
 	info->Construct(jogador->GetNome(), jogador->GetPontos(), jogador->GetMaxVitoriasConsecutivas());
 	ranking->Inserir(info);
+
+	Controlador::GetInstance()->constructed = false;
+
 
 	Frame *pFrame = Application::GetInstance()->GetAppFrame()->GetFrame();
 	FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
