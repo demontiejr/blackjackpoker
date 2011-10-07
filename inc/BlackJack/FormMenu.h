@@ -27,13 +27,19 @@ protected:
 	static const int ID_BUTTON_RANKING = 102;
 	static const int ID_BUTTON_INSTRUCOES = 103;
 	static const int ID_BUTTON_SAIR = 104;
+	//botoes do panel
+	static const int ID_BUTTON_PLAY = 201;
+	static const int ID_BUTTON_CANCEL = 202;
 
 	Osp::Ui::Controls::Button *__pButtonNovoJogo;
 	Osp::Ui::Controls::Button *__pButtonRanking;
 	Osp::Ui::Controls::Button *__pButtonInstrucoes;
 	Osp::Ui::Controls::Button *__pButtonSair;
 
-	Osp::Base::String nomeJogador;
+	Osp::Ui::Controls::Panel *__pPanelNome;
+	Osp::Ui::Controls::EditField *__pEditFieldNome;
+	Osp::Ui::Controls::Button *__pButtonPlay;
+	Osp::Ui::Controls::Button *__pButtonCancel;
 
 public:
 	virtual result OnInitializing(void);
@@ -42,7 +48,7 @@ public:
 	virtual result OnDraw(void);
 
 private:
-	void CriaJogador();
+	void CriaJogador(Osp::Base::String nomeJogador);
 
 };
 

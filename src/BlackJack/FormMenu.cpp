@@ -62,8 +62,23 @@ result FormMenu::OnInitializing(void) {
 		__pButtonSair->AddActionEventListener(*this);
 	}
 
-	//TODO pegar nome a partir da entrada do usuario
-	nomeJogador = L"Arthur";
+	//--- Panel inserir nome
+	__pPanelNome = static_cast<Panel *>(GetControl(L"IDC_PANEL_INSERIR_NOME"));
+	__pPanelNome->SetShowState(false);
+
+	__pEditFieldNome = static_cast<EditField *>(__pPanelNome->GetControl(L"IDC_EDITFIELD_NOME_JOGADOR"));
+
+	__pButtonPlay = static_cast<Button *>(__pPanelNome->GetControl(L"IDC_BUTTON_PLAY"));
+	if (__pButtonPlay != null) {
+		__pButtonPlay->SetActionId(ID_BUTTON_PLAY);
+		__pButtonPlay->AddActionEventListener(*this);
+	}
+
+	__pButtonCancel = static_cast<Button *>(__pPanelNome->GetControl(L"IDC_BUTTON_CANCEL"));
+	if (__pButtonCancel != null) {
+		__pButtonCancel->SetActionId(ID_BUTTON_CANCEL);
+		__pButtonCancel->AddActionEventListener(*this);
+	}
 
 	return r;
 }
@@ -74,7 +89,7 @@ result FormMenu::OnTerminating(void) {
 	return r;
 }
 
-void FormMenu::CriaJogador() {
+void FormMenu::CriaJogador(String nomeJogador) {
 	Controlador* controlador = Controlador::GetInstance();
 	Jogador* j = new Jogador();
 	j->Construct(nomeJogador);
@@ -89,11 +104,8 @@ void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 
 	case ID_BUTTON_NOVO_JOGO: {
 		AppLog("NOVO JOGO Button is clicked! \n");
-		CriaJogador();
-		FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
-				"FormMgr"));
-		if (pFormMgr != null)
-			pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_LOBBY, null);
+		__pPanelNome->SetShowState(true);
+		__pPanelNome->RequestRedraw(true);
 	}
 	break;
 
@@ -118,6 +130,28 @@ void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 	case ID_BUTTON_SAIR: {
 		AppLog("SAIR Button is clicked! \n");
 		Application::GetInstance()->Terminate();
+	}
+	break;
+
+	case ID_BUTTON_PLAY: {
+		AppLog("PLAY Button is clicked! \n");
+		if (__pEditFieldNome->GetText() == "") {
+			__pEditFieldNome->SetText(L"Empty");
+		} else {
+			CriaJogador(__pEditFieldNome->GetText());
+			FormMgr *pFormMgr = static_cast<FormMgr *> (pFrame->GetControl(
+							"FormMgr"));
+			if (pFormMgr != null)
+			pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_LOBBY, null);
+		}
+	}
+	break;
+
+	case ID_BUTTON_CANCEL: {
+		AppLog("CANCEL Button is clicked! \n");
+		__pPanelNome->SetShowState(false);
+		__pPanelNome->RequestRedraw(true);
+		__pEditFieldNome->SetText(L"");
 	}
 	break;
 
