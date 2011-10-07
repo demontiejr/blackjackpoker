@@ -56,27 +56,27 @@
         <layout height="30" mode="Landscape" width="118" x="58" y="210"/>
     </Button>
     <Label id="IDC_LABEL_PONTOS" parent="IDF_FORM_JOGO">
-        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Money: $0" textColor="" textSize="16" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <property BGBitmapPath="/240x400/label-dinheiro-jogo.png" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Money: $0" textColor="" textSize="16" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
         <layout height="20" mode="Portrait" width="130" x="110" y="20"/>
         <layout height="12" mode="Landscape" width="141" x="18" y="6"/>
     </Label>
     <Label id="IDC_LABEL_APOSTA" parent="IDF_FORM_JOGO">
-        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Pot: $0" textColor="" textSize="16" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <property BGBitmapPath="/240x400/label-dinheiro-jogo.png" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Pot: $0" textColor="" textSize="16" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
         <layout height="20" mode="Portrait" width="80" x="0" y="0"/>
         <layout height="12" mode="Landscape" width="141" x="38" y="26"/>
     </Label>
     <Label id="IDC_LABEL_NOME" parent="IDF_FORM_JOGO">
-        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Player Name" textColor="" textSize="16" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <property BGBitmapPath="/240x400/label-nome-jogo.png" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Player Name" textColor="" textSize="16" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
         <layout height="20" mode="Portrait" width="130" x="110" y="0"/>
         <layout height="12" mode="Landscape" width="141" x="38" y="26"/>
     </Label>
     <Label id="IDC_LABEL_PONTOS_MAO" parent="IDF_FORM_JOGO">
-        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Points: 0" textColor="" textSize="16" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
-        <layout height="20" mode="Portrait" width="80" x="110" y="40"/>
+        <property BGBitmapPath="/240x400/label-pontos-jogo.png" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Points: 0" textColor="" textSize="16" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <layout height="20" mode="Portrait" width="130" x="110" y="40"/>
         <layout height="12" mode="Landscape" width="141" x="38" y="26"/>
     </Label>
     <Label id="IDC_LABEL_PONTOS_MESA" parent="IDF_FORM_JOGO">
-        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Points: 0" textColor="" textSize="16" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <property BGBitmapPath="/240x400/label-dinheiro-jogo.png" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Points: 0" textColor="" textSize="16" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
         <layout height="20" mode="Portrait" width="80" x="0" y="40"/>
         <layout height="12" mode="Landscape" width="141" x="58" y="46"/>
     </Label>
