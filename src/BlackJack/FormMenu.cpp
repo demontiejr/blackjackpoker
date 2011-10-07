@@ -18,7 +18,6 @@ using namespace Osp::Graphics;
 
 FormMenu::FormMenu() {
 	// TODO Auto-generated constructor stub
-
 }
 
 FormMenu::~FormMenu() {
