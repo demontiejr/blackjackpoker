@@ -60,8 +60,6 @@ protected:
     Desenhadora desenhadora;
     SmartTimer* timer;
 
-    int apostaMinima;
-    int apostaMaxima;
     Osp::Base::String backgroundPath;
 
 private:
@@ -77,6 +75,7 @@ private:
 
     void InicializaLabels();
     void AtualizaInfoMesa();
+    void DesenhaFichas(Canvas* pCanvas);
 
 public:
     virtual void  OnTimerExpired(Osp::Base::Runtime::Timer &timer);
@@ -97,7 +96,7 @@ public:
 	virtual void OnFimPartida();
 	virtual void OnPagarVencedor();
 
-	void SetAtributos(Osp::Base::Integer apostaMinima, Osp::Base::Integer apostaMaxima,
+	void SetAtributos(Osp::Base::Integer tipoMesa,
 			Osp::Base::String imgPath);
 
 	int valoresApostas[5];
