@@ -85,7 +85,6 @@ void FormLobby::IrParaMesa1()
 	Osp::Base::Collection::ArrayList* args = new Osp::Base::Collection::ArrayList();
 	args->Construct();
 	args->Add(*new Integer(1));
-	args->Add(*new Integer(25));
 	args->Add(*new String("/Home/background3.jpg"));
 	if (pFormMgr != null)
 		pFormMgr->SendUserEvent(FormMgr::REQUEST_FORM_JOGO, args);
@@ -100,8 +99,7 @@ void FormLobby::IrParaMesa2()
 
 	Osp::Base::Collection::ArrayList* args = new Osp::Base::Collection::ArrayList();
 	args->Construct();
-	args->Add(*new Integer(1));
-	args->Add(*new Integer(25));
+	args->Add(*new Integer(2));
 	args->Add(*new String("/Home/background.jpg"));
 
 	if (pFormMgr != null)
@@ -117,8 +115,7 @@ void FormLobby::IrParaMesa3()
 
 	Osp::Base::Collection::ArrayList* args = new Osp::Base::Collection::ArrayList();
 	args->Construct();
-	args->Add(*new Integer(1));
-	args->Add(*new Integer(25));
+	args->Add(*new Integer(3));
 	args->Add(*new String("/Home/background2.jpg"));
 
 	if (pFormMgr != null)

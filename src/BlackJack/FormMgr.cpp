@@ -53,27 +53,15 @@ void FormMgr::SwitchToForm(RequestId requestId, Osp::Base::Collection::IList* pA
 	{
 	case REQUEST_FORM_JOGO:
 	{
-		AppLog("1");
 		FormJogo *pFormJogo = new FormJogo();
-		AppLog("2");
 		pFormJogo->Initialize();
-		AppLog("3");
-		Integer apostaMinima = *static_cast<Integer*>(pArgs->GetAt(0));
-		AppLog("4");
-		Integer apostaMaxima = *static_cast<Integer*>(pArgs->GetAt(1));
-		AppLog("5");
-		String imgPath = *static_cast<String*>(pArgs->GetAt(2));
-		AppLog("6");
-		pFormJogo->SetAtributos(apostaMinima, apostaMaxima, imgPath);
-		AppLog("7");
+		Integer tipoMesa = *static_cast<Integer*>(pArgs->GetAt(0));
+		String imgPath = *static_cast<String*>(pArgs->GetAt(1));
+		pFormJogo->SetAtributos(tipoMesa, imgPath);
 		pFrame->AddControl(*pFormJogo);
-		AppLog("8");
 		pFrame->SetCurrentForm(*pFormJogo);
-		AppLog("9");
 		pFormJogo->Draw();
-		AppLog("10");
 		pFormJogo->Show();
-		AppLog("11");
 		if (__pPreviousForm != null)
 			pFrame->RemoveControl(*__pPreviousForm);
 		__pPreviousForm = pFormJogo;
