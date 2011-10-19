@@ -6,32 +6,32 @@
 
 <Scene Bversion="1.1.0.v20100930" Dversion="20100701">
     <Form id="IDF_FORM_MENU">
-        <property BGColor="" BGColorOpacity="100" Orientation="Portrait" softKey0NormalIcon="" softKey0PressedIcon="" softKey0Text="" softKey1NormalIcon="" softKey1PressedIcon="" softKey1Text="" title="" titleAlign="ALIGN_LEFT" titleIcon=""/>
+        <property BGColor="" BGColorOpacity="100" Orientation="Automatic:2Dir" softKey0NormalIcon="" softKey0PressedIcon="" softKey0Text="" softKey1NormalIcon="" softKey1PressedIcon="" softKey1Text="" title="" titleAlign="ALIGN_LEFT" titleIcon=""/>
         <layout mode="Portrait" style="FORM_STYLE_NORMAL"/>
         <layout mode="Landscape" style="FORM_STYLE_NORMAL"/>
     </Form>
     <Panel id="IDC_PANEL_INSERIR_NOME" parent="IDF_FORM_MENU">
         <property BGColor="" BGColorOpacity="100" GroupStyle="GROUP_STYLE_NONE"/>
-        <layout height="130" mode="Portrait" width="174" x="33" y="120"/>
+        <layout height="130" mode="Portrait" width="174" x="34" y="154"/>
         <layout height="60" mode="Landscape" width="290" x="56" y="54"/>
     </Panel>
     <Button id="IDC_BUTTON_CANCEL" parent="IDC_PANEL_INSERIR_NOME">
-        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="CANCEL" vAlign="ALIGN_MIDDLE"/>
-        <layout height="30" mode="Portrait" width="69" x="10" y="85"/>
+        <property NormalBGBitmapPath="/240x400/Cancel.png" PressedBGBitmapPath="/240x400/Cancel.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
+        <layout height="30" mode="Portrait" width="69" x="10" y="89"/>
         <layout height="51" mode="Landscape" width="39" x="81" y="29"/>
     </Button>
     <Button id="IDC_BUTTON_PLAY" parent="IDC_PANEL_INSERIR_NOME">
-        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="PLAY" vAlign="ALIGN_MIDDLE"/>
-        <layout height="30" mode="Portrait" width="69" x="99" y="85"/>
+        <property NormalBGBitmapPath="/240x400/Play.png" PressedBGBitmapPath="/240x400/Play.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
+        <layout height="30" mode="Portrait" width="69" x="96" y="89"/>
         <layout height="51" mode="Landscape" width="39" x="61" y="9"/>
     </Button>
     <EditField id="IDC_EDITFIELD_NOME_JOGADOR" parent="IDC_PANEL_INSERIR_NOME">
         <property GroupStyle="GROUP_STYLE_NONE" InputStyle="INPUT_STYLE_FULLSCREEN" KeypadEnabled="TRUE" LimitLength="10" bShowTitleText="FALSE" guideText="" text="" titleText=""/>
-        <layout height="40" mode="Portrait" style="EDIT_FIELD_STYLE_NORMAL" width="159" x="9" y="38"/>
+        <layout height="40" mode="Portrait" style="EDIT_FIELD_STYLE_NORMAL" width="159" x="9" y="44"/>
         <layout height="93" mode="Landscape" style="EDIT_FIELD_STYLE_NORMAL" width="46" x="5" y="0"/>
     </EditField>
     <Label id="IDC_LABEL2" parent="IDC_PANEL_INSERIR_NOME">
-        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Enter your name" textColor="" textSize="18" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <property BGBitmapPath="/240x400/EnterYourName.png" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="" textColor="" textSize="18" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
         <layout height="30" mode="Portrait" width="153" x="12" y="5"/>
         <layout height="42" mode="Landscape" width="74" x="20" y="13"/>
     </Label>

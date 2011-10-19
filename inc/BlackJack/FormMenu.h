@@ -16,6 +16,7 @@
 #define JOGO 1
 #define RANKING 2
 #define INSTRUCOES 3
+#define PANEL 4
 
 class FormMenu:
 	public Osp::Ui::Controls::Form,
