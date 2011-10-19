@@ -39,6 +39,7 @@ void Desenhadora::DesenhaBackground(Canvas* pCanvas, String imgPath)
 	decoder.Construct();
 	Bitmap* img = decoder.DecodeN(imgPath, BITMAP_PIXEL_FORMAT_ARGB8888);
 	pCanvas->DrawBitmap(Point(0,0), *img);
+	delete img;//tinha leak aqui...
 }
 
 Desenhadora::~Desenhadora() {
