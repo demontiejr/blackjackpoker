@@ -166,11 +166,30 @@ bool Controlador::Empate() {
 	return (jogador->GetMao()->GetValor() == mesa->GetMao()->GetValor());
 }
 
+int Controlador::CalculaBonus()
+{
+	int qtdCartasBonus = 0;
+
+	for (int i = 0; i < jogador->GetMao()->NumeroCartas(); ++i) {
+		if(jogador->GetMao()->GetCarta(i)->IsBonus()){
+			qtdCartasBonus++;
+		}
+	}
+
+	//o jogador ganha 25% do valor total da aposta por cada carta bonus.
+	int valorBonus = qtdCartasBonus * valorApostaAcumulado * .25;
+
+    return valorBonus;
+}
+
 void Controlador::PagarVencedor() {
 	status = PAGANDO;
 
+	int valorBonus = 0;
+
 	if (JogadorGanhou()) {
-		jogador->Receber(valorApostaAcumulado);
+		valorBonus = CalculaBonus();
+		jogador->Receber(valorApostaAcumulado + valorBonus);
 	} else if (Empate()) {
 		jogador->Receber(valorApostaAcumulado / 2);
 	}

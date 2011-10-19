@@ -77,6 +77,7 @@ public:
 private:
 
 	static Controlador* controlador;
+    int CalculaBonus();
 	Controlador();
 };
 
