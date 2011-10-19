@@ -104,6 +104,7 @@ void FormMenu::CriaJogador(String nomeJogador) {
 
 void FormMenu::MostraPanel() {
 	__pPanelNome->SetShowState(true);
+	__pPanelNome->SetBackgroundColor(Osp::Graphics::Color(0xFF, 0x00, 0xFF));
 	__pButtonNovoJogo->SetEnabled(false);
 	__pButtonRanking->SetEnabled(false);
 	__pButtonInstrucoes->SetEnabled(false);
@@ -121,7 +122,7 @@ void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 	switch (actionId) {
 
 	case ID_BUTTON_NOVO_JOGO: {
-		fundo = JOGO;
+		fundo = PANEL;
 		RequestRedraw(true);
 		AppLog("NOVO JOGO Button is clicked! \n");
 		MostraPanel();
@@ -173,6 +174,7 @@ void FormMenu::OnActionPerformed(const Osp::Ui::Control& source, int actionId) {
 
 	case ID_BUTTON_CANCEL: {
 		AppLog("CANCEL Button is clicked! \n");
+		fundo = NORMAL;
 		EscondePanel();
 		__pEditFieldNome->SetText(L"");
 		RequestRedraw(true);
@@ -204,6 +206,10 @@ result FormMenu::OnDraw(void) {
 	} else if (fundo == INSTRUCOES) {
 		pBitmap = pImage->DecodeN(
 				"/Home/imagensblackjack/background-menu2-instrucoes.png",
+				BITMAP_PIXEL_FORMAT_ARGB8888);
+	} else if (fundo == PANEL) {
+		pBitmap = pImage->DecodeN(
+				"/Home/imagensblackjack/background-menu3.png",
 				BITMAP_PIXEL_FORMAT_ARGB8888);
 	} else {
 		pBitmap = pImage->DecodeN("/Home/imagensblackjack/background-menu.png",
