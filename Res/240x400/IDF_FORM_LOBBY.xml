@@ -16,17 +16,17 @@
         <layout height="42" mode="Landscape" width="185" x="50" y="18"/>
     </Label>
     <Button id="IDC_BUTTON_MESA1" parent="IDF_FORM_LOBBY">
-        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="Dealer 1" vAlign="ALIGN_MIDDLE"/>
+        <property NormalBGBitmapPath="/240x400/Dealer1.png" PressedBGBitmapPath="/240x400/Dealer1.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
         <layout height="32" mode="Portrait" width="97" x="13" y="129"/>
         <layout height="60" mode="Landscape" width="218" x="16" y="12"/>
     </Button>
     <Button id="IDC_BUTTON_MESA2" parent="IDF_FORM_LOBBY">
-        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="Dealer 2" vAlign="ALIGN_MIDDLE"/>
+        <property NormalBGBitmapPath="/240x400/Dealer2.png" PressedBGBitmapPath="/240x400/Dealer2.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
         <layout height="32" mode="Portrait" width="97" x="130" y="129"/>
         <layout height="60" mode="Landscape" width="218" x="36" y="32"/>
     </Button>
     <Button id="IDC_BUTTON_MESA3" parent="IDF_FORM_LOBBY">
-        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="Dealer 3" vAlign="ALIGN_MIDDLE"/>
+        <property NormalBGBitmapPath="/240x400/Dealer3.png" PressedBGBitmapPath="/240x400/Dealer3.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
         <layout height="32" mode="Portrait" width="97" x="71" y="194"/>
         <layout height="60" mode="Landscape" width="218" x="36" y="32"/>
     </Button>
@@ -41,7 +41,7 @@
         <layout height="42" mode="Landscape" width="333" x="55" y="26"/>
     </Label>
     <Button id="IDC_BUTTON_VOLTAR" parent="IDF_FORM_LOBBY">
-        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="Exit" vAlign="ALIGN_MIDDLE"/>
+        <property NormalBGBitmapPath="/240x400/Exit.png" PressedBGBitmapPath="/240x400/Exit.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
         <layout height="35" mode="Portrait" width="70" x="170" y="365"/>
         <layout height="24" mode="Landscape" width="116" x="283" y="216"/>
     </Button>
