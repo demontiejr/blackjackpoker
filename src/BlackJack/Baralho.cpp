@@ -37,12 +37,20 @@ Carta* Baralho::CriaCarta(int numero, int naipe) {
 }
 
 Carta* Baralho::DarCarta() {
-	if (this->topo <= 0)
-		return NULL;
+	if (this->topo <= 0){
+		AppLog("Deu carta nula.");
+		return null;
+	}
+
 	Carta* cartaRetirada = cartas[--this->topo];
+
+	if(cartaRetirada == null){
+		AppLog("Manipulando carta nula.");
+	}
 
 	//decide se eh bonus
 	int bonusNumber = Math::Rand() % 200;
+
 	cartaRetirada->SetBonus(bonusNumber <= 10);
 
 	return cartaRetirada;
