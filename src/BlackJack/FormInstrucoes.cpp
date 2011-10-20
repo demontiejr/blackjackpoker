@@ -116,8 +116,9 @@ void FormInstrucoes::OnActionPerformed(const Osp::Ui::Control& source,
 }
 
 void FormInstrucoes::AtualizaBotoes() {
+	AppLog("Pagina atual: %d/%d", paginaAtual, paginasInstrucoes->GetCount()-1);
 	__pButtonVoltarPagina->SetEnabled(paginaAtual > 0);
-	__pButtonVoltarPagina->SetEnabled(paginaAtual < paginasInstrucoes->GetCount());
+	__pButtonAvancarPagina->SetEnabled(paginaAtual < (paginasInstrucoes->GetCount()-1));
 }
 
 result FormInstrucoes::OnDraw(void) {
@@ -134,10 +135,10 @@ result FormInstrucoes::OnDraw(void) {
 //	AddControl(*pLabel);
 //	delete pImage;
 //	delete pBitmap;
-	__pButtonVoltar->RequestRedraw(true);
-//
-	__pButtonVoltarPagina->RequestRedraw(true);
-	__pButtonAvancarPagina->RequestRedraw(true);
+//	__pButtonVoltar->RequestRedraw(true);
+////
+//	__pButtonVoltarPagina->RequestRedraw(true);
+//	__pButtonAvancarPagina->RequestRedraw(true);
 
 	return E_SUCCESS;
 }
