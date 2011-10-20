@@ -42,7 +42,7 @@ result FormInstrucoes::OnInitializing(void) {
 	{
 		__pButtonVoltarPagina->SetActionId(ID_BUTTON_VOLTAR_PAGINA);
 		__pButtonVoltarPagina->AddActionEventListener(*this);
-		__pButtonVoltarPagina->SetEnabled(false);
+		__pButtonVoltarPagina->SetShowState(false);
 	}
 
 	__pButtonAvancarPagina = static_cast<Button *> (GetControl(L"IDC_BUTTON_AVANCAR_PAGINA"));
@@ -63,6 +63,7 @@ result FormInstrucoes::OnInitializing(void) {
 }
 
 void FormInstrucoes::AdicionaPaginasInstrucoes() {
+	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/background_instr_copy.png"));
 	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/instrucao01.png"));
 	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/instrucao02.png"));
 	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/instrucao03.png"));
@@ -90,22 +91,12 @@ void FormInstrucoes::OnActionPerformed(const Osp::Ui::Control& source,
 	case ID_BUTTON_VOLTAR_PAGINA: {
 		this->paginaAtual--;
 		AtualizaBotoes();
-		Canvas* pCanvas = GetCanvasN();
-		if (pCanvas != null) {
-			desenhadora.DesenhaBackground(pCanvas,
-					*static_cast<String*>(paginasInstrucoes->GetAt(paginaAtual)));
-		}
 	}
 		break;
 
 	case ID_BUTTON_AVANCAR_PAGINA: {
 		this->paginaAtual++;
 		AtualizaBotoes();
-		Canvas* pCanvas = GetCanvasN();
-		if (pCanvas != null) {
-			desenhadora.DesenhaBackground(pCanvas,
-					*static_cast<String*>(paginasInstrucoes->GetAt(paginaAtual)));
-		}
 	}
 			break;
 
@@ -113,15 +104,26 @@ void FormInstrucoes::OnActionPerformed(const Osp::Ui::Control& source,
 		break;
 	}
 
+	RequestRedraw(true);
+
 }
 
 void FormInstrucoes::AtualizaBotoes() {
 	AppLog("Pagina atual: %d/%d", paginaAtual, paginasInstrucoes->GetCount()-1);
-	__pButtonVoltarPagina->SetEnabled(paginaAtual > 0);
-	__pButtonAvancarPagina->SetEnabled(paginaAtual < (paginasInstrucoes->GetCount()-1));
+	__pButtonVoltarPagina->SetShowState(paginaAtual > 0);
+	__pButtonAvancarPagina->SetShowState(paginaAtual < (paginasInstrucoes->GetCount()-1));
 }
 
 result FormInstrucoes::OnDraw(void) {
+	Canvas* pCanvas = GetCanvasN();
+	if (pCanvas != null) {
+		desenhadora.DesenhaBackground(pCanvas,
+				*static_cast<String*>(paginasInstrucoes->GetAt(paginaAtual)));
+
+		pCanvas->Show();
+
+		delete pCanvas;
+	}
 //	Image *pImage = new Image();
 //	result r = pImage->Construct();
 //	if (IsFailed(r))

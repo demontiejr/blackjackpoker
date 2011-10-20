@@ -10,11 +10,6 @@
         <layout mode="Portrait" style="FORM_STYLE_NORMAL"/>
         <layout mode="Landscape" style="FORM_STYLE_NORMAL"/>
     </Form>
-    <Label id="IDC_LABEL1" parent="IDF_FORM_INSTRUCOES">
-        <property BGBitmapPath="/240x400/background_instr_copy.png" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="" textColor="" textSize="22" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
-        <layout height="400" mode="Portrait" width="240" x="0" y="0"/>
-        <layout height="30" mode="Landscape" width="101" x="33" y="48"/>
-    </Label>
     <Button id="IDC_BUTTON_VOLTAR" parent="IDF_FORM_INSTRUCOES">
         <property NormalBGBitmapPath="/240x400/bt-back.png" PressedBGBitmapPath="/240x400/bt-back-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
         <layout height="40" mode="Portrait" width="90" x="76" y="336"/>
