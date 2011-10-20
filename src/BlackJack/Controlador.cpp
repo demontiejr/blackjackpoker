@@ -52,6 +52,7 @@ void Controlador::JogadorPuxaCarta() {
 }
 
 void Controlador::JogadorDobra() {
+	jogador->Apostar(valorApostaAcumulado/2);
 	jogador->PuxarCarta();
 	valorApostaAcumulado *= 2;
 
