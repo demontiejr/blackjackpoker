@@ -33,11 +33,40 @@ result FormInstrucoes::OnInitializing(void) {
 	__pButtonVoltar = static_cast<Button *> (GetControl(L"IDC_BUTTON_VOLTAR"));
 	if (__pButtonVoltar != null)
 	{
-		__pButtonVoltar ->SetActionId(ID_BUTTON_VOLTAR);
-		__pButtonVoltar ->AddActionEventListener(*this);
+		__pButtonVoltar->SetActionId(ID_BUTTON_VOLTAR);
+		__pButtonVoltar->AddActionEventListener(*this);
 	}
 
+	__pButtonVoltarPagina = static_cast<Button *> (GetControl(L"IDC_BUTTON_VOLTAR_PAGINA"));
+	if (__pButtonVoltarPagina != null)
+	{
+		__pButtonVoltarPagina->SetActionId(ID_BUTTON_VOLTAR_PAGINA);
+		__pButtonVoltarPagina->AddActionEventListener(*this);
+		__pButtonVoltarPagina->SetEnabled(false);
+	}
+
+	__pButtonAvancarPagina = static_cast<Button *> (GetControl(L"IDC_BUTTON_AVANCAR_PAGINA"));
+	if (__pButtonAvancarPagina != null)
+	{
+		__pButtonAvancarPagina->SetActionId(ID_BUTTON_AVANCAR_PAGINA);
+		__pButtonAvancarPagina->AddActionEventListener(*this);
+	}
+
+	this->paginasInstrucoes = new Osp::Base::Collection::ArrayList();
+	this->paginasInstrucoes->Construct();
+	this->paginaAtual = 0;
+	AdicionaPaginasInstrucoes();
+
+	desenhadora.Construct();
+
 	return r;
+}
+
+void FormInstrucoes::AdicionaPaginasInstrucoes() {
+	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/instrucao01.png"));
+	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/instrucao02.png"));
+	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/instrucao03.png"));
+	AppLog("adicionou paginas de instrucoes");
 }
 
 result FormInstrucoes::OnTerminating(void) {
@@ -58,9 +87,37 @@ void FormInstrucoes::OnActionPerformed(const Osp::Ui::Control& source,
 	}
 		break;
 
+	case ID_BUTTON_VOLTAR_PAGINA: {
+		this->paginaAtual--;
+		AtualizaBotoes();
+		Canvas* pCanvas = GetCanvasN();
+		if (pCanvas != null) {
+			desenhadora.DesenhaBackground(pCanvas,
+					*static_cast<String*>(paginasInstrucoes->GetAt(paginaAtual)));
+		}
+	}
+		break;
+
+	case ID_BUTTON_AVANCAR_PAGINA: {
+		this->paginaAtual++;
+		AtualizaBotoes();
+		Canvas* pCanvas = GetCanvasN();
+		if (pCanvas != null) {
+			desenhadora.DesenhaBackground(pCanvas,
+					*static_cast<String*>(paginasInstrucoes->GetAt(paginaAtual)));
+		}
+	}
+			break;
+
 	default:
 		break;
 	}
+
+}
+
+void FormInstrucoes::AtualizaBotoes() {
+	__pButtonVoltarPagina->SetEnabled(paginaAtual > 0);
+	__pButtonVoltarPagina->SetEnabled(paginaAtual < paginasInstrucoes->GetCount());
 }
 
 result FormInstrucoes::OnDraw(void) {
@@ -79,5 +136,8 @@ result FormInstrucoes::OnDraw(void) {
 //	delete pBitmap;
 	__pButtonVoltar->RequestRedraw(true);
 //
+	__pButtonVoltarPagina->RequestRedraw(true);
+	__pButtonAvancarPagina->RequestRedraw(true);
+
 	return E_SUCCESS;
 }
