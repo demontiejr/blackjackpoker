@@ -71,6 +71,9 @@ result FormMenu::OnInitializing(void) {
 	__pPanelNome->SetShowState(false);
 
 	__pEditFieldNome = static_cast<EditField *>(__pPanelNome->GetControl(L"IDC_EDITFIELD_NOME_JOGADOR"));
+	if (__pEditFieldNome != null) {
+		__pEditFieldNome->SetText(L"Player");
+	}
 
 	__pButtonPlay = static_cast<Button *>(__pPanelNome->GetControl(L"IDC_BUTTON_PLAY"));
 	if (__pButtonPlay != null) {
