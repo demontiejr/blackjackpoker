@@ -166,7 +166,8 @@ void FormJogo::IrParaLobby() {
 void FormJogo::AtualizaBotoesAcoes() {
 	bool cond = (controlador->GetJogador()->GetMao()->GetValor() >= 21);
 	__pButtonPuxar->SetEnabled(!cond);
-	__pButtonDobrar->SetEnabled(!cond);
+	bool temPontosParaDobrar = controlador->GetJogador()->GetPontos() >= controlador->GetValorPote()/2;
+	__pButtonDobrar->SetEnabled(!cond && temPontosParaDobrar);
 }
 
 void FormJogo::AtualizaInfoMesa() {
