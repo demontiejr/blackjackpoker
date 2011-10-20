@@ -35,6 +35,7 @@ void Desenhadora::DesenhaBackground(Canvas* pCanvas)
 
 void Desenhadora::DesenhaBackground(Canvas* pCanvas, String imgPath)
 {
+	AppLog("entrou no DesenhaBackground");
 	Image decoder;
 	decoder.Construct();
 	Bitmap* img = decoder.DecodeN(imgPath, BITMAP_PIXEL_FORMAT_ARGB8888);
