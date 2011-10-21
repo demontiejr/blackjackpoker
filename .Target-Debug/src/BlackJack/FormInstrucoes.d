@@ -228,6 +228,9 @@ src/BlackJack/FormInstrucoes.d src/BlackJack/FormInstrucoes.o: \
  C:/bada/1.1.0b1/include/FMediaIBasicPlayerInfoEventListener.h \
  C:/bada/1.1.0b1/include/FMediaCapability.h \
  C:/bada/1.1.0b1/include/FMediaCapabilityCommon.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Desenhadora.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mao.h \
+ C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Carta.h \
  C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMgr.h \
  C:/bada/1.1.0b1/include/FApp.h C:/bada/1.1.0b1/include/FAppApplication.h \
  C:/bada/1.1.0b1/include/FSysBattery.h \
@@ -720,6 +723,12 @@ C:/bada/1.1.0b1/include/FMediaIBasicPlayerInfoEventListener.h:
 C:/bada/1.1.0b1/include/FMediaCapability.h:
 
 C:/bada/1.1.0b1/include/FMediaCapabilityCommon.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Desenhadora.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Mao.h:
+
+C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/Carta.h:
 
 C:/bada/1.1.0b1/IDE/workspace/blackjackpoker/inc/BlackJack/FormMgr.h:
 

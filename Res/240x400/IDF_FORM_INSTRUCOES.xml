@@ -12,17 +12,17 @@
     </Form>
     <Button id="IDC_BUTTON_VOLTAR" parent="IDF_FORM_INSTRUCOES">
         <property NormalBGBitmapPath="/240x400/bt-back-normal.png" PressedBGBitmapPath="/240x400/bt-back-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
-        <layout height="33" mode="Portrait" width="93" x="76" y="340"/>
+        <layout height="40" mode="Portrait" width="90" x="76" y="350"/>
         <layout height="24" mode="Landscape" width="118" x="150" y="102"/>
     </Button>
     <Button id="IDC_BUTTON_VOLTAR_PAGINA" parent="IDF_FORM_INSTRUCOES">
         <property NormalBGBitmapPath="/240x400/bt-prev-normal.png" PressedBGBitmapPath="/240x400/bt-prev-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
-        <layout height="43" mode="Portrait" width="33" x="20" y="335"/>
+        <layout height="40" mode="Portrait" width="30" x="20" y="350"/>
         <layout height="24" mode="Landscape" width="166" x="35" y="208"/>
     </Button>
     <Button id="IDC_BUTTON_AVANCAR_PAGINA" parent="IDF_FORM_INSTRUCOES">
         <property NormalBGBitmapPath="/240x400/bt-next-normal.png" PressedBGBitmapPath="/240x400/bt-next-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
-        <layout height="43" mode="Portrait" width="33" x="190" y="335"/>
+        <layout height="40" mode="Portrait" width="30" x="190" y="350"/>
         <layout height="24" mode="Landscape" width="166" x="55" y="216"/>
     </Button>
 </Scene>

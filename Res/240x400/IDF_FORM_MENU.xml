@@ -17,12 +17,12 @@
     </Panel>
     <Button id="IDC_BUTTON_CANCEL" parent="IDC_PANEL_INSERIR_NOME">
         <property NormalBGBitmapPath="/240x400/bt-cancel-normal.png" PressedBGBitmapPath="/240x400/bt-cancel-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
-        <layout height="31" mode="Portrait" width="72" x="10" y="89"/>
+        <layout height="30" mode="Portrait" width="70" x="10" y="89"/>
         <layout height="51" mode="Landscape" width="39" x="81" y="29"/>
     </Button>
     <Button id="IDC_BUTTON_PLAY" parent="IDC_PANEL_INSERIR_NOME">
         <property NormalBGBitmapPath="/240x400/bt-play-normal.png" PressedBGBitmapPath="/240x400/bt-play-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
-        <layout height="31" mode="Portrait" width="72" x="96" y="89"/>
+        <layout height="30" mode="Portrait" width="70" x="96" y="89"/>
         <layout height="51" mode="Landscape" width="39" x="61" y="9"/>
     </Button>
     <EditField id="IDC_EDITFIELD_NOME_JOGADOR" parent="IDC_PANEL_INSERIR_NOME">

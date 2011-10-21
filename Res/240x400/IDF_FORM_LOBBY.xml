@@ -17,17 +17,17 @@
     </Label>
     <Button id="IDC_BUTTON_MESA1" parent="IDF_FORM_LOBBY">
         <property NormalBGBitmapPath="/240x400/bt-dealer1-normal.png" PressedBGBitmapPath="/240x400/bt-dealer1-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
-        <layout height="51" mode="Portrait" width="113" x="9" y="129"/>
+        <layout height="50" mode="Portrait" width="110" x="10" y="129"/>
         <layout height="60" mode="Landscape" width="218" x="16" y="12"/>
     </Button>
     <Button id="IDC_BUTTON_MESA2" parent="IDF_FORM_LOBBY">
         <property NormalBGBitmapPath="/240x400/bt-dealer2-normal.png" PressedBGBitmapPath="/240x400/bt-dealer2-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
-        <layout height="51" mode="Portrait" width="110" x="130" y="129"/>
+        <layout height="50" mode="Portrait" width="110" x="130" y="129"/>
         <layout height="60" mode="Landscape" width="218" x="36" y="32"/>
     </Button>
     <Button id="IDC_BUTTON_MESA3" parent="IDF_FORM_LOBBY">
         <property NormalBGBitmapPath="/240x400/bt-dealer3-normal.png" PressedBGBitmapPath="/240x400/bt-dealer3-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
-        <layout height="51" mode="Portrait" width="113" x="71" y="194"/>
+        <layout height="50" mode="Portrait" width="110" x="70" y="190"/>
         <layout height="60" mode="Landscape" width="218" x="36" y="32"/>
     </Button>
     <Label id="IDC_LABEL_NOME" parent="IDF_FORM_LOBBY">
