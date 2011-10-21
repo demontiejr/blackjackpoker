@@ -11,8 +11,8 @@
         <layout mode="Landscape" style="FORM_STYLE_NORMAL"/>
     </Form>
     <Button id="IDC_BUTTON_LOBBY" parent="IDF_FORM_JOGO">
-        <property NormalBGBitmapPath="/240x400/GoToLobby.png" PressedBGBitmapPath="/240x400/GoToLobby.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
-        <layout height="40" mode="Portrait" width="100" x="10" y="203"/>
+        <property NormalBGBitmapPath="/240x400/bt-lobby-normal.png" PressedBGBitmapPath="/240x400/bt-lobby-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
+        <layout height="43" mode="Portrait" width="111" x="10" y="203"/>
         <layout height="24" mode="Landscape" width="168" x="33" y="120"/>
     </Button>
     <Button id="IDC_BUTTON_APOSTA1" parent="IDF_FORM_JOGO">
@@ -41,17 +41,17 @@
         <layout height="24" mode="Landscape" width="51" x="38" y="122"/>
     </Button>
     <Button id="IDC_BUTTON_PARAR" parent="IDF_FORM_JOGO">
-        <property NormalBGBitmapPath="/240x400/Stand.png" PressedBGBitmapPath="/240x400/Stand.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
+        <property NormalBGBitmapPath="/240x400/bt-stand-normal.png" PressedBGBitmapPath="/240x400/bt-stand-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
         <layout height="40" mode="Portrait" width="70" x="10" y="340"/>
         <layout height="30" mode="Landscape" width="118" x="18" y="204"/>
     </Button>
     <Button id="IDC_BUTTON_PUXAR" parent="IDF_FORM_JOGO">
-        <property NormalBGBitmapPath="/240x400/Hit.png" PressedBGBitmapPath="/240x400/Hit.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
+        <property NormalBGBitmapPath="/240x400/bt-hit-normal.png" PressedBGBitmapPath="/240x400/bt-hit-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
         <layout height="40" mode="Portrait" width="70" x="160" y="340"/>
         <layout height="30" mode="Landscape" width="118" x="38" y="210"/>
     </Button>
     <Button id="IDC_BUTTON_DOBRAR" parent="IDF_FORM_JOGO">
-        <property NormalBGBitmapPath="/240x400/Double.png" PressedBGBitmapPath="/240x400/Double.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
+        <property NormalBGBitmapPath="/240x400/bt-double-normal.png" PressedBGBitmapPath="/240x400/bt-double-pressed.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
         <layout height="40" mode="Portrait" width="70" x="85" y="340"/>
         <layout height="30" mode="Landscape" width="118" x="58" y="210"/>
     </Button>
