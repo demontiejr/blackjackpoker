@@ -66,6 +66,8 @@ void FormInstrucoes::AdicionaPaginasInstrucoes() {
 	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/background1.png"));
 	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/background2.png"));
 	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/background3.png"));
+	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/background4.png"));
+	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/background5.png"));
 	AppLog("adicionou paginas de instrucoes");
 }
 
