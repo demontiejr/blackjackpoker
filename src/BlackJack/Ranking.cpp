@@ -140,9 +140,6 @@ void Ranking::Inserir(InfoRanking *info)
 	r = pStatement->BindInt(1, info->GetPontos());
 	if(IsFailed(r)) goto CATCH;
 
-	r = pStatement->BindInt(2, info->GetVitorias());
-	if(IsFailed(r)) goto CATCH;
-
 	bancoRanking.ExecuteStatementN(*pStatement);
 	r = bancoRanking.CommitTransaction();
 
