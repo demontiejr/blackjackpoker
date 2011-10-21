@@ -47,6 +47,9 @@ result FormRanking::OnInitializing(void) {
 		__pButtonVoltar->AddActionEventListener(*this);
 	}
 
+	__pLabelRanking = static_cast<Label *>(GetControl(L"IDC_LABEL_RANKING"));
+	__pLabelNomes = static_cast<Label *>(GetControl(L"IDC_LABEL_NOMES"));
+
 	//Criando lista do ranking
 	__pLabelPosicao1 = static_cast<Label *>(GetControl(L"IDC_LABEL_POSICAO1"));
 	__pLabelPosicao2 = static_cast<Label *>(GetControl(L"IDC_LABEL_POSICAO2"));
@@ -125,6 +128,9 @@ result FormRanking::OnDraw(void) {
 	AddControl(*pLabel);
 	delete pImage;
 	delete pBitmap;
+	__pLabelRanking->RequestRedraw(true);
+	__pLabelNomes->RequestRedraw(true);
+
 	__pButtonLimpar->RequestRedraw(true);
 	__pButtonVoltar->RequestRedraw(true);
 	RedesenhaLabels();

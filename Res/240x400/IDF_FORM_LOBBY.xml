@@ -41,7 +41,7 @@
         <layout height="42" mode="Landscape" width="333" x="55" y="26"/>
     </Label>
     <Button id="IDC_BUTTON_VOLTAR" parent="IDF_FORM_LOBBY">
-        <property NormalBGBitmapPath="/240x400/Exit.png" PressedBGBitmapPath="/240x400/Exit.png" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
+        <property NormalBGBitmapPath="" PressedBGBitmapPath="" disableTextColor="" hAlign="ALIGN_CENTER" normalTextColor="" pressedTextColor="" text="" vAlign="ALIGN_MIDDLE"/>
         <layout height="35" mode="Portrait" width="70" x="170" y="365"/>
         <layout height="24" mode="Landscape" width="116" x="283" y="216"/>
     </Button>
