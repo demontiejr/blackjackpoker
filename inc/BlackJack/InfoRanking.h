@@ -18,7 +18,6 @@ public:
 	void Construct(String nome, int pontuacao, int vitorias);
 	String GetNome();
 	int GetPontos();
-	int GetVitorias();
 	String ToString();
 
 	virtual ~InfoRanking();
@@ -26,7 +25,6 @@ public:
 protected:
 	String nome;
 	int pontuacao;
-	int vitorias;
 };
 
 #endif /* INFORANKING_H_ */
