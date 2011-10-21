@@ -8,7 +8,8 @@
 #include "BlackJack/InfoRanking.h"
 
 InfoRanking::InfoRanking() {
-	this->nome = "       -      ";
+	this->nome = "";
+	nome.Append("       -");
 	this->pontuacao = 0;
 	this->vitorias = 0;
 }
@@ -42,14 +43,13 @@ int InfoRanking::GetPontos() {
 String InfoRanking::ToString() {
 	String result = nome;
 
-	//int length = sizeof(nome);
-	//for (int i = length; i < 15; i++){
-	//	result.Append(" ");
-	//}
+	int length = result.GetLength();
+	for (int i = length; i <= 15; i++){
+		result.Append(" ");
+	}
 
-	result.Append("           ");
 	result.Append(this->pontuacao);
-	result.Append("             ");
+	result.Append("              ");
 	result.Append(this->vitorias);
 	return result;
 }
