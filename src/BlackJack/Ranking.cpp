@@ -114,6 +114,7 @@ InfoRanking *Ranking::GetInfoPorPosicaoInserir(int posicao)
 
 void Ranking::Inserir(InfoRanking *info)
 {
+
 	result r = E_SUCCESS;
 
 	DbStatement* pStatement;
@@ -142,6 +143,8 @@ void Ranking::Inserir(InfoRanking *info)
 
 	bancoRanking.ExecuteStatementN(*pStatement);
 	r = bancoRanking.CommitTransaction();
+
+	AppLog("Inserindo no Ranking");
 
 	delete pStatement;
 

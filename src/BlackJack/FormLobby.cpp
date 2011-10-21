@@ -170,18 +170,23 @@ result FormLobby::OnDraw(void) {
 	Bitmap *pBitmap = pImage->DecodeN("/Home/imagensblackjack/background.jpg",
 			BITMAP_PIXEL_FORMAT_ARGB8888);
 
-	Label *pLabel = new Label();
-	pLabel->Construct(Rectangle(0, 0, 240, 400), null);
-	pLabel->SetBackgroundBitmap(*pBitmap);
-	AddControl(*pLabel);
+	Canvas* pCanvas = GetCanvasN();
+
+	if(pCanvas != null){
+		pCanvas->DrawBitmap(Point(0, 0), *pBitmap);
+
+		delete pCanvas;
+	}
+
 	delete pImage;
 	delete pBitmap;
-	__pButtonMesa1->RequestRedraw(true);
-	__pButtonMesa2->RequestRedraw(true);
-	__pButtonMesa3->RequestRedraw(true);
-	__pButtonVoltar->RequestRedraw(true);
-	__pLabelNome->RequestRedraw(true);
-	__pLabelDinheiro->RequestRedraw(true);
+
+//	__pButtonMesa1->RequestRedraw(true);
+//	__pButtonMesa2->RequestRedraw(true);
+//	__pButtonMesa3->RequestRedraw(true);
+//	__pButtonVoltar->RequestRedraw(true);
+//	__pLabelNome->RequestRedraw(true);
+//	__pLabelDinheiro->RequestRedraw(true);
 
 	return r;
 }
