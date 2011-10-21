@@ -10,7 +10,7 @@
         <layout mode="Portrait" style="FORM_STYLE_NORMAL"/>
         <layout mode="Landscape" style="FORM_STYLE_NORMAL"/>
     </Form>
-    <Label id="IDC_LABEL1" parent="IDF_FORM_RANKING">
+    <Label id="IDC_LABEL_RANKING" parent="IDF_FORM_RANKING">
         <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="RANKING" textColor="" textSize="22" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
         <layout height="31" mode="Portrait" width="101" x="70" y="10"/>
         <layout height="24" mode="Landscape" width="218" x="100" y="6"/>
@@ -25,8 +25,8 @@
         <layout height="41" mode="Portrait" width="91" x="132" y="350"/>
         <layout height="24" mode="Landscape" width="143" x="220" y="210"/>
     </Button>
-    <Label id="IDC_LABEL2" parent="IDF_FORM_RANKING">
-        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Nome   Pontos  Vitorias" textColor="" textSize="20" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+    <Label id="IDC_LABEL_NOMES" parent="IDF_FORM_RANKING">
+        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Nome       Pontos      Vitorias" textColor="" textSize="20" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
         <layout height="31" mode="Portrait" width="221" x="10" y="50"/>
         <layout height="18" mode="Landscape" width="315" x="50" y="30"/>
     </Label>

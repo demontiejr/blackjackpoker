@@ -30,6 +30,9 @@ protected:
 	Osp::Ui::Controls::Button *__pButtonLimpar;
 	Osp::Ui::Controls::Button *__pButtonVoltar;
 
+	Osp::Ui::Controls::Label *__pLabelRanking;
+	Osp::Ui::Controls::Label *__pLabelNomes;
+
 	Osp::Ui::Controls::Label *__pLabelPosicao1;
 	Osp::Ui::Controls::Label *__pLabelPosicao2;
 	Osp::Ui::Controls::Label *__pLabelPosicao3;
