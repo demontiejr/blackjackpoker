@@ -26,7 +26,7 @@
         <layout height="24" mode="Landscape" width="143" x="220" y="210"/>
     </Button>
     <Label id="IDC_LABEL_NOMES" parent="IDF_FORM_RANKING">
-        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="Nome       Pontos      Vitorias" textColor="" textSize="20" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <property BGBitmapPath="" BGColor="" BGColorOpacity="100" hAlign="ALIGN_LEFT" text="     Nome                   Pontos " textColor="" textSize="20" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
         <layout height="31" mode="Portrait" width="221" x="10" y="50"/>
         <layout height="18" mode="Landscape" width="315" x="50" y="30"/>
     </Label>
