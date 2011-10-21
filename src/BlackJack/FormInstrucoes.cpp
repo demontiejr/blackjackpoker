@@ -63,10 +63,9 @@ result FormInstrucoes::OnInitializing(void) {
 }
 
 void FormInstrucoes::AdicionaPaginasInstrucoes() {
-	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/background_instr_copy.png"));
-	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/instrucao01.png"));
-	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/instrucao02.png"));
-	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/instrucao03.png"));
+	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/background1.png"));
+	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/background2.png"));
+	paginasInstrucoes->Add(*new String(L"/Home/instrucoes/background3.png"));
 	AppLog("adicionou paginas de instrucoes");
 }
 
@@ -124,23 +123,6 @@ result FormInstrucoes::OnDraw(void) {
 
 		delete pCanvas;
 	}
-//	Image *pImage = new Image();
-//	result r = pImage->Construct();
-//	if (IsFailed(r))
-//		return r;
-//	Bitmap *pBitmap = pImage->DecodeN("/Home/background-instr.png",
-//			BITMAP_PIXEL_FORMAT_ARGB8888);
-//
-//	Label *pLabel = new Label();
-//	pLabel->Construct(Rectangle(0, 0, 240, 400), null);
-//	pLabel->SetBackgroundBitmap(*pBitmap);
-//	AddControl(*pLabel);
-//	delete pImage;
-//	delete pBitmap;
-//	__pButtonVoltar->RequestRedraw(true);
-////
-//	__pButtonVoltarPagina->RequestRedraw(true);
-//	__pButtonAvancarPagina->RequestRedraw(true);
 
 	return E_SUCCESS;
 }
