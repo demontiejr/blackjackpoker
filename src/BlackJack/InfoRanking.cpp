@@ -13,12 +13,12 @@ InfoRanking::InfoRanking() {
 	this->pontuacao = 0;
 }
 
-void InfoRanking::Construct(String nome, int pontuacao, int vitorias) {
+void InfoRanking::Construct(String nome, int pontuacao) {
 	this->nome = nome;
 	this->pontuacao = pontuacao;
 }
 
-InfoRanking::InfoRanking(String nome, int pontuacao, int vitorias) {
+InfoRanking::InfoRanking(String nome, int pontuacao) {
 	this->nome = nome;
 	this->pontuacao = pontuacao;
 }

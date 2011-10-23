@@ -129,7 +129,7 @@ void FormLobby::IrParaMenu()
 	Jogador* jogador = Controlador::GetInstance()->GetJogador();
 	// if (jogador->GetNumeroDePartidas() > 0)
 	InfoRanking *info = new InfoRanking();
-	info->Construct(jogador->GetNome(), jogador->GetPontos(), jogador->GetMaxVitoriasConsecutivas());
+	info->Construct(jogador->GetNome(), jogador->GetPontos());
 	ranking->Inserir(info);
 
 	Controlador::GetInstance()->constructed = false;
@@ -167,7 +167,7 @@ result FormLobby::OnDraw(void) {
 	result r = pImage->Construct();
 	if (IsFailed(r))
 		return r;
-	Bitmap *pBitmap = pImage->DecodeN("/Home/imagensblackjack/background.jpg",
+	Bitmap *pBitmap = pImage->DecodeN("/Home/background.jpg",
 			BITMAP_PIXEL_FORMAT_ARGB8888);
 
 	Canvas* pCanvas = GetCanvasN();
@@ -181,13 +181,5 @@ result FormLobby::OnDraw(void) {
 	delete pImage;
 	delete pBitmap;
 
-//	__pButtonMesa1->RequestRedraw(true);
-//	__pButtonMesa2->RequestRedraw(true);
-//	__pButtonMesa3->RequestRedraw(true);
-//	__pButtonVoltar->RequestRedraw(true);
-//	__pLabelNome->RequestRedraw(true);
-//	__pLabelDinheiro->RequestRedraw(true);
-
 	return r;
 }
-
