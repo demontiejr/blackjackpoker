@@ -1,8 +1,7 @@
 /*
  * Ranking.cpp
- *
- *  Created on: 22/09/2011
- *      Author: Arthur Holanda
+ * Created on: 22/09/2011
+ * Author: Arthur Holanda
  */
 
 #include "BlackJack/Ranking.h"
@@ -30,7 +29,7 @@ void Ranking::Construct()
 		if(IsFailed(r)){
 			AppLog("Falhou ao construir ranking.");
 		}else{
-			String statement("CREATE TABLE IF NOT EXISTS Ranking(nome TEXT, pontuacao INTEGER, vitorias INTEGER)");
+			String statement("CREATE TABLE IF NOT EXISTS Ranking(nome TEXT, pontuacao INTEGER)");
 
 			r = bancoRanking.ExecuteSql(statement, true);
 			if(IsFailed(r)){
@@ -43,7 +42,6 @@ void Ranking::Construct()
 }
 
 Ranking::~Ranking() {
-	// TODO Auto-generated destructor stub
 }
 
 InfoRanking *Ranking::GetInfoPorPosicaoInserir(int posicao)
@@ -54,7 +52,7 @@ InfoRanking *Ranking::GetInfoPorPosicaoInserir(int posicao)
 	result r = E_SUCCESS;
 
 	String nome;
-	int pontuacao, vitorias;
+	int pontuacao;
 	InfoRanking* info = new InfoRanking();
 
 	statement = (L"SELECT * FROM Ranking ORDER BY pontuacao DESC");
@@ -75,12 +73,11 @@ InfoRanking *Ranking::GetInfoPorPosicaoInserir(int posicao)
 
 	r = pEnum->GetStringAt(0, nome);
 	r = pEnum->GetIntAt(1, pontuacao);
-	r = pEnum->GetIntAt(2, vitorias);
 
 	if(IsFailed(r))
 		return info;
 
-	info->Construct(nome, pontuacao, vitorias);
+	info->Construct(nome, pontuacao);
 
 	delete pStatement;
 	delete pEnum;
@@ -127,7 +124,7 @@ void Ranking::Inserir(InfoRanking *info)
 		return;
 	}
 
-	statement = "INSERT INTO Ranking(nome, pontuacao, vitorias) VALUES (?, ?, ?)";
+	statement = "INSERT INTO Ranking(nome, pontuacao) VALUES (?,?)";
 
 	pStatement = bancoRanking.CreateStatementN(statement);
 	if(IsFailed(r)){
@@ -184,5 +181,3 @@ void Ranking::Limpar()
 
 	return;
 }
-
-
