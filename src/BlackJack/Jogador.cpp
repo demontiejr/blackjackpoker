@@ -77,6 +77,7 @@ void Jogador::Perdeu() {
 void Jogador::PuxarCarta() {
 	Carta* c = this->controlador->GetBaralho()->DarCarta();
 	this->mao->PegarCarta(c);
+	podeDobrar = false;
 }
 
 int Jogador::Apostar(int valorAposta) {
@@ -97,11 +98,22 @@ void Jogador::IniciarPartida()
 {
 	this->status = JOGANDO;
 	this->mao->LimparMao();
+	this->podeDobrar = true;
 }
 
 void Jogador::TerminouJogada()
 {
 	this->SetStatus(PAROU);
+}
+
+bool Jogador::PodeDobrar()
+{
+	if(! podeDobrar){
+		return false;
+	}else{
+		return (this->GetMao()->GetValor() < 21);
+	}
+
 }
 
 StatusJogador Jogador::GetStatus()
