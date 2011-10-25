@@ -66,12 +66,13 @@ int Mao::CalcularValor()
 	}
 
 	if(soma > 21){
-		soma = 0;
 		for (int i = 0; i < qtdCartas; ++i) {
-			if(cartas[i]->GetNumero() == AS)
-				soma += 1;
-			else
-				soma += cartas[i]->GetValor();
+			if(cartas[i]->GetNumero() == AS){
+				soma -= 10;
+				if(soma <= 21){
+					break;
+				}
+			}
 		}
 	}
 

@@ -99,8 +99,9 @@ result FormMenu::OnTerminating(void) {
 void FormMenu::CriaJogador(String nomeJogador) {
 	Controlador* controlador = Controlador::GetInstance();
 	Jogador* j = new Jogador();
+	nomeJogador.Trim();
 	j->Construct(nomeJogador);
-	j->Receber(100);
+	j->Receber(50);
 	j->SetControlador(controlador);
 	controlador->SetJogador(j);
 }

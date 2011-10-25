@@ -41,6 +41,7 @@ public:
 protected:
 	String nome;
 
+	bool podeDobrar;
 	int pontos;
 	int maxPontos;
 	int valorAposta;
@@ -62,6 +63,8 @@ public: //getters e setters
 	int GetMaxVitoriasConsecutivas();
 
 	Mao* GetMao();
+
+	bool PodeDobrar();
 
 	void SetValorAposta(int valorAposta);
 	int GetValorAposta(int valorAposta);

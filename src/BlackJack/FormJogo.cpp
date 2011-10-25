@@ -392,6 +392,8 @@ void FormJogo::OnInicioPartida() {
 	MostrarBotoesAcoes(false);
 	MostrarBotoesAposta(true);
 	AtualizaInfoMesa();
+	AtualizarInfoJogador();
+	this->__pLabelPontosMao->SetText("Points: 0");
 	RequestRedraw(true);
 }
 
@@ -456,7 +458,6 @@ void FormJogo::MostrarVencedor(Canvas *pCanvas) {
 }
 
 void FormJogo::OnPagarVencedor() {
-	//TODO - adicionar acao
 
 	AtualizaInfoMesa();
 	AtualizarInfoControlador();
@@ -465,13 +466,16 @@ void FormJogo::OnPagarVencedor() {
 	RequestRedraw(true);
 
 	timer->Iniciar(ID_TIMER_INICIAR_PARTIDA, 2000);
-	//controlador->IniciarPartida();
 }
 
 void FormJogo::OnJogadorPuxaCarta() {
-	AtualizaBotoesAcoes();
+	MostrarBotoesAcoes(true);
 	AtualizarInfoJogador();
 	RequestRedraw(true);
+
+	if(controlador->GetJogador()->GetMao()->GetValor() >= 21){
+		controlador->FimJogadaJogador();
+	}
 }
 
 void FormJogo::MostrarBotoesAposta(bool mostrar) {
@@ -487,14 +491,19 @@ void FormJogo::MostrarBotoesAposta(bool mostrar) {
 
 void FormJogo::MostrarBotoesAcoes(bool mostrar) {
 	AtualizaBotoesAcoes();
-	__pButtonPuxar->SetShowState(mostrar);
-	__pButtonDobrar->SetShowState(mostrar);
-	__pButtonParar->SetShowState(mostrar);
+
+	bool podePuxar = controlador->GetJogador()->GetMao()->GetValor() < 21;
+	bool podeDobrar = controlador->GetJogador()->PodeDobrar() && controlador->GetJogador()->GetPontos() >= controlador->GetValorPote()/2;;
+	bool podeParar = true;
+
+
+	__pButtonPuxar->SetShowState(mostrar && podePuxar);
+	__pButtonDobrar->SetShowState(mostrar && podeDobrar);
+	__pButtonParar->SetShowState(mostrar && podeParar);
 }
 
 void FormJogo::Apostar(int valor) {
-	//TODO - debitar quantia do jogador
-	//TODO - colocar quantia em dobro no valor da aposta do controlador
+
 	controlador->GetJogador()->Apostar(valor);
 	controlador->SetValorPote(valor * 2);
 

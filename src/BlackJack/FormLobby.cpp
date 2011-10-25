@@ -129,7 +129,7 @@ void FormLobby::IrParaMenu()
 	Jogador* jogador = Controlador::GetInstance()->GetJogador();
 	// if (jogador->GetNumeroDePartidas() > 0)
 	InfoRanking *info = new InfoRanking();
-	info->Construct(jogador->GetNome(), jogador->GetPontos());
+	info->Construct(jogador->GetNome(), jogador->GetMaxPontos());
 	ranking->Inserir(info);
 
 	Controlador::GetInstance()->constructed = false;
@@ -167,7 +167,7 @@ result FormLobby::OnDraw(void) {
 	result r = pImage->Construct();
 	if (IsFailed(r))
 		return r;
-	Bitmap *pBitmap = pImage->DecodeN("/Home/background.jpg",
+	Bitmap *pBitmap = pImage->DecodeN("/Home/background1.png",
 			BITMAP_PIXEL_FORMAT_ARGB8888);
 
 	Canvas* pCanvas = GetCanvasN();
